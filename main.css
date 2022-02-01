@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+:root {
+    --text-color-primary:rgb(0, 0, 0);
+    --text-color-secondary:green;
+    --brand-color-primary:yellow;
+    --brand-color-secondary:blue;
+}
+
+body {
+    background:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
+}
+.card {
+    width: 30em;
+    aspect-ratio: 3.5 / 2;
+    color: var(--text-color-primary);
+    perspective: 1000px;
+}
+.back, .front {
+    background: rgb(137, 137, 167);
+    position:absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    border-radius: .4em;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden; 
+    overflow: hidden;
+    padding: .5em;
+}
+.back {
+    transform:rotateY(180deg)
+}
+.card:hover > .front {
+    
+    transform:rotateY(180deg);
+}
+.card:hover > .back {
+    
+    transform:rotateY(0deg);
+}
