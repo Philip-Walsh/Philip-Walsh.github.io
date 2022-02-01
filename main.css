@@ -3,10 +3,16 @@
 :root {
     --text-color-primary:rgb(0, 0, 0);
     --text-color-secondary:green;
-    --brand-color-primary:yellow;
-    --brand-color-secondary:blue;
+    --card-color:rgb(137, 137, 167);
+    --brand-color:blue;
 }
-
+* {
+    margin:0;
+    padding:0;
+}
+html {
+    font-size: 16px;
+}
 body {
     background:black;
     display: flex;
@@ -17,6 +23,8 @@ body {
     overflow: hidden;
     font-family: 'Cormorant Garamond', serif;
 }
+
+/****************************************************/
 .card {
     width: 30em;
     aspect-ratio: 3.5 / 2;
@@ -24,7 +32,7 @@ body {
     perspective: 1000px;
 }
 .back, .front {
-    background: rgb(137, 137, 167);
+    background: var(--card-color);
     position:absolute;
     top:0;
     width: 100%;
@@ -47,4 +55,28 @@ body {
 .card:hover > .back {
     
     transform:rotateY(0deg);
+}
+
+/****************************************************/
+.front, .back{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.identity {
+    text-align: center;
+}
+.identity h1 {
+    font-size: 2em;
+}
+.identity p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/****************************************************/
+
+.back p{
+    
+    font-size: 5em;
 }
