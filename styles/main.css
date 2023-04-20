@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+:root {
+    --text-color-primary:rgb(0, 0, 0);
+    --text-color-secondary:green;
+    /* --card-color:rgb(137, 137, 167); */
+    --card-color:linear-gradient(#0B8196, #0B8196, #05214C);
+    --brand-color:blue;
+}
+* {
+    margin:0;
+    padding:0;
+}
+html {
+    font-size: 16px;
+}
+body {
+    background:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/****************************************************/
+.card {
+    width: 30em;
+    aspect-ratio: 3.5 / 2;
+    color: var(--text-color-primary);
+    perspective: 1000px;
+}
+.back, .front {
+    background: var(--card-color);
+    position:absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    border-radius: .4em;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden; 
+    overflow: hidden;
+    padding: .5em;
+}
+.back {
+    transform:rotateY(180deg)
+}
+.card:hover > .front {
+    
+    transform:rotateY(180deg);
+}
+.card:hover > .back {
+    
+    transform:rotateY(0deg);
+}
+
+/****************************************************/
+.front, .back{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.identity {
+    text-align: center;
+}
+.identity h1 {
+    font-size: 2em;
+}
+.identity p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/****************************************************/
+
+.back p{
+    transition: all 0.3s ease-in-out;
+    font-size: 5em;
+}
+.back p:hover{
+    transition: all 0.3s ease-in-out;
+    font-size: 7em;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
