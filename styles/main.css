@@ -13,8 +13,31 @@
 }
 html {
     font-size: 16px;
+    background: black;
+    color:white;
 }
 body {
+    display: grid;
+    grid-template-areas:
+    "head head"
+    "nav main"
+    "foot foot"
+    
+}
+header, nav, footer, main {
+    border: 2px solid greenyellow;
+}
+header {
+    grid-area: head;
+}
+nav {
+    grid-area: nav;
+}
+footer {
+    grid-area: foot;
+}
+main {
+    grid-area: main;
     background:black;
     display: flex;
     justify-content: center;
@@ -29,7 +52,7 @@ body {
 .card {
     width: 30em;
     aspect-ratio: 3.5 / 2;
-    color: var(--text-color-primary);
+    /* color: var(--text-color-primary); */
     perspective: 1000px;
 }
 .back, .front {
