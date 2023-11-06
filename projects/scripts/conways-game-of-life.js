@@ -8,13 +8,13 @@ class GameOfLife {
         this.cells = this.initCells();
         this.aliveColor = '#426c9b';
         this.dyingColor = '#7194c6';
-        this.deadColor = '#fee5c5';
+        this.deadColor = '#e4dccf';
         this.updateInterval = 500;
         this.updateTimer = null;
-        // Add an event listener for the mouseover event on the card element
+
         const card = document.querySelector('#game');
         card.addEventListener('mouseover', () => {
-            this.reset(); // Reset the game when the card is rotated
+            this.reset();
             this.start();
         });
     }
@@ -94,17 +94,17 @@ class GameOfLife {
 
         this.cells = newCells;
     }
-    // Define a reset function in the GameOfLife class
+
     reset() {
-        this.stop(); // Stop the game if it's currently running
-        this.cells = this.initCells(); // Reset the cells to their initial state
-        this.drawCells(); // Draw the reset state of the game
+        this.stop();
+        this.cells = this.initCells();
+        this.drawCells();
         console.log('reset')
     }
     start() {
         if (this.updateTimer) return;
-        this.reset(); // Reset the game before starting it
-        this.drawCells(); // Draw the initial state of the game
+        this.reset();
+        this.drawCells();
         this.updateTimer = setInterval(() => {
             this.update();
         }, this.updateInterval);
