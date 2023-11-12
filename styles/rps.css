@@ -1,0 +1,19 @@
+body {
+    overflow: scroll !important;
+}
+
+#rps-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#rps-game div{
+    display: flex;
+    padding-top: 2em;
+}
+#rps-game div p:first-of-type{
+    padding-right: .5em;
+    text-transform: capitalize;
+}
