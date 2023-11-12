@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+
 
 :root {
   --text-color-primary: rgb(0, 0, 0);
@@ -17,19 +20,32 @@ html {
 }
 
 body {
-  /* background: black; */
+  display: grid;
+  grid-template-areas: 
+  'header'
+  'nav'
+  'main'
+  'footer';
+  background: #e7e1e1;
+  background: linear-gradient(-45deg, #AFD3E2, #19A7CE, #146C94);
+  font-family: "Roboto", sans-serif;
+  font-family: 'Exo 2', sans-serif;
+}
+
+header {
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+}
+main {
+    grid-area: main;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   min-width: 100vw;
   overflow: hidden;
-  font-family: "Cormorant Garamond", serif;
-  /* perspective: 10em;
-  perspective-origin: 50% calc(50% - 2em); */
-  background: #e7e1e1;
-  /* filter: contrast(7); */
-  background: linear-gradient(-45deg, #AFD3E2, #19A7CE, #146C94);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
 }
@@ -52,6 +68,7 @@ body {
   width: 30em;
   aspect-ratio: 3.5 / 2;
   color: var(--text-color-primary);
+  font-family: "Cormorant Garamond", serif;
   perspective: 1000px;
 }
 
@@ -153,10 +170,9 @@ a {
 
 nav {
   padding-top: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  grid-area: nav;
+  width:100%;
+
 }
 
 nav ul {
@@ -180,9 +196,7 @@ nav button {
   box-shadow: inset 2px 2px 2px 1px #0000008f, inset -2px -2px 2px 1px #ffffff2e;
 }
 
-nav button:hover {
-  background-color: var(--brand-color);
-  font-size: 2.2em;
+button:hover {
   filter: brightness(1.1);
   transition: all 0.3s ease-in-out;
 }

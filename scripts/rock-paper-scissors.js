@@ -112,58 +112,29 @@ class RockPaperScissors {
         this.compChoice = "";
         this.userChoice = "";
 
-        this.init();
+        this.setup();
     }
 
-    init() {
-        const rules = document.createElement('section');
-        rules.innerHTML = "<h2>Rules:</h2>";
-        for (let i = 0; i < this.options.length; i++) {
-            const rule = document.createElement('div');
-            let option = this.options[i];
-            
-            rule.innerHTML = `<p>${this.pieces[option].img[0]} ${option} beats:</p><p>${this.pieces[option].beats}</p>`;
-            this.rules.appendChild(rule);
-        } 
-        this.card.appendChild(rulesDiv);
-
-        const increaseRoundButton = document.createElement('button');
-        increaseRoundButton.innerText = 'Increase Rounds';
-        increaseRoundButton.addEventListener('click', () => {
-            this.increaseRounds();
-        });
-        this.card.appendChild(increaseRoundButton);
-
-        const restartButton = document.createElement('button');
-        restartButton.innerText = 'Restart Game';
-        restartButton.addEventListener('click', () => {
-            this.restartGame();
-        });
-        this.card.appendChild(restartButton);
-
-        const roundsDisplay = document.createElement('p');
-        roundsDisplay.innerText = `Rounds: ${this.rounds}`;
-        this.card.appendChild(roundsDisplay);
-
-        this.addButtons();
+    setup() {
+        this.addRules();
+        this.addGameButtons();
+        this.addGameSection();
     }
 
-    increaseRounds() {
-        this.rounds++;
-        this.updateRoundsDisplay();
+    updateRounds(i) {
+        this.rounds += i;
+        if (this.rounds < 1) {
+            this.rounds = 3;
+        }
+        this.updateRoundsText();
     }
 
     restartGame() {
         this.roundCounter = 0;
         this.userScore = 0;
         this.compScore = 0;
-        this.updateRoundsDisplay();
+        this.updateRoundsText();
         this.start();
-    }
-
-    updateRoundsDisplay() {
-        const roundsDisplay = document.querySelector('#rounds-display');
-        roundsDisplay.innerText = `Rounds: ${this.rounds}`;
     }
 
     setCompChoice() {
@@ -171,22 +142,90 @@ class RockPaperScissors {
     }
 
     start() {
-        this.card.innerHTML = '';
-        this.setCompChoice();
-        this.addButtons();
+       this.restartGame();
     }
 
-    addButtons() {
+
+    addRules() {
+        const rules = document.createElement('section');
+        rules.setAttribute("id", "rules")
+
+        rules.innerHTML = "<h2>Rules:</h2>";
+        for (let i = 0; i < this.options.length; i++) {
+            const rule = document.createElement('span');
+            let option = this.options[i];
+
+            rule.innerHTML = `<p>${this.pieces[option].img[0]} ${option} beats:</p><p>${this.pieces[option].beats.join(', ')}</p>`;
+            rules.appendChild(rule);
+        }
+        this.card.appendChild(rules);
+    }
+
+    addGameButtons() {
+        const gameButtons = document.createElement('section');
+        gameButtons.setAttribute("id", "game-buttons");
+
+        const increaseRoundButton = document.createElement('button');
+        increaseRoundButton.innerText = 'Increase Rounds';
+        increaseRoundButton.addEventListener('click', () => {
+            this.updateRounds(1);
+        });
+        gameButtons.appendChild(increaseRoundButton);
+
+
+        const decreaseRoundButton = document.createElement('button');
+        decreaseRoundButton.innerText = 'Decrease Rounds';
+        decreaseRoundButton.addEventListener('click', () => {
+            this.updateRounds(-1);
+        });
+        gameButtons.appendChild(decreaseRoundButton);
+
+        const restartButton = document.createElement('button');
+        restartButton.innerText = 'Restart Game';
+        restartButton.addEventListener('click', () => {
+            this.restartGame();
+        });
+        gameButtons.appendChild(restartButton);
+
+        this.card.appendChild(gameButtons);
+
+    }
+
+    addGameSection() {
+        const game = document.createElement('article');
+        game.setAttribute("id", "game");
+
+        const rounds = document.createElement('p');
+        rounds.setAttribute("id", "rounds");
+        game.appendChild(rounds);
+
+        this.card.appendChild(game);
+
+        this.addChoiceButtons();
+        this.updateRoundsText();
+    }
+
+    addChoiceButtons() {
+        const game = document.querySelector('#game')
+        const userButtons = document.createElement('section');
+
         for (let i = 0; i < this.options.length; i++) {
             const button = document.createElement('button');
             let option = this.options[i];
+            button.alt = option;
             button.innerText = `${this.pieces[option].img[this.imgStyle]}`;
             button.title = option;
             button.addEventListener('click', () => {
                 this.playRound(option);
             });
-            this.card.appendChild(button);
+            userButtons.appendChild(button);
         }
+        game.appendChild(userButtons);
+    }
+
+    updateRoundsText() {
+        const rounds = document.querySelector('#rounds');
+        rounds.innerText = `Round: ${this.roundCounter} / ${this.rounds}`;
     }
 
     playRound(userChoice) {
@@ -205,8 +244,9 @@ class RockPaperScissors {
 
     displayChoices() {
         const choicesDiv = document.createElement('div');
-        choicesDiv.innerHTML = `<p>Round ${this.roundCounter}:</p>
-                                <p>User choice: ${this.pieces[this.userChoice].img[this.imgStyle]}</p>
+        choicesDiv.setAttribute("id", `round-${this.roundCounter}`);
+
+        choicesDiv.innerHTML = `<p>User choice: ${this.pieces[this.userChoice].img[this.imgStyle]}</p>
                                 <p>Computer choice: ${this.pieces[this.compChoice].img[this.imgStyle]}</p>`;
         this.card.appendChild(choicesDiv);
     }
@@ -219,7 +259,7 @@ class RockPaperScissors {
     displayOutcome() {
         const outcomeDiv = document.createElement('div');
         if (this.userScore > this.compScore) {
-            outcomeDiv.innerHTML = `<p>Outcome: You win! 🏆</p>`;
+            outcomeDiv.innerHTML = `<p>Outcome: User wins 🏆</p>`;
         } else if (this.compScore > this.userScore) {
             outcomeDiv.innerHTML = `<p>Outcome: Computer wins. 😢</p>`;
         } else {
@@ -229,14 +269,21 @@ class RockPaperScissors {
     }
 
     checkWinner() {
+        const outcome = document.createElement('p');
+
         if (this.pieces[this.compChoice].beats.includes(this.userChoice)) {
             this.compScore++;
+            outcome.innerHTML = `${this.pieces[this.compChoice].img[0]} beats ${this.pieces[this.userChoice].img[0]}, Computer Wins Round ${this.roundCounter}!`;
         } else if (this.pieces[this.userChoice].beats.includes(this.compChoice)) {
             this.userScore++;
+            outcome.innerHTML = `${this.pieces[this.userChoice].img[0]} beats ${this.pieces[this.compChoice].img[0]}, User Wins Round ${this.roundCounter}!`;
+
         }
+        document.querySelector(`#round-${this.roundCounter}`).appendChild(outcome);
+
+
     }
 }
 
 const card = document.querySelector('#rps-game');
-const rounds = 3;
-const rps = new RockPaperScissors(card, rounds);
+const rps = new RockPaperScissors(card, 3);
