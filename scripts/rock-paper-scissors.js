@@ -1,6 +1,7 @@
 class RockPaperScissors {
-    constructor(card, rounds) {
-        this.card = card;
+    constructor(cardFront, cardBack, rounds) {
+        this.cardFront = cardFront;
+        this.cardBack = cardBack;
         this.rounds = rounds;
         this.roundCounter = 0;
         this.userScore = 0;
@@ -127,6 +128,7 @@ class RockPaperScissors {
             this.rounds = 3;
         }
         this.updateRoundsText();
+        this.restartGame();
     }
 
     restartGame() {
@@ -134,7 +136,8 @@ class RockPaperScissors {
         this.userScore = 0;
         this.compScore = 0;
         this.updateRoundsText();
-        this.start();
+        this.disableChoiceButtons(false);
+        document.querySelector('#rps-game #outcome').innerHTML = '';
     }
 
     setCompChoice() {
@@ -155,10 +158,10 @@ class RockPaperScissors {
             const rule = document.createElement('span');
             let option = this.options[i];
 
-            rule.innerHTML = `<p>${this.pieces[option].img[0]} ${option} beats:</p><p>${this.pieces[option].beats.join(', ')}</p>`;
+            rule.innerHTML = `<p><strong>${this.pieces[option].img[0]} ${option} beats:</strong> ${this.pieces[option].beats.join(', ')}</p>`;
             rules.appendChild(rule);
         }
-        this.card.appendChild(rules);
+        this.cardFront.appendChild(rules);
     }
 
     addGameButtons() {
@@ -187,7 +190,7 @@ class RockPaperScissors {
         });
         gameButtons.appendChild(restartButton);
 
-        this.card.appendChild(gameButtons);
+        this.cardBack.appendChild(gameButtons);
 
     }
 
@@ -199,19 +202,25 @@ class RockPaperScissors {
         rounds.setAttribute("id", "rounds");
         game.appendChild(rounds);
 
-        this.card.appendChild(game);
+        const outcome = document.createElement('p');
+        outcome.setAttribute("id", "outcome");
+        game.appendChild(outcome);
+
+        this.cardBack.appendChild(game);
 
         this.addChoiceButtons();
         this.updateRoundsText();
     }
 
     addChoiceButtons() {
-        const game = document.querySelector('#game')
+        const game = document.querySelector('#rps-game #game');
+        console.log(game)
         const userButtons = document.createElement('section');
 
         for (let i = 0; i < this.options.length; i++) {
             const button = document.createElement('button');
             let option = this.options[i];
+            button.setAttribute("id", `${option}-button`);
             button.alt = option;
             button.innerText = `${this.pieces[option].img[this.imgStyle]}`;
             button.title = option;
@@ -221,6 +230,12 @@ class RockPaperScissors {
             userButtons.appendChild(button);
         }
         game.appendChild(userButtons);
+    }
+
+    disableChoiceButtons(disabled) {
+        for (let i = 0; i < this.options.length; i++) {
+            document.getElementById(`${this.options[i]}-button`).disabled = disabled
+        }
     }
 
     updateRoundsText() {
@@ -235,9 +250,7 @@ class RockPaperScissors {
         this.checkWinner();
         this.roundCounter++;
 
-        if (this.roundCounter < this.rounds) {
-            this.displaySeparator();
-        } else {
+        if (this.roundCounter >= this.rounds) {
             this.displayOutcome();
         }
     }
@@ -248,12 +261,12 @@ class RockPaperScissors {
 
         choicesDiv.innerHTML = `<p>User choice: ${this.pieces[this.userChoice].img[this.imgStyle]}</p>
                                 <p>Computer choice: ${this.pieces[this.compChoice].img[this.imgStyle]}</p>`;
-        this.card.appendChild(choicesDiv);
+        document.querySelector('#rps-game #outcome').appendChild(choicesDiv);
     }
 
     displaySeparator() {
         const separatorDiv = document.createElement('hr');
-        this.card.appendChild(separatorDiv);
+        this.cardBack.appendChild(separatorDiv);
     }
 
     displayOutcome() {
@@ -265,7 +278,8 @@ class RockPaperScissors {
         } else {
             outcomeDiv.innerHTML = `<p>Outcome: It's a draw! 🤝</p>`;
         }
-        this.card.appendChild(outcomeDiv);
+        document.querySelector('#rps-game #outcome').appendChild(outcomeDiv);
+        this.disableChoiceButtons(true)
     }
 
     checkWinner() {
@@ -273,11 +287,12 @@ class RockPaperScissors {
 
         if (this.pieces[this.compChoice].beats.includes(this.userChoice)) {
             this.compScore++;
-            outcome.innerHTML = `${this.pieces[this.compChoice].img[0]} beats ${this.pieces[this.userChoice].img[0]}, Computer Wins Round ${this.roundCounter}!`;
+            outcome.innerHTML = `👎: ${this.pieces[this.compChoice].img[0]} beats ${this.pieces[this.userChoice].img[0]}, Computer Wins Round ${this.roundCounter + 1}!<hr/>`;
         } else if (this.pieces[this.userChoice].beats.includes(this.compChoice)) {
             this.userScore++;
-            outcome.innerHTML = `${this.pieces[this.userChoice].img[0]} beats ${this.pieces[this.compChoice].img[0]}, User Wins Round ${this.roundCounter}!`;
-
+            outcome.innerHTML = `👍: ${this.pieces[this.userChoice].img[0]} beats ${this.pieces[this.compChoice].img[0]}, User Wins Round ${this.roundCounter + 1}!<hr/>`;
+        } else {
+            outcome.innerHTML = `🤝: ${this.pieces[this.userChoice].img[0]} == ${this.pieces[this.compChoice].img[0]}, Draw Round ${this.roundCounter + 1}!<hr/>`;
         }
         document.querySelector(`#round-${this.roundCounter}`).appendChild(outcome);
 
@@ -285,5 +300,6 @@ class RockPaperScissors {
     }
 }
 
-const card = document.querySelector('#rps-game');
-const rps = new RockPaperScissors(card, 3);
+const cardFront = document.querySelector('#rps-game .front .project');
+const cardBack = document.querySelector('#rps-game .back');
+const rps = new RockPaperScissors(cardFront, cardBack, 3);

@@ -1,40 +1,18 @@
-/* ;
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+main {
+  display: flex;
+  flex-direction: column;
 }
-:root {
-  --card-color: linear-gradient(#f0ebe3, #e4dccf, #7d9d9c);
-  --bg-color: #E4DCCF;
-} */
-
-/* body {
-    background-color: #070707;
-    transition: transform 0.5s;
-} */
 
 .card {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    /* height: 600px; */
     margin: 50px auto;
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
 }
 
-/* .card:hover {
-    transform: rotateY(180deg);
-} */
 
-/* .front, .back {
-    position: absolute;
-    padding:2em;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background-color:var(--bg-color);
-} */
 
 .project{
   padding:2em;
@@ -44,14 +22,16 @@
   text-align:center;
 }
 
-.front {
+.front, .back {
     padding: 20px;
+    margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+    background-color: var(--card-color);
+  }
 
 .back {
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
     padding: 0;
   overflow:hidden;
 }
@@ -85,4 +65,68 @@ canvas {
 .info-text{
   padding-top:1em;
   font-size:4em;
+}
+
+/*              RPS                   */
+#rps-game #game{
+ background-color:var(--card-color);
+ height:fit-content;
+ padding: .5em;
+}
+
+#rules{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#rules span{
+  display: flex;
+  margin: .2em;
+  margin-top: .5em;
+}
+#rules span p{
+  padding-right: .1em;
+  text-transform: capitalize;
+  white-space: pre-line;
+}
+
+#game-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1em;
+  font-size: 2em;
+
+}
+
+#rounds {
+  display: flex;
+  flex-direction: row;
+
+}
+#game-buttons button {
+  min-width: 10em;
+  padding:1rem;
+  border-radius: 2em;
+}
+
+#rps-game #game button {
+  font-size: 2em;
+}
+
+#rps-game #game {
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#rps-game #game section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }

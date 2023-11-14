@@ -1,0 +1,101 @@
+.card {
+    width: 30em;
+    aspect-ratio: 3.5 / 2;
+    color: var(--text-color-primary);
+    font-family: "Cormorant Garamond", serif;
+    perspective: 1000px;
+}
+
+.back,
+.front {
+    box-shadow: inset 2px 2px 2px 1px #0000008f, inset -2px -2px 2px 1px #ffffff2e;
+    background: var(--card-color);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4em;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    padding: 0.5em;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.card:hover>.front {
+    transform: rotateY(180deg);
+    transition: all 0.3s ease-out;
+}
+
+.card:hover>.back {
+    transform: rotateY(0deg);
+    transition: all 0.3s ease-out;
+}
+
+/* .card::before {
+    background-color: #0000006b;
+    content: "";
+    position: absolute;
+    top: 20em;
+    width: 32em;
+    border-radius: 2em;
+    height: 2em;
+    transform: perspective(75em) rotateX(18deg) rotateY(-180deg);
+  }
+  .card:hover:before {
+    transform: rotateX(180deg);
+    transition: all 0.1s ease-in;
+  } */
+
+.front,
+.back {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.identity {
+    text-align: center;
+}
+
+.identity h1 {
+    font-size: 2em;
+}
+
+.identity p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.back p {
+    transition: all 0.3s ease-in-out;
+    font-size: 5em;
+}
+
+.back p:hover {
+    transition: all 0.3s ease-in-out;
+    font-size: 7em;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+}
+
+#watermark {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    opacity: 0.2;
+    z-index: 99;
+    color: white;
+    font-size: 6em;
+    transform: rotate(-45deg);
+}

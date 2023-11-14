@@ -2,7 +2,6 @@
 
 const express = require('express');
 const path = require('path');
-const nodemon = require('nodemon');
 
 const app = express();
 const port = 3000;
@@ -28,25 +27,8 @@ app.get('/', (req, res) => {
 
 app.use('/projects', express.static(path.join(__dirname, 'projects')));
 
-// Add more routes for additional directories as needed
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
 
-if (process.env.NODE_ENV === 'development') {
-    nodemon({
-        script: 'server.js',
-        ext: 'html js css',
-        ignore: [],
-    });
-
-    nodemon.on('start', () => {
-        console.log('Server has started');
-    }).on('quit', () => {
-        console.log('Server has quit');
-        process.exit();
-    }).on('restart', (files) => {
-        console.log('Server restarted due to changes:', files);
-    });
-}

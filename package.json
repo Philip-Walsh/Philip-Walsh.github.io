@@ -7,7 +7,7 @@
       "lint": "eslint .",
       "lint:fix": "eslint . --fix",
       "test": "test",
-      "start": "NODE_ENV=development node server.js"
+      "start": "NODE_ENV=development nodemon server.js"
     },
     "repository": {
       "type": "git",
