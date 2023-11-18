@@ -7,10 +7,11 @@
   --text-color-primary: rgb(0, 0, 0);
   --text-color-secondary: #19A7CE;
   --card-color: #E4DCCF;
-  --brand-color: #212427;
+  --main-color: #212427;
+  --brand-color:#19A7CE;
   --text-brand-color: #F6F1F1;
 
-  --elem-height: 10vh
+  --elem-height: 3em;
 }
 
 * {
@@ -35,12 +36,13 @@ body {
   font-family: 'Exo 2', sans-serif;
 }
 
+/*          Header       */
 header {
   grid-area: header;
 }
 header, footer {
   animation: grow 1s ease-out;
-  background-color: var(--brand-color);
+  background-color: var(--main-color);
   color: var(--text-brand-color);
   height:var(--elem-height);
   padding: .5em;
@@ -54,32 +56,9 @@ header, footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-footer  {
-  /* display: grid;
-  grid-template-columns: repeat(9, 1fr); */
-}
-footer p {
-  /* grid-column: 4 / 7; */
-  text-align: center;
-  width:80%;
-  padding-left:2vw;
-}
-.socials {
-  grid-column: 8 / 9;
   justify-content: space-between;
-  width: 10em;
-}
-.socials img{
-  width:2em;
-  cursor: pointer;
-
 }
 
-footer {
-  grid-area: footer;
-}
 
 main {
   grid-area: main;
@@ -120,6 +99,40 @@ nav button {
   font-size: 2em;
 
 }
+
+/* Footer */
+
+footer {
+  grid-area: footer;
+  display: flex;
+}
+
+footer section {
+  text-align: center;
+  flex: 1;
+  margin: 0 5px;
+  box-sizing: border-box;
+}
+
+.socials {
+  position: relative;
+  width:10em;
+  right: 0;
+  bottom:0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.socials svg{
+  height:2em;
+  cursor: pointer;
+}
+
+.socials svg path {
+  fill: var(--text-brand-color)
+}
+
 
 /* Components */
 button {
