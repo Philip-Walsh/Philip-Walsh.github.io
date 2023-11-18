@@ -5,9 +5,13 @@
 
 :root {
   --text-color-primary: rgb(0, 0, 0);
-  --text-color-secondary: green;
+  --text-color-secondary: #19A7CE;
   --card-color: #E4DCCF;
-  --brand-color: #19A7CE;
+  --main-color: #212427;
+  --brand-color:#19A7CE;
+  --text-brand-color: #F6F1F1;
+
+  --elem-height: 3em;
 }
 
 * {
@@ -21,7 +25,7 @@ html {
 
 body {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   'header'
   'nav'
   'main'
@@ -32,12 +36,30 @@ body {
   font-family: 'Exo 2', sans-serif;
 }
 
+/*          Header       */
 header {
   grid-area: header;
 }
-footer {
-  grid-area: footer;
+header, footer {
+  animation: grow 1s ease-out;
+  background-color: var(--main-color);
+  color: var(--text-brand-color);
+  height:var(--elem-height);
+  padding: .5em;
 }
+
+#logo {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 main {
   grid-area: main;
   display: flex;
@@ -78,6 +100,40 @@ nav button {
 
 }
 
+/* Footer */
+
+footer {
+  grid-area: footer;
+  display: flex;
+}
+
+footer section {
+  text-align: center;
+  flex: 1;
+  margin: 0 5px;
+  box-sizing: border-box;
+}
+
+.socials {
+  position: relative;
+  width:10em;
+  right: 0;
+  bottom:0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.socials svg{
+  height:2em;
+  cursor: pointer;
+}
+
+.socials svg path {
+  fill: var(--text-brand-color)
+}
+
+
 /* Components */
 button {
   background-color: var(--brand-color);
@@ -104,5 +160,16 @@ button:hover {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes grow {
+  0% {
+      height: 0;
+      opacity: 0;
+  }
+  100% {
+      height: 100%;
+      opacity: 1;
   }
 }

@@ -6,7 +6,6 @@ main {
 .card {
     position: relative;
     width: 800px;
-    /* height: 600px; */
     margin: 50px auto;
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
