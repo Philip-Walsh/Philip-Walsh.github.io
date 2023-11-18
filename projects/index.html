@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <nav>
+    <!-- <nav>
         <ul>
             <li><button onclick="history.back()" title="Go Back">&#128072</button></li>
         </ul>
-    </nav>
+    </nav> -->
     <main>
         <section id="rps-game" class="card">
             <section class="front">
@@ -67,8 +67,19 @@
             </section>
             <script src="../scripts/conways-game-of-life.js"></script>
         </section>
-        <script src="../scripts/home-page.js"></script>
+        <script>
+            document.querySelector('main')
+            .addEventListener('mouseover',
+            function hover(event) {
+                let title = 'Projects';
+                document.querySelector('#title').innerHTML = 'Projects';
+                toggleContent();
+                event.currentTarget
+                    .removeEventListener('mouseover', hover);
+            });
+            </script>
     </main>
+    <script src="../scripts/home-page.js"></script>
 </body>
 
 </html>

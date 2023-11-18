@@ -1,12 +1,96 @@
 var headerHtml = `
 <a id="logo" class="flex">
-    <h1>Portfolio Coming Soon!</h1>
+    <h1 id="title">Portfolio Coming Soon!</h1>
 </a>
 `
-var flex = "flex"
+var flex = "flex";
+
+function visible(isVisible) {
+    if (isVisible) {
+        return 'visible'
+    }
+    return 'hidden';
+}
+
+var socialButtons = [
+    { src: 'linkedin', alt: 'Linkedin link', href: 'https://www.linkedin.com/in/philip-walsh-01' },
+    { src: 'github', alt: 'Github link', href: 'https://github.com/Philip-Walsh' }
+]
+var navButtons = [
+    { src: 'home', alt: 'Home link', href: '/' },
+    { src: 'projects', alt: 'Projects link', href: '/projects/' }
+
+]
+
+window.onload = () => {
+    addHeader();
+    addFooter();
+    addNav();
+}
+
+function addHeader() {
+    let header = document.createElement("header");
+    header.innerHTML = headerHtml;
+    header.style.visibility = visible();
+    header.className = flex;
+    document.body.prepend(header);
+
+    let logoElem = document.querySelector('#logo');
+    if (logoElem) {
+        logoElem.prependSvg('favicon', 'Logo Image');
+        logoElem.addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = '/';
+        });
+    }
+}
+
+function addFooter() {
+    let footer = document.createElement("footer");
+    footer.innerHTML = "<section></section><section>&copy; <i>Philip Walsh 2023</i></section>";
+    footer.className = flex;
+    footer.style.visibility = visible();
+
+    let socials = document.createElement("section");
+    socials.classList.add(flex, 'socials');
+
+    for (let btn of socialButtons) {
+        (function (btn) {
+            socials.prependSvg(btn.src, btn.alt, 'click', function (event) {
+                event.preventDefault();
+                window.location.href = `${btn.href}`;
+            });
+        })(btn);
+    }
+    footer.appendChild(socials);
+    document.body.appendChild(footer);
+}
+
+function addNav() {
+    let ul = document.createElement("ul");
+
+    for (let btn of navButtons) {
+        let li = document.createElement("li");
+        (function (btn) {
+
+            li.prependSvg(btn.src, btn.alt, 'click', function (event) {
+                event.preventDefault();
+                window.location.href = `${btn.href}`;
+            });
+        })(btn);
+
+        ul.appendChild(li)
+    }
+    let nav = document.createElement("nav");
+    nav.className = flex;
+    nav.style.visibility = visible();
+    nav.appendChild(ul);
+    document.body.appendChild(nav);
+}
+
 
 function getImage(src, alt) {
-    img = document.createElement("img");
+    let img = document.createElement("img");
     img.src = '/assets/' + src;
     img.alt = alt;
     img.onerror = function () {
@@ -24,8 +108,8 @@ HTMLElement.prototype.prependSvg = function (path, ariaLabel, eventType, eventCa
         if (xhr.status === 200) {
             let svgElement = xhr.response.documentElement;
             svgElement.setAttribute('aria-label', ariaLabel);
+            svgElement.setAttribute('title', ariaLabel);
             this.prepend(svgElement);
-
             if (eventType && typeof eventCallback === 'function') {
                 svgElement.addEventListener(eventType, eventCallback);
             }
@@ -36,49 +120,10 @@ HTMLElement.prototype.prependSvg = function (path, ariaLabel, eventType, eventCa
     xhr.send();
 }
 
-function addHeader() {
-    let header = document.createElement("header");
-    header.innerHTML = headerHtml;
-    header.className = flex
-    document.body.prepend(header);
-
-    let logoElem = document.querySelector('#logo');
-    if (logoElem) {
-        logoElem.prependSvg('favicon', 'Logo Image');
-        logoElem.addEventListener('click', function (event) {
-            event.preventDefault();
-            window.location.href = '/';
-        });
+function toggleContent() {
+    for (let elem of ['header', 'footer', 'nav']) {
+        document.querySelector(elem)
+            .style.visibility = visible(true);
     }
 }
 
-function addFooter() {
-    let footer = document.createElement("footer");
-    footer.innerHTML = "<section></section><section>&copy; <i>Philip Walsh 2023</i></section>";
-    footer.className = flex;
-
-    let socials = document.createElement("section");
-    socials.classList.add(flex, 'socials');
-
-    for (btn of [
-        { src: 'linkedin', alt: 'Linkedin link', href: 'https://www.linkedin.com/in/philip-walsh-01' },
-        { src: 'github', alt: 'Github link', href: 'https://github.com/Philip-Walsh' }
-    ]) {
-        socials.prependSvg(btn.src, btn.alt, 'click', function (event) {
-            event.preventDefault();
-            window.location.href = btn.href;
-        });;
-    }
-    socials.appendChild(getImage('', ''))
-    footer.appendChild(socials);
-    document.body.appendChild(footer);
-}
-
-
-document.querySelector('main')
-    .addEventListener('mouseover', function hover(event) {
-        addHeader();
-        addFooter();
-        event.currentTarget
-            .removeEventListener('mouseover', hover);
-    });

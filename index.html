@@ -23,7 +23,7 @@
                 </div>
                 <div id="watermark">
                     🦝
-                <div>
+                    <div>
             </section>
             <section class="back">
                 <a href="https://www.linkedin.com/in/philip-walsh-01/" taget="_blank" title="My Linkedin profile">
@@ -41,6 +41,16 @@
             </section>
         </section>
         <script src="./scripts/home-page.js"></script>
+        <script>
+            document.querySelector('.card')
+                .addEventListener('mouseover',
+                    function hover(event) {
+                        document.querySelector('#title').innerHTML = 'Home';
+                        toggleContent();
+                        event.currentTarget
+                            .removeEventListener('mouseover', hover);
+                    });
+        </script>
     </main>
 </body>
 

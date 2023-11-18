@@ -214,7 +214,6 @@ class RockPaperScissors {
 
     addChoiceButtons() {
         const game = document.querySelector('#rps-game #game');
-        console.log(game)
         const userButtons = document.createElement('section');
 
         for (let i = 0; i < this.options.length; i++) {
@@ -302,4 +301,4 @@ class RockPaperScissors {
 
 const cardFront = document.querySelector('#rps-game .front .project');
 const cardBack = document.querySelector('#rps-game .back');
-const rps = new RockPaperScissors(cardFront, cardBack, 3);
+new RockPaperScissors(cardFront, cardBack, 3);
