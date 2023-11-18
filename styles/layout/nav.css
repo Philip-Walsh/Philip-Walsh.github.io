@@ -14,3 +14,12 @@ nav ul {
     justify-content: space-evenly;
     list-style-type: none;
 }
+
+nav li {
+    padding: .3em;
+}
+
+nav li:hover {
+    border-bottom: .3em solid var(--brand-color);
+    padding-bottom: 0;
+}

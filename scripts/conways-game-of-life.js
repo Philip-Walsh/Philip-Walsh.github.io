@@ -1,3 +1,16 @@
+/**
+ * Project: Conway's Game of Life
+ * Description: Implementation of Conway's Game of Life, a cellular automaton.
+ *              Simulates the evolution of a grid of cells based on simple rules.
+ * Design Patterns: Object-Oriented Programming principles are employed, utilizing classes for
+ *                  encapsulation, inheritance, and polymorphism to achieve modular and
+ *                  maintainable code.
+ * Difficulty: 1/5
+ * Date: 21/04/2023
+ */
+
+
+
 class GameOfLife {
     constructor(canvas) {
         this.canvas = canvas;
