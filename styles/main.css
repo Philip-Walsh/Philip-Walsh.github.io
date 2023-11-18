@@ -5,9 +5,12 @@
 
 :root {
   --text-color-primary: rgb(0, 0, 0);
-  --text-color-secondary: green;
+  --text-color-secondary: #19A7CE;
   --card-color: #E4DCCF;
-  --brand-color: #19A7CE;
+  --brand-color: #212427;
+  --text-brand-color: #F6F1F1;
+
+  --elem-height: 10vh
 }
 
 * {
@@ -21,7 +24,7 @@ html {
 
 body {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   'header'
   'nav'
   'main'
@@ -35,9 +38,49 @@ body {
 header {
   grid-area: header;
 }
+header, footer {
+  animation: grow 1s ease-out;
+  background-color: var(--brand-color);
+  color: var(--text-brand-color);
+  height:var(--elem-height);
+  padding: .5em;
+}
+
+#logo {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer  {
+  /* display: grid;
+  grid-template-columns: repeat(9, 1fr); */
+}
+footer p {
+  /* grid-column: 4 / 7; */
+  text-align: center;
+  width:80%;
+  padding-left:2vw;
+}
+.socials {
+  grid-column: 8 / 9;
+  justify-content: space-between;
+  width: 10em;
+}
+.socials img{
+  width:2em;
+  cursor: pointer;
+
+}
+
 footer {
   grid-area: footer;
 }
+
 main {
   grid-area: main;
   display: flex;
@@ -104,5 +147,16 @@ button:hover {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes grow {
+  0% {
+      height: 0;
+      opacity: 0;
+  }
+  100% {
+      height: 100%;
+      opacity: 1;
   }
 }

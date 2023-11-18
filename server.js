@@ -8,7 +8,7 @@ const port = 3000;
 
 app.get('/assets/:file', (req, res) => {
     const filePath = path.join(__dirname, 'assets', req.params.file);
-    res.sendFile(filePath, { headers: { 'Content-Type': 'text/svg' } });
+    res.sendFile(filePath, { headers: { 'Content-Type': 'image/svg+xml' } });
 });
 
 app.get('/styles/:file', (req, res) => {
