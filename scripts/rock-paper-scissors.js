@@ -1,3 +1,13 @@
+/**
+ * Project: Rock Paper Scissors 25
+ * Description: Implementation of the classic Rock Paper Scissors game with added complexity.
+ * Design Patterns: Object-Oriented Programming principles are employed, utilizing classes for
+ *                  encapsulation, inheritance, and polymorphism to achieve modular and
+ *                  maintainable code.
+ * Difficulty: 1/5
+ * Date: 12/11/2023
+ */
+
 class RockPaperScissors {
     constructor(cardFront, cardBack, rounds) {
         this.cardFront = cardFront;
