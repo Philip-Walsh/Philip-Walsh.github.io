@@ -1,0 +1,16 @@
+nav {
+    padding-top: 1em;
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: baseline;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    list-style-type: none;
+}

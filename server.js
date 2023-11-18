@@ -15,6 +15,10 @@ app.get('/styles/:file', (req, res) => {
     const filePath = path.join(__dirname, 'styles', req.params.file);
     res.sendFile(filePath, { headers: { 'Content-Type': 'text/css' } });
 });
+app.get('/styles/layout/:file', (req, res) => {
+    const filePath = path.join(__dirname, 'styles/layout', req.params.file);
+    res.sendFile(filePath, { headers: { 'Content-Type': 'text/css' } });
+});
 
 app.get('/scripts/:file', (req, res) => {
     const filePath = path.join(__dirname, 'scripts', req.params.file);

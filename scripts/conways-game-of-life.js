@@ -99,8 +99,8 @@ class GameOfLife {
         this.stop();
         this.cells = this.initCells();
         this.drawCells();
-        console.log('reset')
     }
+
     start() {
         if (this.updateTimer) return;
         this.reset();
