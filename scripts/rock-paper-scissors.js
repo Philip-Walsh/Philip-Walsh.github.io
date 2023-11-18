@@ -309,6 +309,6 @@ class RockPaperScissors {
     }
 }
 
-const cardFront = document.querySelector('#rps-game .front .project');
-const cardBack = document.querySelector('#rps-game .back');
+const cardFront = document.querySelector('#rock-paper-scissors .description');
+const cardBack = document.querySelector('#rock-paper-scissors .demo');
 new RockPaperScissors(cardFront, cardBack, 3);
