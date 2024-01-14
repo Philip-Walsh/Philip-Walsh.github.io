@@ -81,6 +81,7 @@ nav {
 main {
   grid-area: main;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -111,4 +112,28 @@ svg {
 
 svg path {
   fill: var(--text-brand-color);
+}
+#above-fold {
+  background: linear-gradient(180deg, var(--main-color) 0%, var(--main-color) 50%, var(--text-color-primary) 80% );
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  min-height: 90vh;
+  border-radius: 0 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+#below-fold {
+  width: 80%;
+
+}
+
+#below-fold section {
+  background-color: 	#19ce9b47;
+  margin:2em;
+  padding:1em;
 }

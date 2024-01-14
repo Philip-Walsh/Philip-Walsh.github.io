@@ -60,21 +60,10 @@
             <section class="back">
                 <canvas id="game" width="600" height="600"></canvas>
             </section>
-            <script src="../scripts/conways-game-of-life.js"></script>
+            <script src="../scripts/conways-game-of-life.js" ></script>
         </section>
-        <script>
-            document.querySelector('main')
-            .addEventListener('mouseover',
-            function hover(event) {
-                let title = 'Projects';
-                document.querySelector('#title').innerHTML = 'Projects';
-                toggleContent();
-                event.currentTarget
-                    .removeEventListener('mouseover', hover);
-            });
-            </script>
     </main>
-    <script src="../scripts/home-page.js"></script>
+    <script src="../scripts/home-page.js" data-headerTitle="Projects" data-loadOnStart="true" async></script>
 </body>
 
 </html>

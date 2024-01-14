@@ -15,43 +15,75 @@
 
 <body>
     <main>
-        <section class="card">
-            <section class="front">
-                <div class="identity">
-                    <h1>Philip Walsh</h1>
-                    <p>Software Developer</p>
-                </div>
-                <div id="watermark">
-                    🦝
-                    <div>
+        <article id="above-fold">
+            <section class="card">
+                <section class="front">
+                    <div class="identity">
+                        <h1>Philip Walsh</h1>
+                        <p>Software Developer</p>
+                    </div>
+                    <div id="watermark">
+                        🦝
+                        <div>
+                </section>
+                <section class="back">
+                    <a href="https://www.linkedin.com/in/philip-walsh-01/" taget="_blank" title="My Linkedin profile">
+                        <p>🤝</p>
+                    </a>
+                    <a href="./projects/index.html" taget="_blank" title="My Projects">
+                        <p>🔧</p>
+                    </a>
+                    <a href="https://github.com/Philip-Walsh" taget="_blank" title="My Github">
+                        <p>📁</p>
+                    </a>
+                    <div id="watermark">
+                        🦝
+                        <div>
+                </section>
             </section>
-            <section class="back">
-                <a href="https://www.linkedin.com/in/philip-walsh-01/" taget="_blank" title="My Linkedin profile">
-                    <p>🤝</p>
-                </a>
-                <a href="./projects/index.html" taget="_blank" title="My Projects">
-                    <p>🔧</p>
-                </a>
-                <a href="https://github.com/Philip-Walsh" taget="_blank" title="My Github">
-                    <p>📁</p>
-                </a>
-                <div id="watermark">
-                    🦝
-                    <div>
+        </article>
+        <article id="below-fold">
+            <section>
+                <p>Passionate DevOps Engineer with expertise in Mean Stack Development, containerization, and
+                    automation.<br/>
+                    Experienced in building and optimizing Jenkins and Spinnaker pipelines, enhancing workflow
+                    efficiency for development teams.</p>
             </section>
-        </section>
-        <script src="./scripts/home-page.js"></script>
-        <script>
-            document.querySelector('.card')
-                .addEventListener('mouseover',
-                    function hover(event) {
-                        document.querySelector('#title').innerHTML = 'Home';
-                        toggleContent();
-                        event.currentTarget
-                            .removeEventListener('mouseover', hover);
-                    });
-        </script>
+            <section>
+                <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"
+                    alt="MongoDB">
+                <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"
+                    alt="Express.js">
+                <img src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white"
+                    alt="Angular">
+                <img src="https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white"
+                    alt="Nginx">
+                <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white"
+                    alt="Docker">
+                <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white"
+                    alt="Kubernetes">
+                <img src="https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white"
+                    alt="Jenkins">
+                <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"
+                    alt="GIT">
+                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                    alt="JavaScript">
+                <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"
+                    alt="Python">
+                <img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white"
+                    alt="Bash Script">
+                <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white"
+                    alt="Prometheus">
+                <img src="https://img.shields.io/badge/Elastic_Search-005571?style=for-the-badge&logo=elasticsearch&logoColor=white"
+                    alt="Elasticsearch">
+                <img src="https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white"
+                    alt="Grafana">
+                <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white"
+                    alt="AWS">
+            </section>
+        </article>
     </main>
+    <script src="./scripts/home-page.js" data-headerTitle="Philip-Walsh.github.io" data-loadOnStart="true" async></script>
 </body>
 
 </html>
