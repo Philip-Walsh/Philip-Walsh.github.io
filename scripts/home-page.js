@@ -4,12 +4,16 @@ var headerHtml = `
 </a>
 `
 var flex = "flex";
-
+var script = document.currentScript;
 function visible(isVisible) {
-    if (isVisible) {
+    console.log(script.dataset)
+    console.log(script.dataset.loadonstart === 'true');
+    console.log(script.dataset.headertitle)
+    if (script.dataset.loadonstart === 'true'){
+        console.log('here')
         return 'visible'
     }
-    return 'hidden';
+    return isVisible? 'visible': 'hidden';
 }
 
 var socialButtons = [
@@ -23,9 +27,11 @@ var navButtons = [
 ]
 
 window.onload = () => {
+    console.log('1')
     addHeader();
     addFooter();
     addNav();
+    
 }
 
 function addHeader() {
@@ -34,7 +40,10 @@ function addHeader() {
     header.style.visibility = visible();
     header.className = flex;
     document.body.prepend(header);
+    if (script.dataset.headertitle) {
+        document.querySelector('#title').innerHTML = script.dataset.headertitle;
 
+    }
     let logoElem = document.querySelector('#logo');
     if (logoElem) {
         logoElem.prependSvg('favicon', 'Logo Image');
@@ -47,7 +56,8 @@ function addHeader() {
 
 function addFooter() {
     let footer = document.createElement("footer");
-    footer.innerHTML = "<section></section><section>&copy; <i>Philip Walsh 2023</i></section>";
+    let year = new Date().getFullYear()
+    footer.innerHTML = `<section></section><section>&copy; <i>Philip Walsh ${year}</i></section>`;
     footer.className = flex;
     footer.style.visibility = visible();
 
