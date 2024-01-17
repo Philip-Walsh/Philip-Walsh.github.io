@@ -18,11 +18,12 @@ function visible(isVisible) {
 
 var socialButtons = [
     { src: 'linkedin', alt: 'Linkedin link', href: 'https://www.linkedin.com/in/philip-walsh-01' },
-    { src: 'github', alt: 'Github link', href: 'https://github.com/Philip-Walsh' }
+    { src: 'github', alt: 'Github link', href: 'https://github.com/Philip-Walsh' },
+    { src: 'codepen', alt: 'Codepen link', href: 'https://codepen.io/Philip-Walsh' }
 ]
 var navButtons = [
     { src: 'home', alt: 'Home link', href: '/' },
-    { src: 'projects', alt: 'Projects link', href: '/projects/' }
+    { src: 'projects', alt: 'Projects link', href: 'https://codepen.io/Philip-Walsh/pens/showcase' }
 
 ]
 
