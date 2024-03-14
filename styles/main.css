@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@100&display=swap');
 
 @import "/styles/layout/header.css";
 @import "/styles/layout/footer.css";
@@ -8,10 +9,10 @@
 
 :root {
   --text-color-primary: rgb(0, 0, 0);
-  --text-color-secondary: #19A7CE;
+  --text-color-secondary: #6f17c4;
   --card-color: #E4DCCF;
   --main-color: #212427;
-  --brand-color: #19A7CE;
+  --brand-color: #6cc417;
   --text-brand-color: #F6F1F1;
 
   --elem-height: 3em;
@@ -24,6 +25,9 @@
 
 html {
   font-size: 16px;
+  cursor:
+    url(/assets/icons/favicon.svg) 2 2,
+    crosshair !important;
 }
 
 body {
@@ -32,11 +36,13 @@ body {
     'header nav'
     'main main'
     'footer footer';
-  background: #e7e1e1;
-  background: linear-gradient(-45deg, #AFD3E2, #19A7CE, #146C94);
-  font-family: "Roboto", sans-serif;
-  font-family: 'Exo 2', sans-serif;
+  background: var(--text-color-secondary);
+  /* font-family: "Roboto", sans-serif; */
+  /* font-family: 'Exo 2', sans-serif; */
+  
+  font-family: "JetBrains Mono", monospace;
 }
+
 @media screen and (max-width: 700px) {
   body {
     grid-template-areas:
@@ -49,6 +55,10 @@ body {
 
 header {
   grid-area: header;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 footer {
@@ -62,10 +72,9 @@ nav {
 header,
 footer,
 nav {
-  /* animation: grow 1s ease-out; */
   background-color: var(--main-color);
   color: var(--text-brand-color);
-  height: var(--elem-height);
+  min-height: var(--elem-height);
   padding: .5em;
 }
 
@@ -73,8 +82,8 @@ nav {
 .flex {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 
@@ -101,20 +110,59 @@ button {
 }
 
 button:hover {
-  filter: brightness(1.1);
+  filter: drop-shadow(16px 16px 20px var(--brand-color))  brightness(1.1);
   transition: all 0.3s ease-in-out;
 }
 
 svg {
   height: 3em;
-  cursor: pointer;
+  /* cursor:
+    url(/assets/icons/favicon.svg) 2 2,
+    crosshair; */
+}
+
+header svg {
+  height: 1.5em;
+  padding-right: 1em;
+  padding-top: .1em;
 }
 
 svg path {
   fill: var(--text-brand-color);
 }
+
+footer {
+  flex-direction: column-reverse !important;
+  align-items: center;
+  gap:2em;
+}
+
+.socials svg {
+  border-radius: 50%;
+  padding:.2em;
+  width: 3em;
+  height: 3em;
+  border: 2px solid white;
+}
+.socials svg:hover {
+  filter: drop-shadow(0 0 .1em var(--brand-color))  brightness(1.1);
+}
+
+.socials {
+  width: 25em;
+  gap: 2em;
+}
+
+#logo {
+  padding-left: 1em;
+}
+
+#logo:hover {
+  filter: drop-shadow(1px 1px 2px var(--brand-color))  brightness(1.1);
+}
+
 #above-fold {
-  background: linear-gradient(180deg, var(--main-color) 0%, var(--main-color) 50%, var(--text-color-primary) 80% );
+  background: linear-gradient(180deg, var(--main-color) 0%, var(--main-color) 50%, var(--text-color-primary) 80%);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
@@ -127,13 +175,56 @@ svg path {
 
 }
 
+#above-fold img {
+  min-width: 20em;
+  width: 30vw;
+  margin: 2em;
+}
+
+#above-fold h1 {
+  text-align: center;
+  margin: 2em;
+  color: white;
+
+}
+
 #below-fold {
   width: 80%;
 
 }
 
 #below-fold section {
-  background-color: 	#19ce9b47;
-  margin:2em;
-  padding:1em;
+  margin: 2em;
+  padding: 1em;
+}
+
+#below-fold section:first-of-type p {
+  padding: 1em;
+}
+
+#title {
+  padding-left: .5em;
+}
+
+#skills {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap:1em;
+  justify-items: center;
+}
+
+.blink {
+  animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }

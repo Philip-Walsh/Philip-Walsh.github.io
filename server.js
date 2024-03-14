@@ -6,9 +6,13 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.get('/assets/:file', (req, res) => {
-    const filePath = path.join(__dirname, 'assets', req.params.file);
+app.get('/assets/icons/:file', (req, res) => {
+    const filePath = path.join(__dirname, 'assets', 'icons', req.params.file);
     res.sendFile(filePath, { headers: { 'Content-Type': 'image/svg+xml' } });
+});
+app.get('/assets/images/:file', (req, res) => {
+    const filePath = path.join(__dirname, 'assets', 'images', req.params.file);
+    res.sendFile(filePath, { headers: { 'Content-Type': 'image/png' } });
 });
 
 app.get('/styles/:file', (req, res) => {

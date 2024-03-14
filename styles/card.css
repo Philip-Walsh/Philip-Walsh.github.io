@@ -86,7 +86,9 @@
 a {
     color: inherit;
     text-decoration: inherit;
-    cursor: inherit;
+    cursor:
+        url(/assets/icons/favicon.svg) 2 2,
+        crosshair;
 }
 
 #watermark {
