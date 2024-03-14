@@ -22,8 +22,8 @@ var socialButtons = [
     { src: 'codepen', alt: 'Codepen link', href: 'https://codepen.io/Philip-Walsh' }
 ]
 var navButtons = [
-    { src: 'home', alt: 'Home link', href: '/' },
-    { src: 'projects', alt: 'Projects link', href: 'https://codepen.io/Philip-Walsh/pens/showcase' }
+    // { src: 'home', alt: 'Home link', href: '/' },
+    // { src: 'projects', alt: 'Projects link', href: 'https://codepen.io/Philip-Walsh/pens/showcase' }
 
 ]
 
