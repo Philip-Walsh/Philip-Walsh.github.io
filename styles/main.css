@@ -6,12 +6,13 @@
 @import "/styles/layout/header.css";
 @import "/styles/layout/footer.css";
 @import "/styles/layout/nav.css";
+@import "/styles/skills.css";
 
 :root {
   --text-color-primary: rgb(0, 0, 0);
   --text-color-secondary: #6f17c4;
   --card-color: #E4DCCF;
-  --main-color: #212427;
+  --marginain-color: #212427;
   --brand-color: #6cc417;
   --text-brand-color: #F6F1F1;
 
@@ -89,7 +90,7 @@ nav {
 header,
 footer,
 nav {
-  background-color: var(--main-color);
+  background-color: var(--marginain-color);
   color: var(--text-brand-color);
   min-height: var(--elem-height);
   padding: .5em;
@@ -180,7 +181,7 @@ footer {
 }
 
 #above-fold {
-  background: linear-gradient(180deg, var(--main-color) 0%, var(--main-color) 50%, var(--text-color-primary) 80%);
+  background: linear-gradient(180deg, var(--marginain-color) 0%, var(--marginain-color) 50%, var(--text-color-primary) 80%);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
@@ -246,32 +247,7 @@ footer {
   padding-left: .5em;
 }
 
-#skills {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 1em;
-  justify-items: center;
-}
 
-#skills img {
-  padding: 1em;
-}
-
-#skills img:nth-of-type(2n+2) {
-  animation: grow 1s ease-in-out infinite;
-}
-
-#skills img:nth-of-type(1n) {
-  animation: grow 1s ease-in-out infinite;
-}
-
-#skills img:nth-of-type(4n) {
-  animation: grow 2s ease-in-out infinite;
-}
-
-#skills img:hover {
-  animation: none;
-}
 
 .blink {
   animation: blink 1.5s step-end infinite;
@@ -289,17 +265,7 @@ footer {
   }
 }
 
-@keyframes grow {
 
-  0%,
-  100% {
-    transform: rotate(3deg);
-  }
-
-  50% {
-    transform: rotate(0deg);
-  }
-}
 
 /* crt */
 .crt {

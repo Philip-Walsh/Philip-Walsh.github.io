@@ -1,3 +1,11 @@
+
+window.onload = () => {
+    addHeader();
+    addFooter();
+    addNav();
+    // addBlobPointer();
+}
+
 var headerHtml = `
 <a id="logo" class="flex">
     <h1>PHILIP WALSH</h1><h1 class="blink">_</h1><h1 id="title"></h1>
@@ -27,13 +35,6 @@ var navButtons = [
 
 ]
 
-window.onload = () => {
-    console.log('1')
-    addHeader();
-    addFooter();
-    addNav();
-    addBlobPointer();
-}
 
 function addHeader() {
     let header = document.createElement("header");

@@ -1,0 +1,45 @@
+:root {
+    --size: 100px;
+    --margin: 4px;
+    --free-space: calc(1.732 * var(--size) + 4 * var(--margin) - 1px);
+}
+
+#skills {
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: 120%;
+}
+
+#skills::before {
+    content: "";
+    width: calc(var(--size)/2 + var(--margin));
+    float: left;
+    height: 120%;
+    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--free-space) - 3px),
+            #000 0 var(--free-space));
+}
+
+#skills div {
+    width: var(--size);
+    margin: var(--margin);
+    height: calc(var(--size)*1.1547);
+    display: inline-block;
+    font-size: initial;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--margin) - var(--size)*0.2885);
+    text-align: center;
+    filter:brightness(.9);
+    transition: filter .5s ease-in;
+
+}
+
+#skills div img {
+    max-width: 100%;
+    padding-top: calc(.4 * (var(--size)*1.1547))
+}
+
+
+#skills div:hover {
+    filter:brightness(1);
+}
