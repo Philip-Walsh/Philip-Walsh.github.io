@@ -17,11 +17,14 @@
 
   /*  60-30-10 Rule */
 
-  -_: #212121; /*  60% */
+  -_: #212121;
+  /*  60% */
   --bg-primary: 33, 33, 33;
-  -_: #323232; /*  30% */
+  -_: #323232;
+  /*  30% */
   --bg-secondary: 50, 50, 50;
-  -_: #0D7377; /*  10% */  
+  -_: #0D7377;
+  /*  10% */
   --bg-accent: 13, 115, 119;
 
   --bg-highlight: #14FFEC;
@@ -134,6 +137,9 @@ svg path {
   fill: var(--text-brand-color);
 }
 
+span {
+  color:var(--bg-highlight)
+}
 .skip-to-main {
   position: absolute;
   left: -9999px;
@@ -143,6 +149,7 @@ svg path {
   color: var(--bg-highlight);
   opacity: 0;
 }
+
 .skip-to-main:focus {
   left: 50%;
   transform: translateX(-50%);

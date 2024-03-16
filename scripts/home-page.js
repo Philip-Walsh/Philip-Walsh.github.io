@@ -42,7 +42,6 @@ function addHeader() {
     }
     if (script.dataset.headertitle) {
         document.querySelector('#title').innerHTML = script.dataset.headertitle.toUpperCase();
-
     }
     let logoElem = document.querySelector('#logo');
     if (logoElem) {
@@ -61,6 +60,7 @@ function addFooter() {
     footer.style.visibility = visible();
 
     let socials = document.createElement("section");
+    socials.classList.add('socials');
     for (let btn of socialButtons) {
         (function (btn) {
             socials.prependSvg(btn.src, btn.alt, 'click', function (event) {
