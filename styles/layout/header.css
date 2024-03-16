@@ -8,11 +8,11 @@ header {
 
 header h1,
 header a {
-    color: rgb(var(--bg-accent));
+    color: var(--bg-highlight);
 }
 
 header svg path {
-    fill: rgb(var(--bg-accent));
+    fill: var(--bg-highlight);
 }
 
 header a {

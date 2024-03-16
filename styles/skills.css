@@ -6,7 +6,7 @@
 
 .skills {
     background-color: rgba(var(--bg-primary), .9);
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0;

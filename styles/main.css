@@ -1,7 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"); */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 @import "/styles/layout/header.css";
 @import "/styles/layout/footer.css";
@@ -102,7 +99,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   animation: gradient 3s ease infinite;
   background: rgba(var(--bg-accent), 0.7);

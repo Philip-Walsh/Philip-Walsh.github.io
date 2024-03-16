@@ -47,7 +47,7 @@ article h1 {
 
 #below-fold {
     width: 100%;
-    padding: 0 10vw;
+    padding: 0 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,7 +63,15 @@ article h1 {
 #about-me {
     padding: 5em;
 }
-
+#more {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+#more h1 {
+ padding-top: 2em;
+ /* max-width: 80%; */
+}
 .crt {
     margin-top: 5em;
     margin-bottom: .1em;
