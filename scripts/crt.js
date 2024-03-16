@@ -1,3 +1,5 @@
+var CHANNEL_CHANGE_INTERVAL = 2000;
+
 function getRandomImageUrl() {
     return fetch("https://picsum.photos/400/300").then(
       (response) => response.url
@@ -23,7 +25,7 @@ function getRandomImageUrl() {
     getRandomImageUrl().then((url) => {
       drawImageOnCRT(url);
     });
-  }, 5000);
+  }, CHANNEL_CHANGE_INTERVAL);
   
   getRandomImageUrl().then((url) => {
     drawImageOnCRT(url);

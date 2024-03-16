@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@100&display=swap');
 
 @import "/styles/layout/header.css";
@@ -12,7 +12,7 @@
   --text-color-primary: rgb(0, 0, 0);
   --text-color-secondary: #6f17c4;
   --card-color: #E4DCCF;
-  --marginain-color: #212427;
+  --margin-color: #212427;
   --brand-color: #6cc417;
   --text-brand-color: #F6F1F1;
 
@@ -34,13 +34,10 @@ html {
 body {
   display: grid;
   grid-template-areas:
-    'header nav'
+    'header header'
     'main main'
     'footer footer';
-  background: var(--text-color-secondary);
-  /* font-family: "Roboto", sans-serif; */
-  /* font-family: 'Exo 2', sans-serif; */
-
+  background: var(--margin-color);
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -52,7 +49,7 @@ main a:hover {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
   body {
     grid-template-areas:
       'header'
@@ -60,27 +57,16 @@ main a:hover {
       'main'
       'footer';
   }
-}
+} */
 
 header {
   grid-area: header;
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
-
-header h1,
-header a {
-  color: var(--brand-color)
-}
-
-header svg path {
-  fill: var(--brand-color)
 }
 
 footer {
   grid-area: footer;
+  padding: 2em 0;
+
 }
 
 nav {
@@ -90,10 +76,9 @@ nav {
 header,
 footer,
 nav {
-  background-color: var(--marginain-color);
+  background-color: var(--margin-color);
   color: var(--text-brand-color);
   min-height: var(--elem-height);
-  padding: .5em;
 }
 
 
@@ -114,8 +99,10 @@ main {
   min-height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-size: 600% 600%;
+  /* background-size: 600% 600%; */
   animation: gradient 3s ease infinite;
+  background: var(--text-color-secondary);
+
 }
 
 
@@ -152,7 +139,7 @@ svg path {
 footer {
   flex-direction: column-reverse !important;
   align-items: center;
-  gap: 2em;
+  gap: 5em;
 }
 
 .socials svg {
@@ -181,7 +168,7 @@ footer {
 }
 
 #above-fold {
-  background: linear-gradient(180deg, var(--marginain-color) 0%, var(--marginain-color) 50%, var(--text-color-primary) 80%);
+  background: linear-gradient(180deg, var(--margin-color) 0%, var(--margin-color) 50%, var(--text-color-primary) 80%);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
@@ -222,7 +209,8 @@ footer {
 }
 
 #below-fold {
-  width: 80%;
+  width: 100%;
+  padding:0 10vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,11 +219,14 @@ footer {
 }
 
 #below-fold h1 {
-  filter: drop-shadow(1px 1px 2px var(--brand-color));
+  font-size: 2em;
+  color:var(--card-color);
+  /* filter: drop-shadow(1px 1px 2px var(--brand-color)); */
 }
 
 #below-fold section {
-  margin: 2em;
+  margin-top:5em;
+  margin-bottom: .1em;
   padding: 1em;
 }
 
@@ -282,7 +273,7 @@ footer {
 
 canvas {
   image-rendering: pixelated;
-  box-shadow: 0 0 .8em var(--brand-color), inset 0 0 .5em var(--brand-color);
+  box-shadow: 0 0 .2em var(--brand-color), inset 0 0 .5em var(--brand-color);
 }
 
 .scanlines {
@@ -290,7 +281,7 @@ canvas {
   margin-left: 20px;
   width: 400px;
   height: 300px;
-  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.4) 0px, rgba(108, 196, 23, 0.5) 1px, transparent 1px, transparent 2px);
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.4) 0px, rgba(108, 196, 23, 0.5) 4px, transparent 4px, transparent 8px);
   pointer-events: none;
-  z-index: 1;
+  z-index: 5;
 }
