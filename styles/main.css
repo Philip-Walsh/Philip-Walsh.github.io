@@ -133,3 +133,18 @@ header svg {
 svg path {
   fill: var(--text-brand-color);
 }
+
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1em;
+  background-color: rgb(var(--bg-primary));
+  color: var(--bg-highlight);
+  opacity: 0;
+}
+.skip-to-main:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+}

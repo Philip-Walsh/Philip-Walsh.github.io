@@ -6,9 +6,8 @@ window.onload = () => {
     // addBlobPointer();
 }
 
-var headerHtml = `<a id="logo" class="flex"><h1>PHILIP WALSH</h1><h1 class="blink">_</h1><h1 id="title"></h1></a>`;
+var headerHtml = `<a id="logo"><h1>PHILIP WALSH</h1><h1 class="blink">_</h1><h1 id="title"></h1></a>`;
 
-var flex = "flex";
 var script = document.currentScript;
 
 
@@ -35,8 +34,12 @@ function addHeader() {
     let header = document.createElement("header");
     header.innerHTML = headerHtml;
     header.style.visibility = visible();
-    header.className = flex;
-    document.body.prepend(header);
+    let secondElement = document.body.children[1];
+    if (secondElement) {
+        document.body.insertBefore(header, secondElement);
+    } else {
+        document.body.appendChild(header);
+    }
     if (script.dataset.headertitle) {
         document.querySelector('#title').innerHTML = script.dataset.headertitle.toUpperCase();
 
@@ -58,8 +61,6 @@ function addFooter() {
     footer.style.visibility = visible();
 
     let socials = document.createElement("section");
-    socials.classList.add(flex, 'socials');
-
     for (let btn of socialButtons) {
         (function (btn) {
             socials.prependSvg(btn.src, btn.alt, 'click', function (event) {
@@ -88,7 +89,6 @@ function addNav() {
         ul.appendChild(li)
     }
     let nav = document.createElement("nav");
-    nav.className = flex;
     nav.style.visibility = visible();
     nav.appendChild(ul);
     document.body.appendChild(nav);
