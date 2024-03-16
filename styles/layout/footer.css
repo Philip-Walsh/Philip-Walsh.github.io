@@ -1,5 +1,8 @@
 footer {
     display: flex;
+    flex-direction: column-reverse !important;
+    align-items: center;
+    gap: 5em;
 }
 
 footer section {
@@ -11,18 +14,12 @@ footer section {
 
 .socials {
     position: relative;
-    width: 10em;
     right: 0;
     bottom: 0;
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
-}
-
-footer {
-    flex-direction: column-reverse !important;
-    align-items: center;
-    gap: 5em;
+    gap: 2em;
 }
 
 .socials svg {
@@ -35,9 +32,4 @@ footer {
 
 .socials svg:hover {
     filter: drop-shadow(0 0 .1em var(--bg-highlight)) brightness(1.1);
-}
-
-.socials {
-    width: 25em;
-    gap: 2em;
 }

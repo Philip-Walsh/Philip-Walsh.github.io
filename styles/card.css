@@ -1,4 +1,4 @@
-.card {
+/* .card {
     width: 30em;
     aspect-ratio: 3.5 / 2;
     color: var(--text-color-primary);
@@ -36,6 +36,7 @@
     transform: rotateY(0deg);
     transition: all 0.3s ease-out;
 }
+*/
 
 /* .card::before {
     background-color: #0000006b;
@@ -50,8 +51,10 @@
   .card:hover:before {
     transform: rotateX(180deg);
     transition: all 0.1s ease-in;
-  } */
+  }
+*/
 
+/*
 .front,
 .back {
     text-transform: uppercase;
@@ -100,4 +103,4 @@ a {
     color: white;
     font-size: 6em;
     transform: rotate(-45deg);
-}
+} */

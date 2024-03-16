@@ -16,10 +16,6 @@ var socialButtons = [
     { src: 'github', alt: 'Github link', href: 'https://github.com/Philip-Walsh' },
     { src: 'codepen', alt: 'Codepen link', href: 'https://codepen.io/Philip-Walsh' }
 ]
-var navButtons = [
-    // { src: 'home', alt: 'Home link', href: '/' },
-    // { src: 'projects', alt: 'Projects link', href: 'https://codepen.io/Philip-Walsh/pens/showcase' }
-]
 
 function visible(isVisible) {
     if (script.dataset.loadonstart === 'true') {
@@ -73,38 +69,6 @@ function addFooter() {
     document.body.appendChild(footer);
 }
 
-function addNav() {
-    let ul = document.createElement("ul");
-
-    for (let btn of navButtons) {
-        let li = document.createElement("li");
-        (function (btn) {
-
-            li.prependSvg(btn.src, btn.alt, 'click', function (event) {
-                event.preventDefault();
-                window.location.href = `${btn.href}`;
-            });
-        })(btn);
-
-        ul.appendChild(li)
-    }
-    let nav = document.createElement("nav");
-    nav.style.visibility = visible();
-    nav.appendChild(ul);
-    document.body.appendChild(nav);
-}
-
-
-function getImage(src, alt) {
-    let img = document.createElement("img");
-    img.src = '/assets/icons/' + src;
-    img.alt = alt;
-    img.onerror = function () {
-        console.error('Error loading the image');
-    };
-    return img;
-}
-
 HTMLElement.prototype.prependSvg = function (path, ariaLabel, eventType, eventCallback) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', `/assets/icons/${path}.svg`, true);
@@ -124,6 +88,43 @@ HTMLElement.prototype.prependSvg = function (path, ariaLabel, eventType, eventCa
         }
     };
     xhr.send();
+}
+
+
+/*
+var navButtons = [
+    { src: 'home', alt: 'Home link', href: '/' },
+    { src: 'projects', alt: 'Projects link', href: 'https://codepen.io/Philip-Walsh/pens/showcase' }
+]
+
+function addNav() {
+    let ul = document.createElement("ul");
+
+    for (let btn of navButtons) {
+        let li = document.createElement("li");
+        (function (btn) {
+
+            li.prependSvg(btn.src, btn.alt, 'click', function (event) {
+                event.preventDefault();
+                window.location.href = `${btn.href}`;
+            });
+        })(btn);
+        ul.appendChild(li)
+    }
+    let nav = document.createElement("nav");
+    nav.style.visibility = visible();
+    nav.appendChild(ul);
+    document.body.appendChild(nav);
+}
+
+function getImage(src, alt) {
+    let img = document.createElement("img");
+    img.src = '/assets/icons/' + src;
+    img.alt = alt;
+    img.onerror = function () {
+        console.error('Error loading the image');
+    };
+    return img;
 }
 
 function toggleContent() {
@@ -155,10 +156,6 @@ function addBlobPointer() {
     blob.style.filter = `blur(${blurFactor}px)`;
 
     document.body.append(blob);
-
-    let prevMouseX = 0;
-    let prevMouseY = 0;
-
     document.addEventListener('mousemove', updateBlob);
 
     function updateBlob(e) {
@@ -186,3 +183,4 @@ function addBlobPointer() {
         prevMouseY = mouseY;
     }
 }
+*/

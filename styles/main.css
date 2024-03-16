@@ -1,32 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
-@import "/styles/layout/header.css";
-@import "/styles/layout/footer.css";
-@import "/styles/layout/nav.css";
-@import "/styles/skills.css";
+@import url("/styles/layout/header.css");
+@import url("/styles/layout/footer.css");
+@import url("/styles/layout/nav.css");
+@import url("/styles/skills.css");
 
 :root {
-  --text-color-primary: rgb(0, 0, 0);
+  --text-color-primary: #000;
   --text-color-secondary: #6f17c4;
   --card-color: #E4DCCF;
   --margin-color: #212427;
   --brand-color: #6cc417;
   --text-brand-color: #F6F1F1;
-
   --elem-height: 3em;
 
   /*  60-30-10 Rule */
-
-  -_: #212121;
-  /*  60% */
-  --bg-primary: 33, 33, 33;
-  -_: #323232;
-  /*  30% */
-  --bg-secondary: 50, 50, 50;
-  -_: #0D7377;
-  /*  10% */
-  --bg-accent: 13, 115, 119;
-
+  --bg-primary: 33 33 33;
+  --bg-secondary: 50 50 50;
+  --bg-accent: 13 115 119;
   --bg-highlight: #14FFEC;
 }
 
@@ -38,7 +28,7 @@
 html {
   font-size: 16px;
   cursor:
-    url(/assets/icons/favicon.svg) 2 2,
+    url("/assets/icons/favicon.svg") 2 2,
     crosshair !important;
   font-family: "JetBrains Mono", monospace;
 
@@ -56,7 +46,7 @@ body {
   background-image: linear-gradient(-70deg,
       rgb(var(--bg-primary)), rgb(var(--bg-primary)), rgb(var(--bg-primary)),
       rgb(var(--bg-primary)), rgb(var(--bg-primary)), rgb(var(--bg-primary)),
-      rgb(var(--bg-primary)), rgb(142, 142, 142), rgb(var(--bg-primary)),
+      rgb(var(--bg-primary)), rgb(142 142 142), rgb(var(--bg-primary)),
       rgb(var(--bg-primary)), rgb(var(--bg-primary)), rgb(var(--bg-primary)),
       rgb(var(--bg-primary)), rgb(var(--bg-primary)), rgb(var(--bg-primary)));
   animation: gradient 5s ease-in-out infinite;
@@ -105,7 +95,7 @@ main {
   width: 100%;
   overflow: hidden;
   animation: gradient 3s ease infinite;
-  background: rgba(var(--bg-accent), 0.7);
+  background: rgba(var(--bg-accent) / 70%);
 }
 
 
@@ -138,8 +128,9 @@ svg path {
 }
 
 span {
-  color:var(--bg-highlight)
+  color: var(--bg-highlight)
 }
+
 .skip-to-main {
   position: absolute;
   left: -9999px;

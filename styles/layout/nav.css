@@ -6,12 +6,9 @@ nav {
 nav ul {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-items: baseline;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
+    place-items: center baseline;
+    place-content: space-around space-evenly;
     list-style-type: none;
 }
 

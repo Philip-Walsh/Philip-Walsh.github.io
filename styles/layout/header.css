@@ -17,14 +17,8 @@ header svg path {
 
 header a {
     font-size: 1.5em;
-    /* margin-left: 5rem; */
     display: flex;
     align-items: baseline;
-}
-
-
-#logo {
-    /* padding-left: 1em; */
 }
 
 #logo:hover {
@@ -35,8 +29,9 @@ header a {
     header a {
         font-size: 1em;
     }
+
     header svg {
-        height:1em;
+        height: 1em;
     }
 }
 

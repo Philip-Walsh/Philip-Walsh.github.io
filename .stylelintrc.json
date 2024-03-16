@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "stylelint-config-standard"
+    ],
+    "except": [
+        "inside-block-and-after-rule"
+    ],
+    "rules": {
+        "media-feature-range-notation": null,
+        "rule-empty-line-before": null
+    }
+}

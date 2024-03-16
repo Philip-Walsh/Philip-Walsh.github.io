@@ -6,6 +6,7 @@
     "scripts": {
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
+        "lint:css": "npx stylelint \"**/*.css\"",
         "test": "test",
         "start": "NODE_ENV=development nodemon server.js"
     },
@@ -31,6 +32,8 @@
     "devDependencies": {
         "eslint": "^8.54.0",
         "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.29.0"
+        "eslint-plugin-import": "^2.29.0",
+        "stylelint": "^16.2.1",
+        "stylelint-config-standard": "^36.0.0"
     }
 }
