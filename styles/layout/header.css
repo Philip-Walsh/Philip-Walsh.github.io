@@ -1,20 +1,57 @@
 header {
-    font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
+    display: flex;
+    place-content: center;
 }
 
 header h1,
 header a {
-    color: var(--brand-color);
+    color: rgb(var(--bg-accent));
 }
 
 header svg path {
-    fill: var(--brand-color);
+    fill: rgb(var(--bg-accent));
 }
 
 header a {
     font-size: 1.5em;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
+    display: flex;
+    align-items: baseline;
+}
+
+
+#logo {
+    /* padding-left: 1em; */
+}
+
+#logo:hover {
+    filter: drop-shadow(1px 1px 2px var(--bg-highlight)) brightness(1.1);
+}
+
+@media screen and (max-width: 500px) {
+    header a {
+        font-size: 1em;
+    }
+    header svg {
+        height:1em;
+    }
+}
+
+.blink {
+    animation: blink 1.5s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }

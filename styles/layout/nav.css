@@ -20,6 +20,6 @@ nav li {
 }
 
 nav li:hover {
-    border-bottom: .3em solid var(--brand-color);
+    border-bottom: .3em solid rgb(var(--bg-accent));
     padding-bottom: 0;
 }

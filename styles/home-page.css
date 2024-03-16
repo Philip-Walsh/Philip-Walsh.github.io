@@ -1,0 +1,102 @@
+
+#above-fold {
+    background: linear-gradient(180deg, rgb(var(--bg-primary)) 0%, rgb(var(--bg-primary)) 50%, rgb(var(--bg-primary)) 80%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    min-height: 90vh;
+    border-radius: 0 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+#above-fold h1 {
+    filter: drop-shadow(1px 1px 2px var(--bg-highlight));
+}
+
+#above-fold img {
+    transition: transform 1s;
+    filter: drop-shadow(1px 1px 2px var(--bg-highlight));
+}
+
+#above-fold img:hover {
+    transform: rotate(10deg);
+    transition: transform 2s;
+}
+
+#above-fold img {
+    min-width: 20em;
+    width: 30vw;
+    margin: 2em;
+}
+
+article h1 {
+    text-align: center;
+    color: white;
+}
+
+#below-fold {
+    width: 100%;
+    padding: 0 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+
+}
+
+#below-fold h1 {
+    font-size: 2em;
+    color: var(--card-color);
+    /* filter: drop-shadow(1px 1px 2px var(--bg-highlight)); */
+}
+#about-me {
+    padding: 5em;
+}
+.crt {
+    margin-top: 5em;
+    margin-bottom: .1em;
+    padding: 1em;
+}
+main article > section {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
+.crt {
+    align-self: center;
+    justify-self: center;
+    background-image: url('/assets/icons/tv.svg');
+    background-repeat: no-repeat;
+    border-radius: .5em;
+    height: 660px;
+    width: 553px;
+
+}
+
+canvas {
+    image-rendering: pixelated;
+    box-shadow: 0 0 .2em var(--bg-highlight), inset 0 0 .5em var(--bg-highlight);
+}
+
+.scanlines {
+    margin-top: 280px;
+    margin-left: 20px;
+    width: 400px;
+    height: 300px;
+    background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.4) 0px, rgba(108, 196, 23, 0.5) 4px, transparent 4px, transparent 8px);
+    pointer-events: none;
+    z-index: 5;
+}
+
+@media screen and (max-width: 800px) {
+    #above-fold {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+}

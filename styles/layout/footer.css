@@ -18,3 +18,26 @@ footer section {
     align-items: baseline;
     justify-content: space-evenly;
 }
+
+footer {
+    flex-direction: column-reverse !important;
+    align-items: center;
+    gap: 5em;
+}
+
+.socials svg {
+    border-radius: 50%;
+    padding: .2em;
+    width: 3em;
+    height: 3em;
+    border: 2px solid white;
+}
+
+.socials svg:hover {
+    filter: drop-shadow(0 0 .1em var(--bg-highlight)) brightness(1.1);
+}
+
+.socials {
+    width: 25em;
+    gap: 2em;
+}

@@ -2,27 +2,15 @@
 window.onload = () => {
     addHeader();
     addFooter();
-    addNav();
+    // addNav();
     // addBlobPointer();
 }
 
-var headerHtml = `
-<a id="logo" class="flex">
-    <h1>PHILIP WALSH</h1><h1 class="blink">_</h1><h1 id="title"></h1>
-</a>
-`
+var headerHtml = `<a id="logo" class="flex"><h1>PHILIP WALSH</h1><h1 class="blink">_</h1><h1 id="title"></h1></a>`;
+
 var flex = "flex";
 var script = document.currentScript;
-function visible(isVisible) {
-    // console.log(script.dataset)
-    // console.log(script.dataset.loadonstart === 'true');
-    // console.log(script.dataset.headertitle)
-    if (script.dataset.loadonstart === 'true') {
-        console.log('here')
-        return 'visible'
-    }
-    return isVisible ? 'visible' : 'hidden';
-}
+
 
 var socialButtons = [
     { src: 'linkedin', alt: 'Linkedin link', href: 'https://www.linkedin.com/in/philip-walsh-01' },
@@ -32,8 +20,15 @@ var socialButtons = [
 var navButtons = [
     // { src: 'home', alt: 'Home link', href: '/' },
     // { src: 'projects', alt: 'Projects link', href: 'https://codepen.io/Philip-Walsh/pens/showcase' }
-
 ]
+
+function visible(isVisible) {
+    if (script.dataset.loadonstart === 'true') {
+        return 'visible';
+    }
+    return isVisible ? 'visible' : 'hidden';
+}
+
 
 
 function addHeader() {

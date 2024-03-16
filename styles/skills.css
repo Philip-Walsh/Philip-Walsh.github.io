@@ -4,33 +4,25 @@
     --free-space: calc(1.732 * var(--size) + 4 * var(--margin) - 1px);
 }
 
-#skills {
-    background-color: var(--text-color-primary);
-    background-size: 300% 200%;
-    background-image: linear-gradient(-70deg,
-            var(--text-color-primary), var(--text-color-primary), var(--text-color-primary),
-            var(--text-color-primary), var(--text-color-primary), var(--text-color-primary),
-            var(--text-color-primary), var(--margin-color), var(--text-color-primary),
-            var(--text-color-primary), var(--text-color-primary), var(--text-color-primary),
-            var(--text-color-primary), var(--text-color-primary), var(--text-color-primary));
-    animation: gradient 5s ease-in-out infinite;
+.skills {
+    background-color: rgba(var(--bg-primary), .9);
     width: 100vw;
     display: flex;
     flex-direction: column;
     margin: 0;
     align-items: center;
     justify-content: baseline;
-    clip-path: polygon(0 0, 100% 15%, 100% 150%, 0% 100%);
-    ;
     overflow: hidden;
-    padding: 30em auto;
-    padding-bottom: 20em !important;
-    margin-bottom: 10em;
-
 }
 
-#skills h1 {
-    margin: 5em;
+#below-fold section:nth-of-type(2) {
+    clip-path: polygon(0 0, 100% 15%, 100% 150%, 0% 100%);
+    height: 5rem;
+    /* border-top: 1em solid var(--bg-highlight); */
+}
+
+.skills h1 {
+    /* margin: 5em; */
     text-align: center;
 }
 
@@ -73,112 +65,112 @@
     transform: rotateY(360deg);
 }
 
-#skills div:nth-of-type(1) {
+.skills div:nth-of-type(1) {
     background-color: #4ea94b;
     background-image: url("https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white");
 }
 
-#skills div:nth-of-type(2) {
+.skills div:nth-of-type(2) {
     background-color: #404d59;
     background-image: url("https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB");
 }
 
-#skills div:nth-of-type(3) {
+.skills div:nth-of-type(3) {
     background-color: #DD0031;
     background-image: url("https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white");
 }
 
-#skills div:nth-of-type(4) {
+.skills div:nth-of-type(4) {
     background-color: #009639;
     background-image: url("https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white");
 }
 
-#skills div:nth-of-type(5) {
+.skills div:nth-of-type(5) {
     background-color: #0db7ed;
     background-image: url("https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white");
 }
 
-#skills div:nth-of-type(6) {
+.skills div:nth-of-type(6) {
     background-color: #326ce5;
     background-image: url("https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white");
 }
 
-#skills div:nth-of-type(7) {
+.skills div:nth-of-type(7) {
     background-color: #2C5263;
     background-image: url("https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white");
 }
 
-#skills div:nth-of-type(8) {
+.skills div:nth-of-type(8) {
     background-color: #E44C30;
     background-image: url("https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white");
 }
 
-#skills div:nth-of-type(9) {
+.skills div:nth-of-type(9) {
     background-color: #F7DF1E;
     background-image: url("https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black");
 }
 
-#skills div:nth-of-type(10) {
+.skills div:nth-of-type(10) {
     background-color: #14354C;
     background-image: url("https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white");
 }
 
-#skills div:nth-of-type(11) {
+.skills div:nth-of-type(11) {
     background-color: #121011;
     background-image: url("https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white");
 }
 
-#skills div:nth-of-type(12) {
+.skills div:nth-of-type(12) {
     background-color: #E6522C;
     background-image: url("https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white");
 }
 
-#skills div:nth-of-type(13) {
+.skills div:nth-of-type(13) {
     background-color: #005571;
     background-image: url("https://img.shields.io/badge/Elastic_Search-005571?style=for-the-badge&logo=elasticsearch&logoColor=white");
 }
 
-#skills div:nth-of-type(14) {
+.skills div:nth-of-type(14) {
     background-color: #F46800;
     background-image: url("https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white");
 }
 
-#skills div:nth-of-type(15) {
+.skills div:nth-of-type(15) {
     background-color: #FF9900;
     background-image: url("https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white");
 }
 
-#skills div:nth-of-type(16) {
+.skills div:nth-of-type(16) {
     background-color: #139BB4;
     background-image: url("https://img.shields.io/badge/Spinnaker-139BB4?logo=spinnaker&logoColor=fff&style=for-the-badge");
 }
 
-#skills div:nth-of-type(17) {
+.skills div:nth-of-type(17) {
     background-color: #9BF0E1;
     background-image: url("https://img.shields.io/badge/Backstage-9BF0E1?logo=backstage&logoColor=000&style=for-the-badge");
 }
 
-#skills div:nth-of-type(18) {
+.skills div:nth-of-type(18) {
     background-color: #0F1689;
     background-image: url("https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=for-the-badge");
 }
 
-#skills div:nth-of-type(19) {
+.skills div:nth-of-type(19) {
     background-color: #0052CC;
     background-image: url("https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=fff&style=for-the-badge");
 }
 
-#skills div:nth-of-type(20) {
+.skills div:nth-of-type(20) {
     background-color: #172B4D;
     background-image: url("https://img.shields.io/badge/Confluence-172B4D?logo=confluence&logoColor=fff&style=for-the-badge");
 }
 
-#skills div:nth-of-type(21) {
+.skills div:nth-of-type(21) {
     background-color: #E95420;
     background-image: url("https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=for-the-badge");
 }
 
-#skills div:nth-of-type(22) {
+.skills div:nth-of-type(22) {
     background-color: #EF7B4D;
     background-image: url("https://img.shields.io/badge/Argo-EF7B4D?logo=argo&logoColor=fff&style=for-the-badge");
 }
