@@ -18,11 +18,12 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    align-items:center;
+    align-items: center;
     justify-content: baseline;
-    clip-path: polygon(0 0, 100% 15%, 100% 150%, 0% 100%);;
+    clip-path: polygon(0 0, 100% 15%, 100% 150%, 0% 100%);
+    ;
     overflow: hidden;
-    padding:30em auto;
+    padding: 30em auto;
     padding-bottom: 20em !important;
     margin-bottom: 10em;
 
@@ -64,7 +65,7 @@
     transition: transform 5s ease;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;       
+    background-size: contain;
 }
 
 #skill-hex-box div:hover {
@@ -145,6 +146,41 @@
 #skills div:nth-of-type(15) {
     background-color: #FF9900;
     background-image: url("https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white");
+}
+
+#skills div:nth-of-type(16) {
+    background-color: #139BB4;
+    background-image: url("https://img.shields.io/badge/Spinnaker-139BB4?logo=spinnaker&logoColor=fff&style=for-the-badge");
+}
+
+#skills div:nth-of-type(17) {
+    background-color: #9BF0E1;
+    background-image: url("https://img.shields.io/badge/Backstage-9BF0E1?logo=backstage&logoColor=000&style=for-the-badge");
+}
+
+#skills div:nth-of-type(18) {
+    background-color: #0F1689;
+    background-image: url("https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=fff&style=for-the-badge");
+}
+
+#skills div:nth-of-type(19) {
+    background-color: #0052CC;
+    background-image: url("https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=fff&style=for-the-badge");
+}
+
+#skills div:nth-of-type(20) {
+    background-color: #172B4D;
+    background-image: url("https://img.shields.io/badge/Confluence-172B4D?logo=confluence&logoColor=fff&style=for-the-badge");
+}
+
+#skills div:nth-of-type(21) {
+    background-color: #E95420;
+    background-image: url("https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=fff&style=for-the-badge");
+}
+
+#skills div:nth-of-type(22) {
+    background-color: #EF7B4D;
+    background-image: url("https://img.shields.io/badge/Argo-EF7B4D?logo=argo&logoColor=fff&style=for-the-badge");
 }
 
 @keyframes gradient {
