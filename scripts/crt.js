@@ -1,4 +1,4 @@
-var CHANNEL_CHANGE_INTERVAL = 2000;
+var CHANNEL_CHANGE_INTERVAL = 4000;
 
 function getRandomImageUrl() {
     return fetch("https://picsum.photos/400/300").then(
