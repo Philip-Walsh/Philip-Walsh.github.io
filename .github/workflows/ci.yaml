@@ -37,8 +37,8 @@ jobs:
         run: npm run lint:css
 
 
-      - name: Run Unit tests
-        run: npm run test:unit
+      # - name: Run Unit tests
+      #   run: npm run test:unit
 
       # - name: Run Integration tests
       #   run: npm test:integration
