@@ -1,4 +1,3 @@
-
 #above-fold {
     background: linear-gradient(180deg, rgb(var(--bg-primary)) 0%, rgb(var(--bg-primary)) 50%, rgb(var(--bg-primary)) 80%);
     background-repeat: no-repeat;
@@ -15,17 +14,24 @@
 
 
 #above-fold h1 {
+    max-width: 90vw;
     filter: drop-shadow(1px 1px 2px var(--bg-highlight));
 }
 
 #above-fold img {
-    transition: transform 1s;
-    filter: drop-shadow(1px 1px 2px var(--bg-highlight));
+    transition: transform 1s ease-in-out;
+    transition: filter 3s ease-in-out;
+    transform: rotate(0);
+    filter: drop-shadow(.1em .1em .2em var(--bg-highlight));
 }
 
 #above-fold img:hover {
+    transition: transform 1s ease-in-out;
+    transition: filter 3s ease-in-out;
     transform: rotate(10deg);
     transition: transform 2s;
+    filter: drop-shadow(0 .1em .3em var(--bg-highlight));
+
 }
 
 #above-fold img {
@@ -52,17 +58,19 @@ article h1 {
 #below-fold h1 {
     font-size: 2em;
     color: var(--card-color);
-    /* filter: drop-shadow(1px 1px 2px var(--bg-highlight)); */
 }
+
 #about-me {
     padding: 5em;
 }
+
 .crt {
     margin-top: 5em;
     margin-bottom: .1em;
     padding: 1em;
 }
-main article > section {
+
+main article>section {
     display: flex;
     flex-direction: column;
     place-content: center;
@@ -81,7 +89,7 @@ main article > section {
 
 canvas {
     image-rendering: pixelated;
-    box-shadow: 0 0 .2em var(--bg-highlight), inset 0 0 .5em var(--bg-highlight);
+    opacity: .9;
 }
 
 .scanlines {
