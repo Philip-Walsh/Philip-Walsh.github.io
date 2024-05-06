@@ -35,6 +35,8 @@ app.get('/', (req, res) => {
 
 app.use('/projects', express.static(path.join(__dirname, 'projects')));
 
+app.use('/ad', express.static(path.join(__dirname, 'ad')));
+
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
