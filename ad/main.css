@@ -4,7 +4,7 @@
     --bg-secondary: #4CCD99;
     --bg-accent: #FFC700;
     --bg-highlight: #FFF455;
-  }
+}
 
 body {
     font-size: 16px;
@@ -21,24 +21,30 @@ body {
     margin: 0;
     overflow: hidden;
 }
+
 aside {
     grid-area: sidebar;
     background-color: var(--bg-accent);
 }
+
 main {
     grid-area: main;
     background-color: var(--bg-primary);
 }
+
 footer {
     grid-area: footer;
 }
+
 header {
     grid-area: header;
 }
+
 nav {
     grid-area: nav;
     background-color: var(--bg-secondary);
 }
+
 footer,
 header {
     background-color: var(--bg-secondary);
