@@ -15,8 +15,6 @@ View at [Philip-Walsh.github.io](https://philip-walsh.github.io/)
 4. Run locally: `npm start`
 
 
-
-
 Thanks for stopping by!
 
 - [Philip 🦝](https://github.com/Philip-Walsh)
