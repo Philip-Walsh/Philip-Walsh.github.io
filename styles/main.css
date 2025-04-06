@@ -26,12 +26,12 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: clamp(14px, 1vw, 18px);
   cursor:
     url("/assets/icons/favicon.svg") 2 2,
     crosshair !important;
   font-family: "JetBrains Mono", monospace;
-
+  scroll-behavior: smooth;
 }
 
 body {
@@ -50,17 +50,19 @@ body {
       rgb(var(--bg-primary)), rgb(var(--bg-primary)), rgb(var(--bg-primary)),
       rgb(var(--bg-primary)), rgb(var(--bg-primary)), rgb(var(--bg-primary)));
   animation: gradient 5s ease-in-out infinite;
-
+  will-change: background-position;
+  transform: translate3d(0, 0, 0);
 }
 
 main a {
-  color: var(--bg-highlight) !important;
+  color: var(--bg-highlight, #14FFEC) !important;
+  transition: all 0.3s ease;
 }
 
 main a:hover {
   text-decoration: underline;
+  filter: brightness(1.2);
 }
-
 
 header {
   grid-area: header;
@@ -84,7 +86,6 @@ nav {
   min-height: var(--elem-height);
 }
 
-
 main {
   grid-area: main;
   display: flex;
@@ -98,29 +99,34 @@ main {
   background: rgba(var(--bg-accent) / 70%);
 }
 
-
-
 button {
-  background-color: var(--bg-highlight);
+  background-color: var(--bg-highlight, #14FFEC);
   border: none;
   border-radius: 0.5em;
-  padding: 0.2em;
-  box-shadow: inset 2px 2px 2px 1px #0000008f, inset -2px -2px 2px 1px #ffffff2e;
+  padding: 0.5em 1em;
+  box-shadow: inset 2px 2px 2px 1px rgb(0 0 0 / 30%), inset -2px -2px 2px 1px rgb(255 255 255 / 10%);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 button:hover {
-  filter: drop-shadow(16px 16px 20px var(--bg-highlight)) brightness(1.1);
-  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 0 0.5em var(--bg-highlight, #14FFEC)) brightness(1.1);
+  transform: translateY(-2px);
 }
 
 svg {
-  height: 3em;
+  height: clamp(2em, 3vw, 3em);
+  transition: transform 0.3s ease;
 }
 
 header svg {
-  height: 1.5em;
+  height: clamp(1.2em, 2vw, 1.5em);
   padding-right: 1em;
   padding-top: .1em;
+}
+
+svg:hover {
+  transform: scale(1.1);
 }
 
 svg path {
