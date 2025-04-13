@@ -623,15 +623,17 @@ footer {
   background-image: var(--bg-texture);
   border-top: 2px solid var(--accent-color);
   box-shadow: 0 -4px 10px -6px var(--accent-glow);
+  display:flex;
+
 }
 
 .footer-content {
   max-width: 800px;
   margin: 0 auto;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  text-align: left;
+  gap: 2rem; */
+  text-align:center;
 }
 
 footer .social-links {
