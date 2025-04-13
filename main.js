@@ -3,6 +3,7 @@ import { initializeNavigation } from './js/navigation.js';
 import { loadProjects } from './js/projects.js';
 import { setupThemeToggle } from './js/theme.js';
 import { initializeScrollEffects } from './js/scroll-effects.js';
+import { initializeMobileNav } from './js/mobile-nav.js';
 
 // Initialize the application when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize navigation functionality
   initializeNavigation();
+  
+  // Initialize mobile navigation
+  initializeMobileNav();
   
   // Initialize scroll effects for neon glow
   initializeScrollEffects();
