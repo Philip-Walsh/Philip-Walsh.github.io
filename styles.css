@@ -29,23 +29,23 @@
 
 /* Dark Theme - Gray Teal Space Cold */
 [data-theme="dark"] {
-  --bg-primary: #212121;
-  --bg-secondary: #2C2C2C;
-  --text-primary: #EEEEEE;
-  --neon-text-primary: #e0e0e0;
-  --text-secondary: #AAAAAA;
+  --bg-primary: #181a1b;
+  --bg-secondary: #232526;
+  --text-primary: #e6e6e6;
+  --neon-text-primary: #bafcff;
+  --text-secondary: #8a8a8a;
   --accent-color: #32E0C4;
   --accent-glow: rgba(50, 224, 196, 0.7);
   --accent-glow-strong: rgba(99, 199, 182, 0.9);
-  --border-color: #444444;
+  --border-color: #333a3d;
   --card-shadow: 0 4px 6px rgba(50, 224, 196, 0.2);
-  --header-bg: #212121;
-  --footer-bg: #212121;
+  --header-bg: #181a1b;
+  --footer-bg: #181a1b;
   --neon-text-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
   --neon-box-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
   --bg-texture: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png');
   --card-texture: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
-  --neon-color-1: #32E0C4;
+  --neon-color-1: #1bc6b4;
   --neon-color-2: #0D7377;
 
   --font-size: clamp(1rem, 2vw, 2rem);
@@ -169,10 +169,9 @@ main {
   text-shadow:
     0 0 1px #fff,
     0 0 2px #fff,
-    0 0 13ox #141417,
-    0 0 4px var(--neon-color-1),
-    0 0 6px var(--neon-color-1),
-    0 0 8px var(--neon-color-1);
+    0 0 6px #141417,
+    0 0 2px var(--neon-color-1),
+    0 0 4px var(--neon-color-1);
 
   position: relative;
   animation: neon-pulse 3s ease-in-out infinite alternate;
@@ -595,8 +594,10 @@ main {
   transition: opacity 0.5s ease, transform 0.5s ease;
   padding: 1.5rem;
   background-color: var(--bg-secondary);
-  border-radius: 8px;
+  background-image: var(--card-texture);
   border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.45);
 }
 
 .section.visible {
@@ -697,16 +698,21 @@ main {
   gap: 2rem;
 }
 
-.job {
+.job,
+.education-item,
+.accomplishment-item {
   background-color: var(--bg-secondary);
   background-image: var(--card-texture);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.45);
 }
 
-.job:hover {
+.job:hover,
+.education-item:hover,
+.accomplishment-item:hover {
   border-color: var(--accent-color);
   box-shadow: 0 0 10px var(--accent-glow);
 }
@@ -750,26 +756,6 @@ main {
   gap: 2rem;
 }
 
-.education-item {
-  background-color: var(--bg-secondary);
-  background-image: var(--card-texture);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-  border-color: var(--accent-color);
-  box-shadow: 0 0 10px var(--accent-glow);
-}
-
-.institution {
-  font-weight: 600;
-  color: var(--accent-color);
-  font-size: 1.1rem;
-}
-
 /* Accomplishments Section */
 .accomplishments-grid {
   display: grid;
@@ -784,6 +770,7 @@ main {
   border-radius: 8px;
   padding: 1.5rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.45);
 }
 
 .accomplishment-item:hover {
@@ -1201,4 +1188,20 @@ button:focus {
 /* Remove old social link styles */
 .social-link {
   display: none;
+}
+
+#windsurf-logo img {
+  width: 1.3em;
+  vertical-align: middle;
+  display: inline-block;
+  animation: bob 1.8s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.18em);
+  }
 }
