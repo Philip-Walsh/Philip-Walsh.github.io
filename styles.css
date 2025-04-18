@@ -12,7 +12,7 @@
   --text-secondary: #555555;
   --accent-color: #0D7377;
   --accent-glow: rgba(13, 115, 119, 0.7);
-  --accent-glow-strong: rgba(13, 115, 119, 0.9);
+  --accent-glow-strong: rgba(99, 199, 182, 0.9);
   --border-color: #CCCCCC;
   --card-shadow: 0 4px 6px rgba(13, 115, 119, 0.15);
   --header-bg: #EEEEEE;
@@ -83,6 +83,52 @@ body {
   font-size: var(--font-size);
 }
 
+.pattern-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  opacity: 0.7;
+  pointer-events: none;
+  background-image: var(--bg-texture), linear-gradient(120deg, rgba(13, 115, 119, 0.22) 0%, rgba(50, 224, 196, 0.14) 100%);
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+}
+
+.neon-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.neon-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.45;
+  background: radial-gradient(ellipse at 50% 40%, var(--accent-glow-strong) 0%, transparent 70%);
+  filter: blur(32px) saturate(1.2);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  background-image: var(--bg-texture);
+  min-height: 100vh;
+  height: 100%;
+}
+
 /* Layout structure */
 .site-header {
   width: 100vw;
@@ -134,7 +180,7 @@ main {
 }
 
 /* Neon Container and Glow */
-.neon-container {
+/* .neon-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -159,7 +205,7 @@ main {
   opacity: 0;
   transition: opacity 0.3s ease, height 0.3s ease;
   box-shadow: 0 0 20px 5px var(--accent-glow);
-}
+} */
 
 /* Neon Text Effect - Softer for better readability */
 .neon-text {

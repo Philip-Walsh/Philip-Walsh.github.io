@@ -44,12 +44,17 @@ describe('Theme Module', () => {
     // Attach mocks to global/window
     global.document = document;
     global.window = window;
-    
-    // Define localStorage as a property on window
+
+    // Define localStorage as a property on both window and global
     Object.defineProperty(window, 'localStorage', {
-      value: localStorageMock
+      value: localStorageMock,
+      configurable: true
     });
-    
+    Object.defineProperty(global, 'localStorage', {
+      value: localStorageMock,
+      configurable: true
+    });
+
     // Mock matchMedia - default to light mode
     window.matchMedia = vi.fn().mockImplementation(query => ({
       matches: false,
@@ -57,6 +62,7 @@ describe('Theme Module', () => {
       addEventListener: vi.fn(),
       removeEventListener: vi.fn()
     }));
+    global.matchMedia = window.matchMedia;
     
     // Mock console.warn to avoid test output pollution
     console.warn = vi.fn();
@@ -113,7 +119,8 @@ describe('Theme Module', () => {
         removeEventListener: vi.fn()
       };
     });
-    
+    global.matchMedia = window.matchMedia;
+
     setupThemeToggle();
     
     expect(document.documentElement.getAttribute('data-theme')).toBe(DARK_THEME);
@@ -123,7 +130,7 @@ describe('Theme Module', () => {
   it('should use saved theme from localStorage if available', () => {
     // Mock localStorage to return a saved theme
     localStorageMock.getItem.mockReturnValue(DARK_THEME);
-    
+
     setupThemeToggle();
     
     expect(document.documentElement.getAttribute('data-theme')).toBe(DARK_THEME);
