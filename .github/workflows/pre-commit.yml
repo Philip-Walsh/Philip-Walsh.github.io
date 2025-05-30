@@ -12,30 +12,62 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.10'
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Install DevKit
+      - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -e ./tools/devkit
+          npm ci
+          npm install -g alex write-good
 
-      - name: Run Linting
-        run: |
-          devkit lint check
-          devkit lint fix
+      - name: Run ESLint
+        run: npm run lint
 
-      - name: Run Tests
+      - name: Run HTML validation
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            try {
+              execSync('npx htmlhint "**/*.html"', { stdio: 'inherit' });
+            } catch (error) {
+              console.error('HTML validation failed');
+              process.exit(1);
+            }
+
+      - name: Run CSS validation
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            try {
+              execSync('npx stylelint "**/*.css"', { stdio: 'inherit' });
+            } catch (error) {
+              console.error('CSS validation failed');
+              process.exit(1);
+            }
+
+      - name: Check writing quality
         run: |
-          devkit test run
+          # Check for insensitive or inconsiderate writing
+          alex "**/*.{html,md}" --quiet
+          
+          # Check for better writing suggestions
+          write-good "**/*.{html,md}" --no-passive
 
       - name: Analyze Code Changes
         id: analyze
         run: |
-          devkit version analyze > version_changes.txt
-          echo "changes=$(cat version_changes.txt)" >> $GITHUB_OUTPUT 
+          # Simple version bump based on commit messages
+          if git log -1 --pretty=%B | grep -q "BREAKING CHANGE"; then
+            echo "changes=major" >> $GITHUB_OUTPUT
+          elif git log -1 --pretty=%B | grep -q "feat:"; then
+            echo "changes=minor" >> $GITHUB_OUTPUT
+          else
+            echo "changes=patch" >> $GITHUB_OUTPUT
+          fi 
