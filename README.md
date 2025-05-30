@@ -30,3 +30,5 @@ npm run test
 - `styles.css`: CSS styles
 - `main.js`: Main JavaScript file
 - `tests/`: Test files
+
+[![Security Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml)
