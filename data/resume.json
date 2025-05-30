@@ -1,0 +1,169 @@
+{
+  "about": {
+    "personalStatement": "Experienced software engineer with a strong background in DevOps, cloud-native development, and secure software solutions. Committed to delivering impactful projects, driving technical excellence, and collaborating with innovative teams on cutting-edge software engineering initiatives."
+  },
+  "skills": [
+    {
+      "name": "JavaScript / TypeScript",
+      "icon": "fab fa-js"
+    },
+    {
+      "name": "Python",
+      "icon": "fab fa-python"
+    },
+    {
+      "name": "React / Angular",
+      "icon": "fab fa-react"
+    },
+    {
+      "name": "Node.js",
+      "icon": "fab fa-node-js"
+    },
+    {
+      "name": "Docker",
+      "icon": "fab fa-docker"
+    },
+    {
+      "name": "Kubernetes / Helm",
+      "icon": "fas fa-cube"
+    },
+    {
+      "name": "Jenkins",
+      "icon": "fab fa-jenkins"
+    },
+    {
+      "name": "Spinnaker",
+      "icon": "fas fa-spinner"
+    },
+    {
+      "name": "MongoDB / PostgreSQL / SQL",
+      "icon": "fas fa-database"
+    },
+    {
+      "name": "Backstage",
+      "icon": "fas fa-layer-group"
+    },
+    {
+      "name": "Windsurf",
+      "icon": "fas fa-wind"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "Ericsson",
+      "period": "Jan 2025 - Present",
+      "location": "Athlone, Ireland",
+      "responsibilities": [
+        "Led the development of Backstage React plugins for the developer experience portal.",
+        "Led in early adoption pilot testing of Codeium GenAi Coding assistant, demonstrating the tool to all employees including the CEO, leading to adoption throughout the company.",
+        "Acted as Security Master for my team making sure our products and pipelines align with security best practices.",
+        "Developed Vulnerability Analysis scanning of our products, applications and microservices to align EIC product with regulations for american markets.",
+        "Contributed as part of a DevOps Team to build and maintain pipelines and internal tooling for CICD pipelines for cloud native product Ericsson Intelligent Controller (EIC) and RAN automation rApps."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Ericsson",
+      "period": "Aug 2022 - Jan 2025",
+      "location": "Athlone, Ireland",
+      "responsibilities": [
+        "Drove the development of multiple MEAN stack applications.",
+        "Contributed as part of a DevOps Team to build and maintain pipelines and internal tooling for CICD pipelines.",
+        "Implemented security best practices across products and applications."
+      ]
+    },
+    {
+      "title": "Trainee Software Engineer",
+      "company": "Ericsson",
+      "period": "June 2021 - Aug 2022",
+      "location": "Athlone, Ireland",
+      "responsibilities": [
+        "Assisted in the development of MEAN stack applications.",
+        "Supported the DevOps team with pipeline maintenance and tooling.",
+        "Learned security best practices and vulnerability scanning techniques."
+      ]
+    },
+    {
+      "title": "Science and Math Teacher",
+      "company": "SABIS International School Choueifat",
+      "period": "2018 - 2019",
+      "location": "Sulimaniyah, Kurdistan",
+      "responsibilities": [
+        "Ensured student comprehension through effective teaching and support, maintaining discipline and providing necessary resources.",
+        "Collaborated with colleagues to deliver a concise and timely curriculum, optimizing lesson effectiveness and engagement."
+      ]
+    },
+    {
+      "title": "English Teacher",
+      "company": "Feinschule English Academy",
+      "period": "2017 - 2018",
+      "location": "Daegu, Korea",
+      "responsibilities": [
+        "Taught English as a second language to Korean students aged 3-14, delivering 4-8 daily classes focusing on grammar, listening, writing, and speaking skills."
+      ]
+    },
+    {
+      "title": "Kayak Instructor",
+      "company": "NUIG Kayak Club",
+      "period": "Oct 2012 - Aug 2016",
+      "location": "Galway, Ireland",
+      "responsibilities": [
+        "Trained new instructors to lead sessions and complete coaching certificates.",
+        "Organized kayak sessions, events and competitions."
+      ]
+    },
+    {
+      "title": "Camp Counsellor",
+      "company": "Camp Androscoggin",
+      "period": "June - Aug 2013",
+      "location": "Maine, USA",
+      "responsibilities": [
+        "Provided counseling and support for resident campers aged 8-14.",
+        "Conducted canoe and kayak courses for residents during their stay."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Sc Software Engineering",
+      "institution": "Athlone Institute of Technology",
+      "period": "2020 - 2021",
+      "details": [
+        "Studied Object Oriented Java programming, Agile software development, Databases, Networking and Cloud Computing.",
+        "Final Grade: Second Class Honours"
+      ]
+    },
+    {
+      "degree": "H.Dip Applied Computer Technologies",
+      "institution": "University College Cork",
+      "period": "2019 - 2020",
+      "details": [
+        "Studied Web Development, Systems organization, Multimedia, Programming and Relational Databases"
+      ]
+    },
+    {
+      "degree": "B.Sc Marine Science",
+      "institution": "National University of Ireland Galway",
+      "period": "2012 - 2016",
+      "details": [
+        "Attended classes in Botany, Zoology, Microbiology, Statistics and Mathematics.",
+        "Prepared a thesis on Iodine uptake in algae.",
+        "Research used in a paper published in Journal of Phycology. https://doi.org/10.1111/jpy.12606"
+      ]
+    }
+  ],
+  "accomplishments": {
+    "certifications": [
+      "Kubernetes Administration with Helm Component (Soft: 2021)",
+      "TEFL Certified (The TEFL Academy: 2016)",
+      "Level 4 Kayak Proficiency (Irish Canoe Union: 2014)",
+      "ISTQB Certified Tester, Foundation level (ISTQB: 2021)"
+    ],
+    "leadership": [
+      "River Guide, NUIG Kayak Club - Coached students to Irish Canoe Union level 2. Assessed and rewarded level 2 certificates.",
+      "Kayak Instructor, SKC Kayak Club - Instructed trainee coaches to pass instructor Assessment. Taught all ages canoe and kayak skills.",
+      "Lissadell No Limits, Cregg House Sligo - Kayak Instructor and Mentor for the physically disabled and visually impaired."
+    ]
+  }
+} 

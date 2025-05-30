@@ -1,393 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Philip Walsh - Senior Software Engineer portfolio showcasing skills and experience" />
-    <title>Philip Walsh | Senior Software Engineer</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <script type="module" src="./main.js" defer></script>
-    
-    <link rel="icon" href="./assets/icons/favicon.svg" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  </head>
-  <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <div class="neon-container">
-      <div class="neon-glow"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Philip Walsh - Senior Software Engineer portfolio showcasing skills and experience" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://cdnjs.cloudflare.com; connect-src 'self'; frame-src 'self' https://codepen.io;" />
+  <title>Philip Walsh | Senior Software Engineer</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="module" src="./main.js" defer></script>
+  <script type="module" src="./js/project-images.js" defer></script>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Philip Walsh | Senior Software Engineer" />
+  <meta property="og:description" content="Senior Software Engineer portfolio showcasing skills and experience" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://philip-walsh.github.io" />
+  <meta property="og:image" content="https://philip-walsh.github.io/images/hero.jpg" />
+
+  <link rel="icon" href="./assets/icons/favicon.svg" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="neon-container">
+    <div class="neon-glow"></div>
+  </div>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-times"></i>
+  </button>
+
+  <header class="site-header">
+    <div class="header-content">
+      <div class="hero-container">
+        <div class="hero-image-container">
+          <img src="./images/hero.jpg" alt="Philip Walsh standing in front of shops with his name" class="hero-image">
+        </div>
+        <div class="hero-text">
+          <h1 class="neon-text" data-text="Philip Walsh">Philip Walsh</h1>
+          <p class="subtitle">Senior Software Engineer</p>
+          <p class="tagline">Bringing cloud-native DevOps <i class="fas fa-wrench"></i>, secure systems <i
+              class="fas fa-shield-alt"></i>, and frontend finesse <i class="fas fa-paint-brush"></i> to teams with
+            vision.</p>
+        </div>
+      </div>
+      <div class="social-links header-social">
+        <ul>
+          <li>
+            <span>
+              <a href="https://linkedin.com/in/philip-walsh-01" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </span>
+          </li>
+          <li>
+            <span>
+              <a href="https://github.com/Philip-Walsh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </span>
+          </li>
+          <li>
+            <span>
+              <a href="https://codepen.io/Philip-Walsh/" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
+                <i class="fab fa-codepen"></i>
+              </a>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-sun sun-icon"></i>
+        <i class="fas fa-moon moon-icon"></i>
+      </button>
     </div>
-    
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-      <i class="fas fa-times"></i>
-    </button>
-    
-    <header class="site-header">
-      <div class="header-content">
-        <div class="hero-container">
-          <div class="hero-image-container">
-            <img src="./images/hero.jpg" alt="Philip Walsh standing in front of shops with his name" class="hero-image">
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+      <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+      <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="#accomplishments"><i class="fas fa-award"></i> Accomplishments</a></li>
+      <li><a href="#codepens"><i class="fas fa-paint-brush"></i> Codepens</a></li>
+      <li><a href="https://spaghettis.netlify.app/"><i class="fa-solid fa-rocket"></i>Forbidden Ramen</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <article id="about" class="section">
+      <h2 class="neon-text" data-text="About Me">About Me</h2>
+      <section class="about-content">
+        <div class="personal-statement">
+          <h3>Personal Statement</h3>
+          <p>
+            Experienced software engineer with a strong background in DevOps, cloud-native development,
+            and secure software solutions. Committed to delivering impactful projects, driving technical excellence,
+            and collaborating with innovative teams on cutting-edge software engineering initiatives.
+          </p>
+        </div>
+      </section>
+    </article>
+
+    <article id="skills" class="section">
+      <h2 class="neon-text" data-text="Development Skills">Development Skills</h2>
+      <section class="skills-content">
+        <ul class="skills-list">
+          <!-- Skills will be loaded here dynamically -->
+        </ul>
+      </section>
+    </article>
+
+    <article id="projects" class="section">
+      <h2 class="neon-text" data-text="Projects">Projects</h2>
+      <section class="projects-content">
+        <div id="projects-container">
+          <!-- Projects will be loaded here dynamically -->
+        </div>
+      </section>
+    </article>
+
+    <article id="experience" class="section">
+      <h2 class="neon-text" data-text="Work Experience">Work Experience</h2>
+      <section class="experience-content">
+        <!-- Experience will be loaded here dynamically -->
+      </section>
+    </article>
+
+    <article id="education" class="section">
+      <h2 class="neon-text" data-text="Education">Education</h2>
+      <section class="education-content">
+        <!-- Education will be loaded here dynamically -->
+      </section>
+    </article>
+
+    <article id="accomplishments" class="section">
+      <h2 class="neon-text" data-text="Accomplishments">Accomplishments</h2>
+      <section class="accomplishments-content">
+        <div class="accomplishments-grid">
+          <!-- Accomplishments will be loaded here dynamically -->
+        </div>
+      </section>
+    </article>
+
+    <article id="codepens" class="section">
+      <h2 class="neon-text" data-text="Codepens">Codepens</h2>
+      <section class="codepens-content">
+        <div class="codepen-arcade">
+          <div class="arcade-machine">
+            <div class="arcade-screen">
+              <iframe height="500" scrolling="no" title="A Range of Choices"
+                src="https://codepen.io/Philip-Walsh/full/VYwaaxE" frameborder="no" loading="lazy"
+                allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/Philip-Walsh/full/VYwaaxE">A Range of Choices</a> by Philip
+                Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a
+                  href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
+            <div class="arcade-info">
+              <h3>'A Range of Choices' - CSS Challenge</h3>
+              <p>A forbidden ramen restaurant with bill splitting and tipping functionality.</p>
+            </div>
           </div>
-          <div class="hero-text">
-            <h1 class="neon-text" data-text="Philip Walsh">Philip Walsh</h1>
-            <p class="subtitle">Senior Software Engineer</p>
-            <p class="tagline">Bringing cloud-native DevOps <i class="fas fa-wrench"></i>, secure systems <i class="fas fa-shield-alt"></i>, and frontend finesse <i class="fas fa-paint-brush"></i> to teams with vision.</p>
+
+          <div class="arcade-machine">
+            <div class="arcade-screen">
+              <iframe height="500" scrolling="no" title="Glitches" src="https://codepen.io/Philip-Walsh/full/QwWmWOW"
+                frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/Philip-Walsh/full/QwWmWOW">Glitches</a> by Philip Walsh (<a
+                  href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
+            <div class="arcade-info">
+              <h3>Glitches</h3>
+              <p>ChatGPT creepypasta with glitching CSS effects.</p>
+            </div>
+          </div>
+
+          <div class="arcade-machine">
+            <div class="arcade-screen">
+              <iframe height="500" scrolling="no" title="Bugs - Match 2 Game"
+                src="https://codepen.io/Philip-Walsh/full/ZYEeVXe" frameborder="no" loading="lazy"
+                allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/Philip-Walsh/full/ZYEeVXe">Bugs - Match 2 Game</a> by Philip
+                Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a
+                  href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
+            <div class="arcade-info">
+              <h3>Bugs - Match 2 Game</h3>
+              <p>A fun memory matching game with a bug theme.</p>
+            </div>
+          </div>
+
+          <div class="arcade-machine">
+            <div class="arcade-screen">
+              <iframe height="500" scrolling="no" title="Isomorphic Room with Trihedral Vertex"
+                src="https://codepen.io/Philip-Walsh/full/Jojdmpx" frameborder="no" loading="lazy"
+                allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/Philip-Walsh/full/Jojdmpx">Isomorphic Room with Trihedral
+                  Vertex</a> by Philip Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a
+                  href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
+            <div class="arcade-info">
+              <h3>[DRAFT] Isomorphic Room with Trihedral Vertex</h3>
+              <p>An isometric 3D illusion created using CSS, designed to simulate a trihedral vertex—a point where three
+                perpendicular planes meet, forming the corner of a room. The effect uses pseudo-elements for walls and
+                floor with colors and shadows enhancing depth perception.</p>
+            </div>
           </div>
         </div>
-        <div class="social-links header-social">
-          <ul>
-            <li>
-              <span>
-                <a href="https://linkedin.com/in/philip-walsh-01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </span>
-            </li>
-            <li>
-              <span>
-                <a href="https://github.com/Philip-Walsh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </span>
-            </li>
-            <li>
-              <span>
-                <a href="https://codepen.io/Philip-Walsh/" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
-                  <i class="fab fa-codepen"></i>
-                </a>
-              </span>
-            </li>
-          </ul>
+      </section>
+    </article>
+
+    <article id="recommendations" class="section">
+      <h2 class="neon-text" data-text="Recommendations">Recommendations</h2>
+      <section class="recommendations-content">
+        <div id="recommendations-container">
+          <!-- Recommendations will be loaded here dynamically -->
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-          <i class="fas fa-sun sun-icon"></i>
-          <i class="fas fa-moon moon-icon"></i>
-        </button>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <h3>Connect With Me</h3>
+        <ul>
+          <li>
+            <span>
+              <a href="https://linkedin.com/in/philip-walsh-01" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </span>
+          </li>
+          <li>
+            <span>
+              <a href="https://github.com/Philip-Walsh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </span>
+          </li>
+          <li>
+            <span>
+              <a href="https://codepen.io/Philip-Walsh/" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
+                <i class="fab fa-codepen"></i>
+              </a>
+            </span>
+          </li>
+        </ul>
       </div>
-    </header>
-    
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-        <li><a href="#accomplishments"><i class="fas fa-award"></i> Accomplishments</a></li>
-        <li><a href="#codepens"><i class="fas fa-paint-brush"></i> Codepens</a></li>
-        <li><a href="https://spaghettis.netlify.app/"><i class="fa-solid fa-rocket"></i>Forbidden Ramen</a></li>
-      </ul>
-    </nav>
-    
-    <main id="main-content">
-      <article id="about" class="section">
-        <h2 class="neon-text" data-text="About Me">About Me</h2>
-        <section class="about-content">
-          <div class="personal-statement">
-            <h3>Personal Statement</h3>
-            <p>
-              Experienced software engineer with a strong background in DevOps, cloud-native development,
-              and secure software solutions. Committed to delivering impactful projects, driving technical excellence,
-              and collaborating with innovative teams on cutting-edge software engineering initiatives.
-            </p>
-          </div>
-        </section>
-      </article>
-      
-      <article id="skills" class="section">
-        <h2 class="neon-text" data-text="Development Skills">Development Skills</h2>
-        <section class="skills-content">
-          <ul class="skills-list">
-            <li class="skill-item"><i class="fab fa-js"></i> JavaScript / TypeScript</li>
-            <li class="skill-item"><i class="fab fa-python"></i> Python</li>
-            <li class="skill-item"><i class="fab fa-react"></i> React / Angular</li>
-            <li class="skill-item"><i class="fab fa-node-js"></i> Node.js</li>
-            <li class="skill-item"><i class="fab fa-docker"></i> Docker</li>
-            <li class="skill-item"><i class="fas fa-dharmachakra"></i> Kubernetes / Helm</li>
-            <li class="skill-item"><i class="fab fa-jenkins"></i> Jenkins</li>
-            <li class="skill-item"><i class="fas fa-ship"></i> Spinnaker</li>
-            <li class="skill-item"><i class="fas fa-database"></i> MongoDB / PostgreSQL / SQL</li>
-            <li class="skill-item"><i class="fas fa-sitemap"></i> Backstage</li>
-            <li class="skill-item"><i class="fa-solid fa-code"></i> Windsurf</li>
-            <!-- <li class="skill-item"><i class="fas fa-link"></i> Langchain</li> -->
-            <!-- <li class="skill-item"><i class="fas fa-project-diagram"></i> GraphQL</li> -->
-          </ul>
-        </section>
-      </article>
-      
-      <article id="experience" class="section">
-        <h2 class="neon-text" data-text="Work Experience">Work Experience</h2>
-        <section class="experience-content">
-          <div class="job">
-            <div class="job-header">
-              <h3>Senior Software Engineer</h3>
-              <p class="company">Ericsson</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> Jan 2025 - Present</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Athlone, Ireland</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Led the development of Backstage React plugins for the developer experience portal.</li>
-                <li>Led in early adoption pilot testing of Codeium GenAi Coding assistant, demonstrating the tool to all employees including the CEO, leading to adoption throughout the company.</li>
-                <li>Acted as Security Master for my team making sure our products and pipelines align with security best practices.</li>
-                <li>Developed Vulnerability Analysis scanning of our products, applications and microservices to align EIC product with regulations for american markets.</li>
-                <li>Contributed as part of a DevOps Team to build and maintain pipelines and internal tooling for CICD pipelines for cloud native product Ericsson Intelligent Controller (EIC) and RAN automation rApps.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="job">
-            <div class="job-header">
-              <h3>Software Engineer</h3>
-              <p class="company">Ericsson</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> Aug 2022 - Jan 2025</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Athlone, Ireland</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Drove the development of multiple MEAN stack applications.</li>
-                <li>Contributed as part of a DevOps Team to build and maintain pipelines and internal tooling for CICD pipelines.</li>
-                <li>Implemented security best practices across products and applications.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="job">
-            <div class="job-header">
-              <h3>Trainee Software Engineer</h3>
-              <p class="company">Ericsson</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> June 2021 - Aug 2022</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Athlone, Ireland</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Assisted in the development of MEAN stack applications.</li>
-                <li>Supported the DevOps team with pipeline maintenance and tooling.</li>
-                <li>Learned security best practices and vulnerability scanning techniques.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="job">
-            <div class="job-header">
-              <h3>Science and Math Teacher</h3>
-              <p class="company">SABIS International School Choueifat</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> 2018 - 2019</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Sulimaniyah, Kurdistan</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Ensured student comprehension through effective teaching and support, maintaining discipline and providing necessary resources.</li>
-                <li>Collaborated with colleagues to deliver a concise and timely curriculum, optimizing lesson effectiveness and engagement.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="job">
-            <div class="job-header">
-              <h3>English Teacher</h3>
-              <p class="company">Feinschule English Academy</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> 2017 - 2018</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Daegu, Korea</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Taught English as a second language to Korean students aged 3-14, delivering 4-8 daily classes focusing on grammar, listening, writing, and speaking skills.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="job">
-            <div class="job-header">
-              <h3>Kayak Instructor</h3>
-              <p class="company">NUIG Kayak Club</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> Oct 2012 - Aug 2016</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Galway, Ireland</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Trained new instructors to lead sessions and complete coaching certificates.</li>
-                <li>Organized kayak sessions, events and competitions.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="job">
-            <div class="job-header">
-              <h3>Camp Counsellor</h3>
-              <p class="company">Camp Androscoggin</p>
-              <p class="period"><i class="far fa-calendar-alt"></i> June - Aug 2013</p>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Maine, USA</p>
-            </div>
-            <div class="job-description">
-              <ul>
-                <li>Provided counseling and support for resident campers aged 8-14.</li>
-                <li>Conducted canoe and kayak courses for residents during their stay.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </article>
-      
-      <article id="education" class="section">
-        <h2 class="neon-text" data-text="Education">Education</h2>
-        <section class="education-content">
-          <div class="education-item">
-            <h3>M.Sc Software Engineering</h3>
-            <p class="institution">Athlone Institute of Technology</p>
-            <p class="period"><i class="far fa-calendar-alt"></i> 2020 - 2021</p>
-            <div class="education-description">
-              <p>Studied Object Oriented Java programming, Agile software development, Databases, Networking and Cloud Computing.</p>
-              <p>Final Grade: Second Class Honours</p>
-            </div>
-          </div>
-          
-          <div class="education-item">
-            <h3>H.Dip Applied Computer Technologies</h3>
-            <p class="institution">University College Cork</p>
-            <p class="period"><i class="far fa-calendar-alt"></i> 2019 - 2020</p>
-            <div class="education-description">
-              <p>Studied Web Development, Systems organization, Multimedia, Programming and Relational Databases</p>
-            </div>
-          </div>
-          
-          <div class="education-item">
-            <h3>B.Sc Marine Science</h3>
-            <p class="institution">National University of Ireland Galway</p>
-            <p class="period"><i class="far fa-calendar-alt"></i> 2012 - 2016</p>
-            <div class="education-description">
-              <p>Attended classes in Botany, Zoology, Microbiology, Statistics and Mathematics.</p>
-              <p>Prepared a thesis on Iodine uptake in algae.</p>
-              <p>Research used in a paper published in Journal of Phycology. <a href="https://doi.org/10.1111/jpy.12606" target="_blank" rel="noopener noreferrer">https://doi.org/10.1111/jpy.12606</a></p>
-            </div>
-          </div>
-        </section>
-      </article>
-      
-      <article id="accomplishments" class="section">
-        <h2 class="neon-text" data-text="Accomplishments">Accomplishments</h2>
-        <section class="accomplishments-content">
-          <div class="accomplishments-grid">
-            <div class="accomplishment-item">
-              <h3><i class="fas fa-certificate"></i> Certifications</h3>
-              <ul>
-                <li>Kubernetes Administration with Helm Component (Soft: 2021)</li>
-                <li>TEFL Certified (The TEFL Academy: 2016)</li>
-                <li>Level 4 Kayak Proficiency (Irish Canoe Union: 2014)</li>
-                <li>ISTQB Certified Tester, Foundation level (ISTQB: 2021)</li>
-              </ul>
-            </div>
-            
-            <div class="accomplishment-item">
-              <h3><i class="fas fa-users"></i> Leadership & Volunteering</h3>
-              <ul>
-                <li>
-                  <strong>River Guide, NUIG Kayak Club</strong>
-                  <p>Coached students to Irish Canoe Union level 2. Assessed and rewarded level 2 certificates.</p>
-                </li>
-                <li>
-                  <strong>Kayak Instructor, SKC Kayak Club</strong>
-                  <p>Instructed trainee coaches to pass instructor Assessment. Taught all ages canoe and kayak skills.</p>
-                </li>
-                <li>
-                  <strong>Lissadell No Limits, Cregg House Sligo</strong>
-                  <p>Kayak Instructor and Mentor for the physically disabled and visually impaired.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </article>
-      
-      <article id="codepens" class="section">
-        <h2 class="neon-text" data-text="Codepens">Codepens</h2>
-        <section class="codepens-content">
-          <div class="codepen-arcade">
-            <div class="arcade-machine">
-              <div class="arcade-screen">
-                <iframe height="500" scrolling="no" title="A Range of Choices" src="https://codepen.io/Philip-Walsh/full/VYwaaxE" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  See the Pen <a href="https://codepen.io/Philip-Walsh/full/VYwaaxE">A Range of Choices</a> by Philip Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
-              </div>
-              <div class="arcade-info">
-                <h3>'A Range of Choices' - CSS Challenge</h3>
-                <p>A forbidden ramen restaurant with bill splitting and tipping functionality.</p>
-              </div>
-            </div>
-            
-            <div class="arcade-machine">
-              <div class="arcade-screen">
-                <iframe height="500" scrolling="no" title="Glitches" src="https://codepen.io/Philip-Walsh/full/QwWmWOW" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  See the Pen <a href="https://codepen.io/Philip-Walsh/full/QwWmWOW">Glitches</a> by Philip Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
-              </div>
-              <div class="arcade-info">
-                <h3>Glitches</h3>
-                <p>ChatGPT creepypasta with glitching CSS effects.</p>
-              </div>
-            </div>
-            
-            <div class="arcade-machine">
-              <div class="arcade-screen">
-                <iframe height="500" scrolling="no" title="Bugs - Match 2 Game" src="https://codepen.io/Philip-Walsh/full/ZYEeVXe" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  See the Pen <a href="https://codepen.io/Philip-Walsh/full/ZYEeVXe">Bugs - Match 2 Game</a> by Philip Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
-              </div>
-              <div class="arcade-info">
-                <h3>Bugs - Match 2 Game</h3>
-                <p>A fun memory matching game with a bug theme.</p>
-              </div>
-            </div>
-            
-            <div class="arcade-machine">
-              <div class="arcade-screen">
-                <iframe height="500" scrolling="no" title="Isomorphic Room with Trihedral Vertex" src="https://codepen.io/Philip-Walsh/full/Jojdmpx" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                  See the Pen <a href="https://codepen.io/Philip-Walsh/full/Jojdmpx">Isomorphic Room with Trihedral Vertex</a> by Philip Walsh (<a href="https://codepen.io/Philip-Walsh">@Philip-Walsh</a>) on <a href="https://codepen.io">CodePen</a>.
-                </iframe>
-              </div>
-              <div class="arcade-info">
-                <h3>[DRAFT] Isomorphic Room with Trihedral Vertex</h3>
-                <p>An isometric 3D illusion created using CSS, designed to simulate a trihedral vertex—a point where three perpendicular planes meet, forming the corner of a room. The effect uses pseudo-elements for walls and floor with colors and shadows enhancing depth perception.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-    </main>
-    
-    <footer>
-      <div class="footer-content">
-        <div class="social-links">
-          <h3>Connect With Me</h3>
-          <ul>
-            <li>
-              <span>
-                <a href="https://linkedin.com/in/philip-walsh-01" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </span>
-            </li>
-            <li>
-              <span>
-                <a href="https://github.com/Philip-Walsh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </span>
-            </li>
-            <li>
-              <span>
-                <a href="https://codepen.io/Philip-Walsh/" target="_blank" rel="noopener noreferrer" aria-label="Codepen">
-                  <i class="fab fa-codepen"></i>
-                </a>
-              </span>
-            </li>
-          </ul>
-        </div>
-        
-        <p class="copyright">&copy; <span id="current-year">2025</span> Philip Walsh. All Rights Reserved.</p>
-        <p>Built with <a href="https://windsurf.com/refer?referral_code=f181515cf7">Windsurf <img id="windsurf-logo" src="https://windsurf.com/favicon.ico" alt="Windsurf logo" /></a></p>
-      </div>
-    </footer>
-  </body>
+
+      <p class="copyright">&copy; <span id="current-year">2025</span> Philip Walsh.</p>
+    </div>
+  </footer>
+
+  <style>
+    .project-image {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-image img.loading {
+      opacity: 0;
+    }
+
+    .project-image img.error {
+      display: none;
+    }
+
+    .project-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(13, 115, 119, 0.1), rgba(13, 115, 119, 0.05));
+      pointer-events: none;
+    }
+  </style>
+</body>
+
 </html>

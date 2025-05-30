@@ -1,0 +1,126 @@
+{
+  "projects": {
+    "webApps": [
+      {
+        "title": "Forbidden Ramen",
+        "description": "A modern restaurant app with bill splitting and tipping functionality, built with React and modern CSS.",
+        "technologies": ["React", "CSS", "JavaScript"],
+        "links": {
+          "demo": "https://spaghettis.netlify.app/",
+          "github": "https://github.com/Philip-Walsh/www.spaghettis"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Forbidden+Ramen"
+      },
+      {
+        "title": "News API (go-app)",
+        "description": "A Go-based web application that allows users to search for news articles using the News API.",
+        "technologies": ["Go", "REST API", "News API"],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/go-app"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=News+API"
+      },
+      {
+        "title": "Weather App",
+        "description": "Real-time global weather updates with a modern UI. Powered by Express, React, and WeatherAPI.",
+        "technologies": ["Express", "React", "WeatherAPI"],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/weather"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Weather+App"
+      }
+    ],
+    "devOpsTools": [
+      {
+        "title": "Devkit",
+        "description": "CLI tool for developer productivity and automation, built with Go.",
+        "technologies": ["Go", "CLI", "DevOps"],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/devkit"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Devkit"
+      },
+      {
+        "title": "CICD Goat",
+        "description": "A deliberately vulnerable CI/CD environment for learning CI/CD security through multiple challenges.",
+        "technologies": ["CI/CD", "Security", "DevOps"],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/cicd-goat"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=CICD+Goat"
+      }
+    ],
+    "learningResources": [
+      {
+        "title": "Build Apps with Windsurf's AI Coding Agents",
+        "description": "Course and demos for building apps using Windsurf's AI coding agents, taught by Anshul Ramachandran.",
+        "technologies": ["AI", "Windsurf", "Learning"],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/build-apps-with-windsurfs-ai-coding-agents"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Build+Apps+with+Windsurf+AI"
+      }
+    ],
+    "creativeFun": [
+      {
+        "title": "Emojinomicon",
+        "description": "A repository of SVG emoji assets for web projects, from backgrounds to cursors.",
+        "technologies": ["SVG", "Design", "Web Assets"],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/emojinomicon"
+        },
+        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Emojinomicon"
+      }
+    ]
+  },
+  "recommendations": {
+    "podcasts": [
+      {
+        "title": "Kubernetes Podcast",
+        "description": "Weekly podcast about Kubernetes and cloud-native development",
+        "url": "https://kubernetespodcast.com/"
+      },
+      {
+        "title": "Syntax",
+        "description": "Web development tips, tricks, and tools from Wes Bos and Scott Tolinski",
+        "url": "https://syntax.fm/"
+      }
+    ],
+    "books": [
+      {
+        "title": "Clean Code",
+        "description": "By Robert C. Martin - A handbook of agile software craftsmanship",
+        "url": "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+      },
+      {
+        "title": "Designing Data-Intensive Applications",
+        "description": "By Martin Kleppmann - The big ideas behind reliable, scalable, and maintainable systems",
+        "url": "https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321"
+      }
+    ],
+    "youtubeChannels": [
+      {
+        "title": "Tech With Tim",
+        "description": "Programming tutorials and tech content",
+        "url": "https://www.youtube.com/c/TechWithTim"
+      },
+      {
+        "title": "Fireship",
+        "description": "Quick and practical web development tutorials",
+        "url": "https://www.youtube.com/c/Fireship"
+      }
+    ],
+    "learningResources": [
+      {
+        "title": "freeCodeCamp",
+        "description": "Free interactive coding lessons and certifications",
+        "url": "https://www.freecodecamp.org/"
+      },
+      {
+        "title": "Coursera",
+        "description": "Online courses from top universities and companies",
+        "url": "https://www.coursera.org/"
+      }
+    ]
+  }
+} 

@@ -25,6 +25,10 @@
   --neon-color-2: #32E0C4;
 
   --font-size: clamp(1rem, 2vw, 2rem);
+
+  /* Skeleton Loader Colors */
+  --skeleton-bg: rgba(255, 255, 255, 0.1);
+  --skeleton-shine: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark Theme - Gray Teal Space Cold */
@@ -1202,6 +1206,7 @@ button:focus {
 .social-link {
   display: none;
 }
+
 #windsurf-logo {
   width: 1.3em;
   vertical-align: middle;
@@ -1210,10 +1215,414 @@ button:focus {
 }
 
 @keyframes bob {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-0.18em);
   }
+}
+
+/* Projects Section */
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.project-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.project-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.project-info p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tech-tag {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  background: var(--accent-glow-strong);
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--accent-glow-strong);
+}
+
+.project-link i {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-info {
+    padding: 1.25rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Recommendations Section */
+.recommendations-content {
+  padding: 2rem 0;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.recommendation-category {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.recommendation-category:hover {
+  transform: translateY(-5px);
+}
+
+.recommendation-category h3 {
+  color: var(--neon-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recommendation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendation-list li {
+  margin-bottom: 1rem;
+}
+
+.recommendation-list li:last-child {
+  margin-bottom: 0;
+}
+
+.recommendation-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.recommendation-list a:hover {
+  background-color: var(--hover-bg);
+}
+
+.recommendation-list strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--neon-color);
+}
+
+.recommendation-list p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skeleton Loader Styles */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+      var(--skeleton-bg) 25%,
+      var(--skeleton-shine) 50%,
+      var(--skeleton-bg) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Project Card Skeleton */
+.project-card.skeleton {
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+.project-card.skeleton .project-image {
+  height: 200px;
+  background: var(--skeleton-bg);
+}
+
+.project-card.skeleton .project-info {
+  padding: 1rem;
+}
+
+.project-card.skeleton h3 {
+  height: 24px;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.project-card.skeleton p {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.project-card.skeleton .project-technologies {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-card.skeleton .tech-tag {
+  height: 24px;
+  width: 80px;
+}
+
+/* Experience Skeleton */
+.job.skeleton {
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.job.skeleton .job-header h3 {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 0.5rem;
+}
+
+.job.skeleton .job-header p {
+  height: 20px;
+  width: 40%;
+  margin-bottom: 0.5rem;
+}
+
+.job.skeleton .job-description ul {
+  margin-top: 1rem;
+}
+
+.job.skeleton .job-description li {
+  height: 20px;
+  width: 90%;
+  margin-bottom: 0.5rem;
+}
+
+/* Education Skeleton */
+.education-item.skeleton {
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.education-item.skeleton h3 {
+  height: 24px;
+  width: 70%;
+  margin-bottom: 0.5rem;
+}
+
+.education-item.skeleton p {
+  height: 20px;
+  width: 50%;
+  margin-bottom: 0.5rem;
+}
+
+/* Skills Skeleton */
+.skill-item.skeleton {
+  height: 32px;
+  width: 150px;
+  margin: 0.5rem;
+}
+
+/* Recommendations Skeleton */
+.recommendation-category.skeleton {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.recommendation-category.skeleton h3 {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.recommendation-category.skeleton li {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Error State Styles */
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.error-message i {
+  font-size: 2rem;
+  color: var(--error-color);
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Skeleton Loader Transition */
+.skeleton {
+  transition: opacity 0.3s ease-out;
+}
+
+.skeleton.fade-out {
+  opacity: 0;
 }
