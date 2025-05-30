@@ -5,16 +5,7 @@
 [![Pre-commit Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml)
 [![Security Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml)
 [![Deploy](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/deploy.yml)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fphilip-walsh.github.io)](https://philip-walsh.github.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/github/package-json/v/Philip-Walsh/Philip-Walsh.github.io)](https://github.com/Philip-Walsh/Philip-Walsh.github.io)
-[![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat&logo=github&logoColor=white)](https://pages.github.com)
-[![Accessibility](https://img.shields.io/badge/Accessibility-FF4B4B?style=flat&logo=accessibility&logoColor=white)](https://www.w3.org/WAI/)
-[![Responsive](https://img.shields.io/badge/Responsive-00A4EF?style=flat&logo=responsive&logoColor=white)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ## 🌟 Features
 
@@ -60,7 +51,14 @@ If you find this portfolio template useful, consider buying me some ramen! It he
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+### What this means:
+- **Template**: The portfolio structure and design can be used as a template
+- **Personal Data**: The resume data and personal information are not licensed for reuse
+- **Attribution**: If you use the template, you must give credit
+- **NonCommercial**: The template cannot be used for commercial purposes
+- **NoDerivatives**: The template cannot be modified and distributed
 
 ## 🌐 Live Demo
 
@@ -72,6 +70,7 @@ Feel free to fork this repository and customize it for your own portfolio! Just 
 1. Update the `data.json` files with your information
 2. Customize the theme to match your style
 3. Give credit where credit is due
+4. Do not use my personal information or resume data
 
 ---
 

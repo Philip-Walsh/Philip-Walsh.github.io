@@ -15,78 +15,78 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
           cache: 'npm'
 
       - name: Install dependencies
         run: |
-          npm ci
+          npm install
           npm install -g prettier htmlhint stylelint svgo
-
-      - name: Run ESLint
-        run: npm run lint
-
-      - name: Run HTML validation
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const { execSync } = require('child_process');
-            try {
-              execSync('npx htmlhint "**/*.html"', { stdio: 'inherit' });
-            } catch (error) {
-              console.error('HTML validation failed');
-              process.exit(1);
-            }
-
-      - name: Run CSS validation
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const { execSync } = require('child_process');
-            try {
-              execSync('npx stylelint "**/*.css"', { stdio: 'inherit' });
-            } catch (error) {
-              console.error('CSS validation failed');
-              process.exit(1);
-            }
-
-      - name: Validate SVGs
-        run: |
-          # Check SVG optimization and validity
-          npx svgo --check "**/*.svg"
 
       - name: Format check
         run: |
-          # Check JavaScript formatting
-          npx prettier --check "**/*.{js,json}"
-          
-          # Check HTML formatting
-          npx prettier --check "**/*.html"
-          
-          # Check CSS formatting
-          npx prettier --check "**/*.css"
-          
-          # Check SVG formatting
-          npx prettier --check "**/*.svg"
+          npx prettier --check "**/*.{js,html,css,svg}"
+
+      - name: Lint JavaScript
+        run: npx eslint .
+
+      - name: Validate HTML
+        run: npx htmlhint "**/*.html"
+
+      - name: Validate CSS
+        run: npx stylelint "**/*.css"
+
+      - name: Validate SVGs
+        run: |
+          npx svgo --check "**/*.svg"
 
       - name: Check writing quality
         run: |
-          # Check for insensitive or inconsiderate writing
-          alex "**/*.{html,md}" --quiet
-          
-          # Check for better writing suggestions
-          write-good "**/*.{html,md}" --no-passive
+          npm install -g alex write-good
+          alex .
+          write-good "**/*.md"
 
-      - name: Analyze Code Changes
-        id: analyze
+      - name: Determine version bump
+        id: version
         run: |
-          # Simple version bump based on commit messages
-          if git log -1 --pretty=%B | grep -q "BREAKING CHANGE"; then
-            echo "changes=major" >> $GITHUB_OUTPUT
-          elif git log -1 --pretty=%B | grep -q "feat:"; then
-            echo "changes=minor" >> $GITHUB_OUTPUT
+          # Get the last commit message
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          
+          # Check for version bump indicators in commit message
+          if [[ $COMMIT_MSG == *"MAJOR"* ]]; then
+            echo "bump=major" >> $GITHUB_OUTPUT
+          elif [[ $COMMIT_MSG == *"MINOR"* ]]; then
+            echo "bump=minor" >> $GITHUB_OUTPUT
           else
-            echo "changes=patch" >> $GITHUB_OUTPUT
-          fi 
+            echo "bump=patch" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update version
+        if: success()
+        run: |
+          # Read current version from package.json
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          # Split version into components
+          IFS='.' read -r -a VERSION_PARTS <<< "$CURRENT_VERSION"
+          MAJOR="${VERSION_PARTS[0]}"
+          MINOR="${VERSION_PARTS[1]}"
+          PATCH="${VERSION_PARTS[2]}"
+          
+          # Bump version based on commit message
+          if [[ "${{ steps.version.outputs.bump }}" == "major" ]]; then
+            NEW_VERSION="$((MAJOR + 1)).0.0"
+          elif [[ "${{ steps.version.outputs.bump }}" == "minor" ]]; then
+            NEW_VERSION="${MAJOR}.$((MINOR + 1)).0"
+          else
+            NEW_VERSION="${MAJOR}.${MINOR}.$((PATCH + 1))"
+          fi
+          
+          # Update package.json
+          npm version $NEW_VERSION --no-git-tag-version
+          
+          # Create version file for other jobs
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+          echo "VERSION_CHANGED=true" >> $GITHUB_ENV 
