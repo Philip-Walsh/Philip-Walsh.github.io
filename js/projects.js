@@ -6,12 +6,13 @@
 // Sample project data - in a real application, this could be loaded from an API or JSON file
 const projectsData = [
   {
-    id: 'windsurfrules',
-    title: 'WindSurfRules',
-    description: 'An application for windsurfing enthusiasts to track rules and regulations.',
-    technologies: ['JavaScript', 'HTML', 'CSS'],
-    githubUrl: 'https://github.com/Philip-Walsh/windSurfRules',
-    liveUrl: ''
+    id: "windsurfrules",
+    title: "WindSurfRules",
+    description:
+      "An application for windsurfing enthusiasts to track rules and regulations.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    githubUrl: "https://github.com/Philip-Walsh/windSurfRules",
+    liveUrl: "",
   },
   // Additional projects can be added here
 ];
@@ -20,18 +21,18 @@ const projectsData = [
  * Load projects data and render to the page
  */
 export function loadProjects() {
-  const projectsList = document.getElementById('project-list');
-  
+  const projectsList = document.getElementById("project-list");
+
   if (!projectsList) {
-    console.error('Project list element not found');
+    console.error("Project list element not found");
     return;
   }
-  
+
   // Clear existing projects
-  projectsList.innerHTML = '';
-  
+  projectsList.innerHTML = "";
+
   // Render each project
-  projectsData.forEach(project => {
+  projectsData.forEach((project) => {
     const projectElement = createProjectElement(project);
     projectsList.appendChild(projectElement);
   });
@@ -43,24 +44,24 @@ export function loadProjects() {
  * @returns {HTMLElement} - Project list item element
  */
 function createProjectElement(project) {
-  const projectItem = document.createElement('li');
-  projectItem.classList.add('project-item');
+  const projectItem = document.createElement("li");
+  projectItem.classList.add("project-item");
   projectItem.id = project.id;
-  
+
   const projectContent = `
     <div class="project-card">
       <h3>${project.title}</h3>
       <p>${project.description}</p>
       <div class="project-technologies">
-        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+        ${project.technologies.map((tech) => `<span class="tech-tag">${tech}</span>`).join("")}
       </div>
       <div class="project-links">
         <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer">GitHub</a>
-        ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">Live Demo</a>` : ''}
+        ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">Live Demo</a>` : ""}
       </div>
     </div>
   `;
-  
+
   projectItem.innerHTML = projectContent;
   return projectItem;
 }

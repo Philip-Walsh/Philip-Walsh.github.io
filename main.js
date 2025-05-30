@@ -1,12 +1,12 @@
 // Import modules
-import { initializeNavigation } from './js/navigation.js';
-import { setupThemeToggle } from './js/theme.js';
-import { initializeScrollEffects } from './js/scroll-effects.js';
-import { initializeMobileNav } from './js/mobile-nav.js';
+import { initializeNavigation } from "./js/navigation.js";
+import { setupThemeToggle } from "./js/theme.js";
+import { initializeScrollEffects } from "./js/scroll-effects.js";
+import { initializeMobileNav } from "./js/mobile-nav.js";
 
 // Initialize the application when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Philip Walsh Portfolio initialized');
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Philip Walsh Portfolio initialized");
 
   // Initialize theme first to prevent flash of unstyled content
   setupThemeToggle();
@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeScrollEffects();
 
   // Set current year in footer
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  document.getElementById("current-year").textContent =
+    new Date().getFullYear();
 
   // Load all data immediately
   loadAllData();
@@ -30,23 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to show skeleton loaders
 function showSkeletonLoaders() {
   // Projects skeleton
-  const projectsContainer = document.getElementById('projects-container');
-  projectsContainer.innerHTML = Array(2).fill(`
+  const projectsContainer = document.getElementById("projects-container");
+  projectsContainer.innerHTML = Array(2)
+    .fill(
+      `
     <article class="project-card skeleton">
       <figure class="project-image"></figure>
       <section class="project-info">
         <h3 class="skeleton"></h3>
         <p class="skeleton"></p>
         <section class="project-technologies" role="list" aria-label="Technologies used">
-          ${Array(3).fill('<span class="tech-tag skeleton" role="listitem"></span>').join('')}
+          ${Array(3).fill('<span class="tech-tag skeleton" role="listitem"></span>').join("")}
         </section>
       </section>
     </article>
-  `).join('');
+  `,
+    )
+    .join("");
 
   // Experience skeleton
-  const experienceContent = document.querySelector('.experience-content');
-  experienceContent.innerHTML = Array(2).fill(`
+  const experienceContent = document.querySelector(".experience-content");
+  experienceContent.innerHTML = Array(2)
+    .fill(
+      `
     <article class="job skeleton">
       <header class="job-header">
         <h3 class="skeleton"></h3>
@@ -56,41 +63,55 @@ function showSkeletonLoaders() {
       </header>
       <section class="job-description">
         <ul>
-          ${Array(2).fill('<li class="skeleton"></li>').join('')}
+          ${Array(2).fill('<li class="skeleton"></li>').join("")}
         </ul>
       </section>
     </article>
-  `).join('');
+  `,
+    )
+    .join("");
 
   // Education skeleton
-  const educationContent = document.querySelector('.education-content');
-  educationContent.innerHTML = Array(2).fill(`
+  const educationContent = document.querySelector(".education-content");
+  educationContent.innerHTML = Array(2)
+    .fill(
+      `
     <article class="education-item skeleton">
       <h3 class="skeleton"></h3>
       <p class="skeleton"></p>
       <p class="skeleton"></p>
       <section class="education-description">
-        ${Array(2).fill('<p class="skeleton"></p>').join('')}
+        ${Array(2).fill('<p class="skeleton"></p>').join("")}
       </section>
     </article>
-  `).join('');
+  `,
+    )
+    .join("");
 
   // Skills skeleton
-  const skillsList = document.querySelector('.skills-list');
-  skillsList.innerHTML = Array(6).fill('<li class="skill-item skeleton"></li>').join('');
+  const skillsList = document.querySelector(".skills-list");
+  skillsList.innerHTML = Array(6)
+    .fill('<li class="skill-item skeleton"></li>')
+    .join("");
 
   // Recommendations skeleton
-  const recommendationsContainer = document.getElementById('recommendations-container');
+  const recommendationsContainer = document.getElementById(
+    "recommendations-container",
+  );
   recommendationsContainer.innerHTML = `
     <section class="recommendations-grid">
-      ${Array(3).fill(`
+      ${Array(3)
+        .fill(
+          `
         <article class="recommendation-category skeleton">
           <h3 class="skeleton"></h3>
           <ul class="recommendation-list">
-            ${Array(2).fill('<li class="skeleton"></li>').join('')}
+            ${Array(2).fill('<li class="skeleton"></li>').join("")}
           </ul>
         </article>
-      `).join('')}
+      `,
+        )
+        .join("")}
     </section>
   `;
 }
@@ -103,8 +124,8 @@ async function loadAllData() {
 
     // Load data in parallel
     const [projectsData, resumeData] = await Promise.all([
-      fetch('./data/data.json').then(res => res.json()),
-      fetch('./data/resume.json').then(res => res.json())
+      fetch("./data/data.json").then((res) => res.json()),
+      fetch("./data/resume.json").then((res) => res.json()),
     ]);
 
     // Load all sections immediately
@@ -115,16 +136,15 @@ async function loadAllData() {
     loadEducation(resumeData.education);
     loadAccomplishments(resumeData.accomplishments);
     loadRecommendations(projectsData.recommendations);
-
   } catch (error) {
-    console.error('Error loading data:', error);
+    console.error("Error loading data:", error);
     showErrorState();
   }
 }
 
 // Function to load about section
 function loadAbout(about) {
-  const aboutContent = document.querySelector('.about-content');
+  const aboutContent = document.querySelector(".about-content");
   if (aboutContent && about) {
     aboutContent.innerHTML = `
       <section class="personal-statement">
@@ -137,26 +157,37 @@ function loadAbout(about) {
 
 // Function to load skills
 function loadSkills(skills) {
-  const skillsList = document.querySelector('.skills-list');
+  const skillsList = document.querySelector(".skills-list");
   if (skillsList && skills) {
-    skillsList.innerHTML = skills.map(skill => `
+    skillsList.innerHTML = skills
+      .map(
+        (skill) => `
       <li class="skill-item">
         <i class="${skill.icon}" aria-hidden="true"></i>
         <span>${skill.name}</span>
       </li>
-    `).join('');
+    `,
+      )
+      .join("");
   }
 }
 
 // Function to load projects
 function loadProjects(projects) {
-  const projectsContainer = document.getElementById('projects-container');
+  const projectsContainer = document.getElementById("projects-container");
   if (projectsContainer && projects) {
-    projectsContainer.innerHTML = Object.entries(projects).map(([category, projects]) => `
+    projectsContainer.innerHTML = Object.entries(projects)
+      .map(
+        ([category, projects]) => `
       <section class="project-category">
-        <h3>${category.replace(/([A-Z])/g, ' $1').trim().replace(/^\w/, c => c.toUpperCase())}</h3>
+        <h3>${category
+          .replace(/([A-Z])/g, " $1")
+          .trim()
+          .replace(/^\w/, (c) => c.toUpperCase())}</h3>
         <section class="projects-grid">
-          ${projects.map(project => `
+          ${projects
+            .map(
+              (project) => `
             <article class="project-card">
               <figure class="project-image">
                 <img src="${project.image}" alt="${project.title} Screenshot" loading="lazy" />
@@ -165,17 +196,25 @@ function loadProjects(projects) {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 <section class="project-technologies" role="list" aria-label="Technologies used">
-                  ${project.technologies.map(tech => `
+                  ${project.technologies
+                    .map(
+                      (tech) => `
                     <span class="tech-tag" role="listitem">${tech}</span>
-                  `).join('')}
+                  `,
+                    )
+                    .join("")}
                 </section>
                 <section class="project-links">
-                  ${project.links.demo ? `
+                  ${
+                    project.links.demo
+                      ? `
                     <a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" class="project-link">
                       <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                       <span>Live Demo</span>
                     </a>
-                  ` : ''}
+                  `
+                      : ""
+                  }
                   <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="project-link">
                     <i class="fab fa-github" aria-hidden="true"></i>
                     <span>GitHub</span>
@@ -183,18 +222,24 @@ function loadProjects(projects) {
                 </section>
               </section>
             </article>
-          `).join('')}
+          `,
+            )
+            .join("")}
         </section>
       </section>
-    `).join('');
+    `,
+      )
+      .join("");
   }
 }
 
 // Function to load experience
 function loadExperience(experience) {
-  const experienceContent = document.querySelector('.experience-content');
+  const experienceContent = document.querySelector(".experience-content");
   if (experienceContent && experience) {
-    experienceContent.innerHTML = experience.map(job => `
+    experienceContent.innerHTML = experience
+      .map(
+        (job) => `
       <article class="job">
         <header class="job-header">
           <h3>${job.title}</h3>
@@ -210,19 +255,23 @@ function loadExperience(experience) {
         </header>
         <section class="job-description">
           <ul>
-            ${job.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+            ${job.responsibilities.map((resp) => `<li>${resp}</li>`).join("")}
           </ul>
         </section>
       </article>
-    `).join('');
+    `,
+      )
+      .join("");
   }
 }
 
 // Function to load education
 function loadEducation(education) {
-  const educationContent = document.querySelector('.education-content');
+  const educationContent = document.querySelector(".education-content");
   if (educationContent && education) {
-    educationContent.innerHTML = education.map(edu => `
+    educationContent.innerHTML = education
+      .map(
+        (edu) => `
       <article class="education-item">
         <h3>${edu.degree}</h3>
         <p class="institution">${edu.institution}</p>
@@ -231,16 +280,18 @@ function loadEducation(education) {
           <span>${edu.period}</span>
         </p>
         <section class="education-description">
-          ${edu.details.map(detail => `<p>${detail}</p>`).join('')}
+          ${edu.details.map((detail) => `<p>${detail}</p>`).join("")}
         </section>
       </article>
-    `).join('');
+    `,
+      )
+      .join("");
   }
 }
 
 // Function to load accomplishments
 function loadAccomplishments(accomplishments) {
-  const accomplishmentsGrid = document.querySelector('.accomplishments-grid');
+  const accomplishmentsGrid = document.querySelector(".accomplishments-grid");
   if (accomplishmentsGrid && accomplishments) {
     accomplishmentsGrid.innerHTML = `
       <article class="accomplishment-item">
@@ -249,7 +300,7 @@ function loadAccomplishments(accomplishments) {
           <span>Certifications</span>
         </h3>
         <ul>
-          ${accomplishments.certifications.map(cert => `<li>${cert}</li>`).join('')}
+          ${accomplishments.certifications.map((cert) => `<li>${cert}</li>`).join("")}
         </ul>
       </article>
       <article class="accomplishment-item">
@@ -258,7 +309,7 @@ function loadAccomplishments(accomplishments) {
           <span>Leadership & Volunteering</span>
         </h3>
         <ul>
-          ${accomplishments.leadership.map(item => `<li>${item}</li>`).join('')}
+          ${accomplishments.leadership.map((item) => `<li>${item}</li>`).join("")}
         </ul>
       </article>
     `;
@@ -267,28 +318,38 @@ function loadAccomplishments(accomplishments) {
 
 // Function to load recommendations
 function loadRecommendations(recommendations) {
-  const recommendationsContainer = document.getElementById('recommendations-container');
+  const recommendationsContainer = document.getElementById(
+    "recommendations-container",
+  );
   if (recommendationsContainer && recommendations) {
     recommendationsContainer.innerHTML = `
       <section class="recommendations-grid">
-        ${Object.entries(recommendations).map(([category, items]) => `
+        ${Object.entries(recommendations)
+          .map(
+            ([category, items]) => `
           <article class="recommendation-category">
             <h3>
               <i class="fas fa-${getCategoryIcon(category)}" aria-hidden="true"></i>
-              <span>${category.replace(/([A-Z])/g, ' $1').trim()}</span>
+              <span>${category.replace(/([A-Z])/g, " $1").trim()}</span>
             </h3>
             <ul class="recommendation-list">
-              ${items.map(item => `
+              ${items
+                .map(
+                  (item) => `
                 <li>
                   <a href="${item.url}" target="_blank" rel="noopener noreferrer">
                     <strong>${item.title}</strong>
                     <p>${item.description}</p>
                   </a>
                 </li>
-              `).join('')}
+              `,
+                )
+                .join("")}
             </ul>
           </article>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </section>
     `;
   }
@@ -297,12 +358,12 @@ function loadRecommendations(recommendations) {
 // Helper function to get category icons
 function getCategoryIcon(category) {
   const icons = {
-    podcasts: 'podcast',
-    books: 'book',
-    youtubeChannels: 'youtube',
-    learningResources: 'graduation-cap'
+    podcasts: "podcast",
+    books: "book",
+    youtubeChannels: "youtube",
+    learningResources: "graduation-cap",
   };
-  return icons[category] || 'link';
+  return icons[category] || "link";
 }
 
 // Function to show error state
@@ -314,9 +375,9 @@ function showErrorState() {
     </section>
   `;
 
-  document.getElementById('projects-container').innerHTML = errorMessage;
-  document.querySelector('.experience-content').innerHTML = errorMessage;
-  document.querySelector('.education-content').innerHTML = errorMessage;
-  document.querySelector('.skills-list').innerHTML = errorMessage;
-  document.getElementById('recommendations-container').innerHTML = errorMessage;
+  document.getElementById("projects-container").innerHTML = errorMessage;
+  document.querySelector(".experience-content").innerHTML = errorMessage;
+  document.querySelector(".education-content").innerHTML = errorMessage;
+  document.querySelector(".skills-list").innerHTML = errorMessage;
+  document.getElementById("recommendations-container").innerHTML = errorMessage;
 }

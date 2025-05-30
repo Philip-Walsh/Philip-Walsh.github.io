@@ -1,28 +1,30 @@
 /* Philip Walsh Portfolio - Main Stylesheet */
 
 /* Import Prompt Font */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* CSS Variables for Theming */
 :root {
   /* Light Theme (Default) - Gray Teal Space Cold */
-  --bg-primary: #EEEEEE;
-  --bg-secondary: #FFFFFF;
+  --bg-primary: #eeeeee;
+  --bg-secondary: #ffffff;
   --text-primary: #212121;
   --text-secondary: #555555;
-  --accent-color: #0D7377;
+  --accent-color: #0d7377;
   --accent-glow: rgba(13, 115, 119, 0.7);
   --accent-glow-strong: rgba(13, 115, 119, 0.9);
-  --border-color: #CCCCCC;
+  --border-color: #cccccc;
   --card-shadow: 0 4px 6px rgba(13, 115, 119, 0.15);
-  --header-bg: #EEEEEE;
-  --footer-bg: #EEEEEE;
-  --neon-text-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
-  --neon-box-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
-  --bg-texture: url('https://www.transparenttextures.com/patterns/cartographer.png');
-  --card-texture: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
-  --neon-color-1: #0D7377;
-  --neon-color-2: #32E0C4;
+  --header-bg: #eeeeee;
+  --footer-bg: #eeeeee;
+  --neon-text-shadow:
+    0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
+  --neon-box-shadow:
+    0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
+  --bg-texture: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  --card-texture: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+  --neon-color-1: #0d7377;
+  --neon-color-2: #32e0c4;
 
   --font-size: clamp(1rem, 2vw, 2rem);
 
@@ -34,23 +36,25 @@
 /* Dark Theme - Gray Teal Space Cold */
 [data-theme="dark"] {
   --bg-primary: #212121;
-  --bg-secondary: #2C2C2C;
-  --text-primary: #EEEEEE;
+  --bg-secondary: #2c2c2c;
+  --text-primary: #eeeeee;
   --neon-text-primary: #e0e0e0;
-  --text-secondary: #AAAAAA;
-  --accent-color: #32E0C4;
+  --text-secondary: #aaaaaa;
+  --accent-color: #32e0c4;
   --accent-glow: rgba(50, 224, 196, 0.7);
   --accent-glow-strong: rgba(99, 199, 182, 0.9);
   --border-color: #444444;
   --card-shadow: 0 4px 6px rgba(50, 224, 196, 0.2);
   --header-bg: #212121;
   --footer-bg: #212121;
-  --neon-text-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
-  --neon-box-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
-  --bg-texture: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png');
-  --card-texture: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
-  --neon-color-1: #32E0C4;
-  --neon-color-2: #0D7377;
+  --neon-text-shadow:
+    0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
+  --neon-box-shadow:
+    0 0 5px var(--accent-glow), 0 0 10px var(--accent-glow), 0 0 15px #fff;
+  --bg-texture: url("https://www.transparenttextures.com/patterns/carbon-fibre-big.png");
+  --card-texture: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+  --neon-color-1: #32e0c4;
+  --neon-color-2: #0d7377;
 
   --font-size: clamp(1rem, 2vw, 2rem);
 }
@@ -73,13 +77,15 @@
 }
 
 body {
-  font-family: 'Prompt', sans-serif;
+  font-family: "Prompt", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
   background-image: var(--bg-texture);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   margin: 0;
   padding: 0;
   position: relative;
@@ -154,20 +160,24 @@ main {
   left: 0;
   width: 100%;
   height: 0;
-  background: linear-gradient(to bottom,
-      transparent,
-      var(--accent-glow) 40%,
-      var(--accent-glow-strong) 50%,
-      var(--accent-glow) 60%,
-      transparent 100%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-glow) 40%,
+    var(--accent-glow-strong) 50%,
+    var(--accent-glow) 60%,
+    transparent 100%
+  );
   opacity: 0;
-  transition: opacity 0.3s ease, height 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    height 0.3s ease;
   box-shadow: 0 0 20px 5px var(--accent-glow);
 }
 
 /* Neon Text Effect - Softer for better readability */
 .neon-text {
-  font-family: 'Prompt', sans-serif;
+  font-family: "Prompt", sans-serif;
   font-weight: 700;
   color: var(--neon-text-primary);
   text-shadow:
@@ -184,7 +194,6 @@ main {
 
 /* Neon Pulse Animation - Softer and slower */
 @keyframes neon-pulse {
-
   0%,
   100% {
     text-shadow:
@@ -220,7 +229,6 @@ main {
 
 /* Flux Pulse Animation */
 @keyframes flux-pulse {
-
   0%,
   100% {
     text-shadow:
@@ -315,7 +323,9 @@ p {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
   position: relative;
   font-weight: 500;
 }
@@ -325,7 +335,7 @@ a:hover {
 }
 
 a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -391,7 +401,9 @@ a:hover::after {
   padding: 0.5rem 1rem;
   border: 1px solid var(--accent-color);
   border-radius: 4px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   font-weight: 500;
 }
 
@@ -426,8 +438,10 @@ a:hover::after {
   min-height: 4em;
   border-radius: 50%;
   padding: 0.3em;
-  background: conic-gradient(var(--accent-color) var(--fill-percent),
-      transparent var(--fill-percent));
+  background: conic-gradient(
+    var(--accent-color) var(--fill-percent),
+    transparent var(--fill-percent)
+  );
   transition: --fill-percent 0.6s ease-in-out;
 }
 
@@ -450,7 +464,9 @@ a:hover::after {
 
 .header-social a i {
   font-size: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .header-social li:hover a {
@@ -470,7 +486,7 @@ a:hover::after {
 nav {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding: .5em;
+  padding: 0.5em;
   background-color: var(--bg-secondary);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -499,7 +515,9 @@ nav a {
   color: var(--text-primary);
   font-weight: 500;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   text-align: center;
   justify-content: center;
 }
@@ -596,7 +614,9 @@ main {
   margin-bottom: 5rem;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
   padding: 1.5rem;
   background-color: var(--bg-secondary);
   border-radius: 8px;
@@ -676,7 +696,9 @@ main {
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
   border: 1px solid var(--accent-color);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -707,7 +729,9 @@ main {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .job:hover {
@@ -760,7 +784,9 @@ main {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .education-item:hover {
@@ -787,7 +813,9 @@ main {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .accomplishment-item:hover {
@@ -851,7 +879,7 @@ main {
 
 .arcade-machine {
   background-color: var(--bg-secondary);
-  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   border: 3px solid var(--accent-color);
   border-radius: 12px;
   padding: 1.5rem;
@@ -865,16 +893,18 @@ main {
 }
 
 .arcade-machine::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 10px;
-  background: linear-gradient(90deg,
-      var(--accent-color) 0%,
-      var(--neon-color-2) 50%,
-      var(--accent-color) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--accent-color) 0%,
+    var(--neon-color-2) 50%,
+    var(--accent-color) 100%
+  );
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
@@ -888,23 +918,27 @@ main {
   border: 2px solid var(--accent-color);
   border-radius: 8px;
   padding: 0.5rem;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px var(--accent-glow);
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 10px var(--accent-glow);
   position: relative;
   height: 350px;
   overflow: hidden;
 }
 
 .arcade-screen::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
   pointer-events: none;
 }
 
@@ -1013,8 +1047,10 @@ footer {
   min-height: 4em;
   border-radius: 50%;
   padding: 0.3em;
-  background: conic-gradient(var(--accent-color) var(--fill-percent),
-      transparent var(--fill-percent));
+  background: conic-gradient(
+    var(--accent-color) var(--fill-percent),
+    transparent var(--fill-percent)
+  );
   transition: --fill-percent 0.6s ease-in-out;
 }
 
@@ -1037,7 +1073,9 @@ footer {
 
 .social-links a i {
   font-size: 1.5rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .social-links li:hover a {
@@ -1073,7 +1111,9 @@ footer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   font-size: 1.5rem;
   z-index: 10;
   box-shadow: 0 0 5px rgba(30, 87, 153, 0.3);
@@ -1215,7 +1255,6 @@ button:focus {
 }
 
 @keyframes bob {
-
   0%,
   100% {
     transform: translateY(0);
@@ -1253,7 +1292,9 @@ button:focus {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1319,7 +1360,9 @@ button:focus {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .tech-tag:hover {
@@ -1465,10 +1508,12 @@ button:focus {
 }
 
 .skeleton {
-  background: linear-gradient(90deg,
-      var(--skeleton-bg) 25%,
-      var(--skeleton-shine) 50%,
-      var(--skeleton-bg) 75%);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-bg) 25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-bg) 75%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 4px;

@@ -1,19 +1,40 @@
 {
   "name": "philip-walsh-portfolio",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.1",
+  "description": "A cyberpunk-themed portfolio showcasing my journey through the digital realm",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run format && npm run lint && npm run lint:html && npm run lint:css && npm run lint:svg && npm run lint:md",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "format": "prettier --write \"**/*.{js,html,css,svg}\"",
+    "format:check": "prettier --check \"**/*.{js,html,css,svg}\"",
+    "lint": "eslint .",
+    "lint:html": "htmlhint \"**/*.html\"",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:svg": "svgo --check \"**/*.svg\"",
+    "lint:md": "alex . && write-good \"**/*.md\"",
+    "security": "npm audit",
+    "security:fix": "npm audit fix",
+    "sbom": "cyclonedx-bom --output-file bom.xml",
+    "precommit": "npm run build && npm run security",
+    "version:bump": "node scripts/version-bump.js"
   },
   "devDependencies": {
     "vite": "^6.2.6",
     "vitest": "^3.1.1",
     "jsdom": "^26.1.0",
-    "@testing-library/dom": "^10.4.0"
+    "@testing-library/dom": "^10.4.0",
+    "alex": "^10.0.0",
+    "eslint": "^8.0.0",
+    "htmlhint": "^1.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.0.0",
+    "svgo": "^3.0.0",
+    "write-good": "^1.0.0",
+    "cyclonedx-bom": "^0.0.9"
   }
 }
