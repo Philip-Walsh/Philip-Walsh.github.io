@@ -3,7 +3,7 @@
 > A cyberpunk-themed portfolio showcasing my journey through the digital realm
 
 [![Pre-commit Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml)
-[![Security Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml)
+[![Security](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml)
 [![Deploy](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/deploy.yml)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
