@@ -1,0 +1,105 @@
+version: 1.0
+
+project:
+  name: philip-walsh-portfolio
+  type: static-site
+  version: 1.0.0
+
+linting:
+  tools:
+    - name: eslint
+      config: .eslintrc.json
+      files: ["**/*.js"]
+    - name: stylelint
+      config: .stylelintrc.json
+      files: ["**/*.css"]
+    - name: htmlhint
+      config: .htmlhintrc
+      files: ["**/*.html"]
+  rules:
+    max_line_length: 100
+    indent_size: 2
+    quote_style: single
+    semicolon: true
+
+testing:
+  framework: jest
+  coverage:
+    threshold: 80
+    exclude:
+      - "node_modules/**"
+      - "tools/**"
+  files:
+    - "**/*.test.js"
+    - "**/*.spec.js"
+
+security:
+  scan:
+    schedule: daily
+    severity: medium
+    ignore:
+      - "node_modules/**"
+      - "tools/**"
+
+  container:
+    base_image: nginx:alpine
+    user: nginx
+    ports:
+      - "80"
+    health_check:
+      path: /
+      port: 80
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+versioning:
+  strategy: semantic
+  branch: main
+  commit_message: "chore: bump version [skip ci]"
+  tag_format: "v{version}"
+  rules:
+    major:
+      - "Breaking changes in API"
+      - "Major feature additions"
+      - "Incompatible changes"
+    minor:
+      - "New features"
+      - "Backwards compatible changes"
+      - "Deprecation notices"
+    patch:
+      - "Bug fixes"
+      - "Minor improvements"
+      - "Documentation updates"
+
+deployment:
+  github_pages:
+    branch: gh-pages
+    directory: /
+    clean: true
+    keep_history: true
+
+workflows:
+  - name: pre-commit
+    trigger: push
+    branch: main
+    steps:
+      - lint check
+      - lint fix
+      - test run
+      - version analyze
+
+  - name: security-scan
+    schedule: "0 0 * * *"
+    steps:
+      - version check
+      - security scan
+      - generate sbom
+      - update version
+
+  - name: deploy
+    trigger: push
+    branch: main
+    steps:
+      - security scan
+      - deploy github-pages

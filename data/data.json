@@ -32,9 +32,9 @@
     ],
     "devOpsTools": [
       {
-        "title": "Devkit",
-        "description": "CLI tool for developer productivity and automation, built with Go.",
-        "technologies": ["Go", "CLI", "DevOps"],
+        "title": "DevKit",
+        "description": "A powerful CLI tool that simplifies secure container development by turning complex, multi-step security processes into simple commands. Features include automated vulnerability scanning, security documentation generation, and secure Kubernetes deployments.",
+        "technologies": ["Python", "Docker", "Kubernetes", "Security", "DevOps"],
         "links": {
           "github": "https://github.com/Philip-Walsh/devkit"
         },

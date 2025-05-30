@@ -1,0 +1,3 @@
+[submodule "tools/devkit"]
+	path = tools/devkit
+	url = https://github.com/Philip-Walsh/devkit.git
