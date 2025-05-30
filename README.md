@@ -8,6 +8,13 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fphilip-walsh.github.io)](https://philip-walsh.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/github/package-json/v/Philip-Walsh/Philip-Walsh.github.io)](https://github.com/Philip-Walsh/Philip-Walsh.github.io)
+[![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat&logo=github&logoColor=white)](https://pages.github.com)
+[![Accessibility](https://img.shields.io/badge/Accessibility-FF4B4B?style=flat&logo=accessibility&logoColor=white)](https://www.w3.org/WAI/)
+[![Responsive](https://img.shields.io/badge/Responsive-00A4EF?style=flat&logo=responsive&logoColor=white)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 
 ## 🌟 Features
 
@@ -49,7 +56,7 @@ npm run build
 
 If you find this portfolio template useful, consider buying me some ramen! It helps keep the neon lights on and the code flowing.
 
-[![Buy Me A Ramen](https://img.shields.io/badge/Buy%20Me%20A%20Ramen-%23FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/philipwalsf)
+[![Buy Me Some Ramen](https://img.shields.io/badge/Buy%20Me%20Some%20Ramen-%23FF6B6B?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAwem0xMjgtMTQ0YzAgMTcuNy0xNC4zIDMyLTMyIDMycy0zMi0xNC4zLTMyLTMyIDE0LjMtMzIgMzItMzIgMzIgMTQuMyAzMiAzMnptLTY0IDBjMCAxNy43LTE0LjMgMzItMzIgMzJzLTMyLTE0LjMtMzItMzIgMTQuMy0zMiAzMi0zMiAzMiAxNC4zIDMyIDMyem0tNjQgMGMwIDE3LjctMTQuMyAzMi0zMiAzMnMtMzItMTQuMy0zMi0zMiAxNC4zLTMyIDMyLTMyIDMyIDE0LjMgMzIgMzJ6Ii8+PC9zdmc+)](https://buymeacoffee.com/philipwalsf)
 
 ## 📝 License
 
