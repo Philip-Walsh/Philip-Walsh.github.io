@@ -4,7 +4,11 @@
       {
         "title": "Forbidden Ramen",
         "description": "A modern restaurant app with bill splitting and tipping functionality, built with React and modern CSS.",
-        "technologies": ["React", "CSS", "JavaScript"],
+        "technologies": [
+          "React",
+          "CSS",
+          "JavaScript"
+        ],
         "links": {
           "demo": "https://spaghettis.netlify.app/",
           "github": "https://github.com/Philip-Walsh/www.spaghettis"
@@ -14,7 +18,11 @@
       {
         "title": "News API (go-app)",
         "description": "A Go-based web application that allows users to search for news articles using the News API.",
-        "technologies": ["Go", "REST API", "News API"],
+        "technologies": [
+          "Go",
+          "REST API",
+          "News API"
+        ],
         "links": {
           "github": "https://github.com/Philip-Walsh/go-app"
         },
@@ -23,7 +31,11 @@
       {
         "title": "Weather App",
         "description": "Real-time global weather updates with a modern UI. Powered by Express, React, and WeatherAPI.",
-        "technologies": ["Express", "React", "WeatherAPI"],
+        "technologies": [
+          "Express",
+          "React",
+          "WeatherAPI"
+        ],
         "links": {
           "github": "https://github.com/Philip-Walsh/weather"
         },
@@ -33,8 +45,14 @@
     "devOpsTools": [
       {
         "title": "DevKit",
-        "description": "A powerful CLI tool that simplifies secure container development by turning complex, multi-step security processes into simple commands. Features include automated vulnerability scanning, security documentation generation, and secure Kubernetes deployments.",
-        "technologies": ["Python", "Docker", "Kubernetes", "Security", "DevOps"],
+        "description": "A CLI tool that simplifies secure container development by turning complex, multi-step security processes into simple commands. Features include automated vulnerability scanning, security documentation generation, and secure Kubernetes deployments.",
+        "technologies": [
+          "Python",
+          "Docker",
+          "Kubernetes",
+          "Security",
+          "DevOps"
+        ],
         "links": {
           "github": "https://github.com/Philip-Walsh/devkit"
         },
@@ -43,7 +61,11 @@
       {
         "title": "CICD Goat",
         "description": "A deliberately vulnerable CI/CD environment for learning CI/CD security through multiple challenges.",
-        "technologies": ["CI/CD", "Security", "DevOps"],
+        "technologies": [
+          "CI/CD",
+          "Security",
+          "DevOps"
+        ],
         "links": {
           "github": "https://github.com/Philip-Walsh/cicd-goat"
         },
@@ -54,7 +76,11 @@
       {
         "title": "Build Apps with Windsurf's AI Coding Agents",
         "description": "Course and demos for building apps using Windsurf's AI coding agents, taught by Anshul Ramachandran.",
-        "technologies": ["AI", "Windsurf", "Learning"],
+        "technologies": [
+          "AI",
+          "Windsurf",
+          "Learning"
+        ],
         "links": {
           "github": "https://github.com/Philip-Walsh/build-apps-with-windsurfs-ai-coding-agents"
         },
@@ -65,7 +91,11 @@
       {
         "title": "Emojinomicon",
         "description": "A repository of SVG emoji assets for web projects, from backgrounds to cursors.",
-        "technologies": ["SVG", "Design", "Web Assets"],
+        "technologies": [
+          "SVG",
+          "Design",
+          "Web Assets"
+        ],
         "links": {
           "github": "https://github.com/Philip-Walsh/emojinomicon"
         },
@@ -76,14 +106,19 @@
   "recommendations": {
     "podcasts": [
       {
-        "title": "Kubernetes Podcast",
-        "description": "Weekly podcast about Kubernetes and cloud-native development",
-        "url": "https://kubernetespodcast.com/"
+        "title": "Adventures in DevOps",
+        "description": "Come listen to experts in building infrastructure and enabling development and deployment processes discuss the ideas and technologies involved in DevOps. Hosted by Will Button and Warren Parad",
+        "url": "https://open.spotify.com/show/7h0KN1wSukqOmQVvMmAfan?si=d441c3afd09c4b0b"
       },
       {
-        "title": "Syntax",
-        "description": "Web development tips, tricks, and tools from Wes Bos and Scott Tolinski",
-        "url": "https://syntax.fm/"
+        "title": "Fork Around And Find Out",
+        "description": "Your downtime from uptime, a chance to learn from expert's successes and failures. Hosted by Justin Garrison and Autom Nash",
+        "url": "https://open.spotify.com/show/3JOoodqT7171mrbZYxzOGF?si=b19a93f2f58e4745"
+      },
+      {
+        "title": "Station 151",
+        "description": "A science-fiction podcast written by Andy Scearce and Steven James Scearce. It is produced by Bear Weiter and Pale Matter. Station 151 is Antarctica’s first and only astronomical radio observatory. Built by the Telders Corporation at an estimated cost of $200M USD, the station promises to reveal the darkest secrets of the universe. Join Astrophysicist Wayne Robertson at the bottom of the world as he sets off on the adventure of a lifetime (and possibly his last).",
+        "url": "https://open.spotify.com/show/6ivVLrV6gUo1Xbi0BhMHnc?si=b996f2940c694314"
       }
     ],
     "books": [
@@ -100,14 +135,24 @@
     ],
     "youtubeChannels": [
       {
-        "title": "Tech With Tim",
-        "description": "Programming tutorials and tech content",
-        "url": "https://www.youtube.com/c/TechWithTim"
+        "title": "LangChain",
+        "description": "Learn more about building LLM applications with LangChain",
+        "url": "https://www.youtube.com/@LangChain"
       },
       {
-        "title": "Fireship",
-        "description": "Quick and practical web development tutorials",
-        "url": "https://www.youtube.com/c/Fireship"
+        "title": "IBM Technology",
+        "description": "Whether it’s AI, automation, cybersecurity, data science, DevOps, quantum computing or anything in between, we provide educational content on the biggest topics in tech. Subscribe to build your skillset, learn about new trends, and gain insights from IBM experts.",
+        "url": "https://www.youtube.com/@IBMTechnology"
+      },
+      {
+        "title": "The Coding Train",
+        "description": "All aboard! The Coding Train is on its way with creative coding video tutorials on subjects ranging from the basics of programming languages like JavaScript to algorithmic art, machine learning, simulation, generative poetry, and more. Choo choo!",
+        "url": "https://www.youtube.com/@TheCodingTrain"
+      },
+      {
+        "title": "Kevin Powell",
+        "description": "Helping you learn how to make the web, and make it look good while you're at it. With weekly videos and shorts, I'll be bringing you How Tos and Tutorials, as well as simple tips and tricks, with a big focus on helping people see how wonderful CSS is!",
+        "url": "https://www.youtube.com/@KevinPowell"
       }
     ],
     "learningResources": [
@@ -117,10 +162,15 @@
         "url": "https://www.freecodecamp.org/"
       },
       {
-        "title": "Coursera",
-        "description": "Online courses from top universities and companies",
-        "url": "https://www.coursera.org/"
+        "title": "DevOps Roadmap",
+        "description": "Community created roadmaps, guides and articles to help developers grow in their career.",
+        "url": "https://roadmap.sh/devops"
+      },
+      {
+        "title": "Codewars",
+        "description": "Achieve mastery through challenge. Improve your development skills by training with your peers on code kata that continuously challenge and push your coding practice.",
+        "url": "https://www.codewars.com/"
       }
     ]
   }
-} 
+}
