@@ -1,13 +1,12 @@
 /* Philip Walsh Portfolio - Main Stylesheet */
 
-/* Import Prompt Font */
 @import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* CSS Variables for Theming */
 :root {
   /* Light Theme (Default) - Gray Teal Space Cold */
   --bg-primary: #eeeeee;
   --bg-secondary: #ffffff;
+  --bg-secondary-rgb: 255, 255, 255;
   --text-primary: #212121;
   --text-secondary: #555555;
   --accent-color: #0d7377;
@@ -37,6 +36,7 @@
 [data-theme="dark"] {
   --bg-primary: #212121;
   --bg-secondary: #2c2c2c;
+  --bg-secondary-rgb: 44, 44, 44;
   --text-primary: #eeeeee;
   --neon-text-primary: #e0e0e0;
   --text-secondary: #aaaaaa;
@@ -616,7 +616,7 @@ main {
     opacity 0.5s ease,
     transform 0.5s ease;
   padding: 1.5rem;
-  background-color: var(--bg-secondary);
+  background-color: rgba(var(--bg-secondary-rgb), 0.5);
   border-radius: 8px;
   border: 1px solid var(--border-color);
 }
@@ -875,6 +875,10 @@ main {
     max-width: 1400px;
     margin: 0 auto;
   }
+}
+
+#recommendations article {
+  background-color: rgba(var(--bg-secondary-rgb), 1);
 }
 
 .arcade-machine {
