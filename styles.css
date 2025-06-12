@@ -160,14 +160,12 @@ main {
   left: 0;
   width: 100%;
   height: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--accent-glow) 40%,
-    var(--accent-glow-strong) 50%,
-    var(--accent-glow) 60%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      var(--accent-glow) 40%,
+      var(--accent-glow-strong) 50%,
+      var(--accent-glow) 60%,
+      transparent 100%);
   opacity: 0;
   transition:
     opacity 0.3s ease,
@@ -194,6 +192,7 @@ main {
 
 /* Neon Pulse Animation - Softer and slower */
 @keyframes neon-pulse {
+
   0%,
   100% {
     text-shadow:
@@ -229,6 +228,7 @@ main {
 
 /* Flux Pulse Animation */
 @keyframes flux-pulse {
+
   0%,
   100% {
     text-shadow:
@@ -380,7 +380,7 @@ a:hover::after {
 .tagline {
   margin-top: 1rem;
   font-size: 1.1rem;
-  max-width: 600px;
+  max-width: 65ch;
   margin-left: auto;
   margin-right: auto;
   font-weight: 400;
@@ -438,10 +438,8 @@ a:hover::after {
   min-height: 4em;
   border-radius: 50%;
   padding: 0.3em;
-  background: conic-gradient(
-    var(--accent-color) var(--fill-percent),
-    transparent var(--fill-percent)
-  );
+  background: conic-gradient(var(--accent-color) var(--fill-percent),
+      transparent var(--fill-percent));
   transition: --fill-percent 0.6s ease-in-out;
 }
 
@@ -769,6 +767,7 @@ main {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
   line-height: 1.5;
+  max-width: 65ch;
 }
 
 /* Education Section */
@@ -841,6 +840,7 @@ main {
 .accomplishment-item li {
   margin-bottom: 1rem;
   font-weight: 400;
+  max-width: 60ch;
 }
 
 .accomplishment-item strong {
@@ -899,12 +899,10 @@ main {
   left: 0;
   width: 100%;
   height: 10px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-color) 0%,
-    var(--neon-color-2) 50%,
-    var(--accent-color) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--accent-color) 0%,
+      var(--neon-color-2) 50%,
+      var(--accent-color) 100%);
   box-shadow: 0 0 10px var(--accent-glow);
 }
 
@@ -933,12 +931,10 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.1) 100%);
   pointer-events: none;
 }
 
@@ -968,6 +964,7 @@ main {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
+  max-width: 55ch;
 }
 
 @media (max-width: 768px) {
@@ -1047,10 +1044,8 @@ footer {
   min-height: 4em;
   border-radius: 50%;
   padding: 0.3em;
-  background: conic-gradient(
-    var(--accent-color) var(--fill-percent),
-    transparent var(--fill-percent)
-  );
+  background: conic-gradient(var(--accent-color) var(--fill-percent),
+      transparent var(--fill-percent));
   transition: --fill-percent 0.6s ease-in-out;
 }
 
@@ -1255,6 +1250,7 @@ button:focus {
 }
 
 @keyframes bob {
+
   0%,
   100% {
     transform: translateY(0);
@@ -1344,6 +1340,7 @@ button:focus {
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
+  max-width: 55ch;
 }
 
 .project-technologies {
@@ -1496,6 +1493,184 @@ button:focus {
   }
 }
 
+.recommendations-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  max-width: 1400px;
+  gap: 2rem;
+  margin: 2rem auto 0;
+}
+
+@media (min-width: 1200px) {
+  .recommendations-panels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.recommendation-panel {
+  background: var(--card-bg);
+  border: 1px solid rgba(13, 115, 119, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recommendation-panel:hover {
+  border-color: rgba(13, 115, 119, 0.5);
+  box-shadow: 0 8px 32px rgba(13, 115, 119, 0.2);
+  transform: translateY(-4px);
+}
+
+.recommendation-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.recommendation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: blur(3px);
+  transition: all 0.3s ease;
+}
+
+.recommendation-panel:hover .recommendation-image img {
+  transform: scale(1.05);
+  filter: blur(0px);
+}
+
+.platform-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.recommendation-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendation-content h3 {
+  color: var(--neon-color);
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(13, 115, 119, 0.3);
+}
+
+.recommendation-description {
+  color: var(--text-color);
+  margin: 0 0 1.25rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex: 1;
+  opacity: 0.85;
+  max-width: 50ch;
+}
+
+.recommendation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.recommendation-meta span {
+  background: rgba(13, 115, 119, 0.2);
+  color: var(--neon-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.recommendation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neon-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--neon-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.recommendation-link:hover {
+  background: var(--neon-color);
+  color: var(--bg-color);
+  transform: translateY(-1px);
+}
+
+/* Codepen Tags */
+.codepen-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.codepen-tags .tag {
+  background: rgba(13, 115, 119, 0.2);
+  color: var(--neon-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.codepen-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--neon-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--neon-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.codepen-link:hover {
+  background: var(--neon-color);
+  color: var(--bg-color);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .recommendations-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-panel {
+    min-width: unset;
+  }
+}
+
 /* Skeleton Loader Styles */
 @keyframes shimmer {
   0% {
@@ -1508,12 +1683,10 @@ button:focus {
 }
 
 .skeleton {
-  background: linear-gradient(
-    90deg,
-    var(--skeleton-bg) 25%,
-    var(--skeleton-shine) 50%,
-    var(--skeleton-bg) 75%
-  );
+  background: linear-gradient(90deg,
+      var(--skeleton-bg) 25%,
+      var(--skeleton-shine) 50%,
+      var(--skeleton-bg) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 4px;

@@ -99,19 +99,25 @@ function showSkeletonLoaders() {
     "recommendations-container",
   );
   recommendationsContainer.innerHTML = `
-    <section class="recommendations-grid">
-      ${Array(3)
-        .fill(
-          `
-        <article class="recommendation-category skeleton">
-          <h3 class="skeleton"></h3>
-          <ul class="recommendation-list">
-            ${Array(2).fill('<li class="skeleton"></li>').join("")}
-          </ul>
+    <section class="recommendations-panels">
+      ${Array(6)
+      .fill(
+        `
+        <article class="recommendation-panel skeleton">
+          <div class="recommendation-image skeleton"></div>
+          <div class="recommendation-content">
+            <h3 class="skeleton"></h3>
+            <p class="skeleton"></p>
+            <div class="recommendation-meta">
+              <span class="skeleton"></span>
+              <span class="skeleton"></span>
+            </div>
+            <div class="skeleton"></div>
+          </div>
         </article>
       `,
-        )
-        .join("")}
+      )
+      .join("")}
     </section>
   `;
 }
@@ -136,6 +142,7 @@ async function loadAllData() {
     loadEducation(resumeData.education);
     loadAccomplishments(resumeData.accomplishments);
     loadRecommendations(projectsData.recommendations);
+    loadCodepens(projectsData.codepens);
   } catch (error) {
     console.error("Error loading data:", error);
     showErrorState();
@@ -181,9 +188,9 @@ function loadProjects(projects) {
         ([category, projects]) => `
       <section class="project-category">
         <h3>${category
-          .replace(/([A-Z])/g, " $1")
-          .trim()
-          .replace(/^\w/, (c) => c.toUpperCase())}</h3>
+            .replace(/([A-Z])/g, " $1")
+            .trim()
+            .replace(/^\w/, (c) => c.toUpperCase())}</h3>
         <section class="projects-grid">
           ${projects
             .map(
@@ -197,24 +204,23 @@ function loadProjects(projects) {
                 <p>${project.description}</p>
                 <section class="project-technologies" role="list" aria-label="Technologies used">
                   ${project.technologies
-                    .map(
-                      (tech) => `
+                  .map(
+                    (tech) => `
                     <span class="tech-tag" role="listitem">${tech}</span>
                   `,
-                    )
-                    .join("")}
+                  )
+                  .join("")}
                 </section>
                 <section class="project-links">
-                  ${
-                    project.links.demo
-                      ? `
+                  ${project.links.demo
+                  ? `
                     <a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" class="project-link">
                       <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                       <span>Live Demo</span>
                     </a>
                   `
-                      : ""
-                  }
+                  : ""
+                }
                   <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="project-link">
                     <i class="fab fa-github" aria-hidden="true"></i>
                     <span>GitHub</span>
@@ -322,36 +328,76 @@ function loadRecommendations(recommendations) {
     "recommendations-container",
   );
   if (recommendationsContainer && recommendations) {
+    // Flatten all recommendations into individual cards
+    const allRecommendations = Object.entries(recommendations).flatMap(
+      ([category, items]) =>
+        items.map((item) => ({ ...item, category }))
+    );
+
     recommendationsContainer.innerHTML = `
-      <section class="recommendations-grid">
-        ${Object.entries(recommendations)
-          .map(
-            ([category, items]) => `
-          <article class="recommendation-category">
-            <h3>
-              <i class="fas fa-${getCategoryIcon(category)}" aria-hidden="true"></i>
-              <span>${category.replace(/([A-Z])/g, " $1").trim()}</span>
-            </h3>
-            <ul class="recommendation-list">
-              ${items
-                .map(
-                  (item) => `
-                <li>
-                  <a href="${item.url}" target="_blank" rel="noopener noreferrer">
-                    <strong>${item.title}</strong>
-                    <p>${item.description}</p>
-                  </a>
-                </li>
-              `,
-                )
-                .join("")}
-            </ul>
+      <section class="recommendations-panels">
+        ${allRecommendations
+        .map(
+          (item) => `
+          <article class="recommendation-panel">
+            <div class="recommendation-image">
+              <img src="${item.image}" alt="${item.title}" loading="lazy" />
+              <div class="platform-badge">
+                <i class="fas fa-${getCategoryIcon(item.category)}" aria-hidden="true"></i>
+                <span>${item.platform || item.category.replace(/([A-Z])/g, " $1").trim()}</span>
+              </div>
+            </div>
+            <div class="recommendation-content">
+              <h3>${item.title}</h3>
+              <p class="recommendation-description">${item.description}</p>
+              <div class="recommendation-meta">
+                ${item.author ? `<span class="author">by ${item.author}</span>` : ''}
+                ${item.type ? `<span class="type">${item.type}</span>` : ''}
+                ${item.category ? `<span class="category">${item.category.replace(/([A-Z])/g, " $1").trim()}</span>` : ''}
+              </div>
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="recommendation-link">
+                <span>Visit ${item.platform || 'Link'}</span>
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </a>
+            </div>
           </article>
         `,
-          )
-          .join("")}
+        )
+        .join("")}
       </section>
     `;
+  }
+}
+
+// Function to load codepens
+function loadCodepens(codepens) {
+  const codepensContainer = document.querySelector(".codepen-arcade");
+  if (codepensContainer && codepens) {
+    codepensContainer.innerHTML = codepens
+      .map(
+        (codepen) => `
+      <div class="arcade-machine">
+        <div class="arcade-screen">
+          <iframe height="500" scrolling="no" title="${codepen.title}"
+            src="${codepen.embedUrl}" frameborder="no" loading="lazy"
+            allowtransparency="true" allowfullscreen="true">
+          </iframe>
+        </div>
+        <div class="arcade-info">
+          <h3>${codepen.status === 'draft' ? '[DRAFT] ' : ''}${codepen.title}</h3>
+          <p>${codepen.description}</p>
+          <div class="codepen-tags">
+            ${codepen.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+          <a href="${codepen.url}" target="_blank" rel="noopener noreferrer" class="codepen-link">
+            <i class="fab fa-codepen" aria-hidden="true"></i>
+            <span>View on CodePen</span>
+          </a>
+        </div>
+      </div>
+    `,
+      )
+      .join("");
   }
 }
 
@@ -360,7 +406,7 @@ function getCategoryIcon(category) {
   const icons = {
     podcasts: "podcast",
     books: "book",
-    youtubeChannels: "youtube",
+    videoChannels: "youtube",
     learningResources: "graduation-cap",
   };
   return icons[category] || "link";

@@ -103,73 +103,160 @@
       }
     ]
   },
+  "codepens": [
+    {
+      "title": "A Range of Choices",
+      "description": "A forbidden ramen restaurant with bill splitting and tipping functionality.",
+      "url": "https://codepen.io/Philip-Walsh/full/VYwaaxE",
+      "embedUrl": "https://codepen.io/Philip-Walsh/full/VYwaaxE",
+      "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Range+of+Choices",
+      "tags": [
+        "CSS",
+        "JavaScript",
+        "Restaurant",
+        "Calculator"
+      ]
+    },
+    {
+      "title": "Glitches",
+      "description": "ChatGPT creepypasta with glitching CSS effects.",
+      "url": "https://codepen.io/Philip-Walsh/full/QwWmWOW",
+      "embedUrl": "https://codepen.io/Philip-Walsh/full/QwWmWOW",
+      "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Glitches",
+      "tags": [
+        "CSS",
+        "Animation",
+        "Horror",
+        "Effects"
+      ]
+    },
+    {
+      "title": "Bugs - Match 2 Game",
+      "description": "A fun memory matching game with a bug theme.",
+      "url": "https://codepen.io/Philip-Walsh/full/ZYEeVXe",
+      "embedUrl": "https://codepen.io/Philip-Walsh/full/ZYEeVXe",
+      "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Bugs+Match+Game",
+      "tags": [
+        "JavaScript",
+        "Game",
+        "Memory",
+        "Interactive"
+      ]
+    },
+    {
+      "title": "Isomorphic Room with Trihedral Vertex",
+      "description": "An isometric 3D illusion created using CSS, designed to simulate a trihedral vertex—a point where three perpendicular planes meet, forming the corner of a room.",
+      "url": "https://codepen.io/Philip-Walsh/full/Jojdmpx",
+      "embedUrl": "https://codepen.io/Philip-Walsh/full/Jojdmpx",
+      "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Isomorphic+Room",
+      "tags": [
+        "CSS",
+        "3D",
+        "Illusion",
+        "Geometry"
+      ],
+      "status": "draft"
+    }
+  ],
   "recommendations": {
     "podcasts": [
       {
         "title": "Adventures in DevOps",
         "description": "Come listen to experts in building infrastructure and enabling development and deployment processes discuss the ideas and technologies involved in DevOps. Hosted by Will Button and Warren Parad",
-        "url": "https://open.spotify.com/show/7h0KN1wSukqOmQVvMmAfan?si=d441c3afd09c4b0b"
+        "url": "https://open.spotify.com/show/7h0KN1wSukqOmQVvMmAfan?si=d441c3afd09c4b0b",
+        "image": "https://topenddevs.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTIsInB1ciI6ImJsb2JfaWQifX0=--ba438251e05f75067ec7114791e6f91339672995/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGVnIiwicmVzaXplX3RvX2ZpdCI6WzMwMCwzMDBdfSwicHVyIjoidmFyaWF0aW9uIn19--b30d2b2ffbdad3e82053ac7499c91f84964a05ab/Adventures-in-DevOps-1-scaled.jpeg",
+        "platform": "Spotify",
+        "category": "Technology"
       },
       {
         "title": "Fork Around And Find Out",
         "description": "Your downtime from uptime, a chance to learn from expert's successes and failures. Hosted by Justin Garrison and Autom Nash",
-        "url": "https://open.spotify.com/show/3JOoodqT7171mrbZYxzOGF?si=b19a93f2f58e4745"
+        "url": "https://open.spotify.com/show/3JOoodqT7171mrbZYxzOGF?si=b19a93f2f58e4745",
+        "image": "https://images-cf.getpodpage.com/cdn-cgi/image/quality=70,fit=contain,format=auto,width=768/https://img.transistor.fm/Rks7JNss3I2vc13DAZFzFFr4u9CoAsJaNOHntINPBiw/rs:fill:3000:3000:1/q:60/aHR0cHM6Ly9pbWct/dXBsb2FkLXByb2R1/Y3Rpb24udHJhbnNp/c3Rvci5mbS8wMmI5/NGZlNmQyMDI5NTUy/NzJiZjQ1ZDcyZWQw/YTFhMC5wbmc.jpg",
+        "platform": "Spotify",
+        "category": "Technology"
       },
       {
         "title": "Station 151",
-        "description": "A science-fiction podcast written by Andy Scearce and Steven James Scearce. It is produced by Bear Weiter and Pale Matter. Station 151 is Antarctica’s first and only astronomical radio observatory. Built by the Telders Corporation at an estimated cost of $200M USD, the station promises to reveal the darkest secrets of the universe. Join Astrophysicist Wayne Robertson at the bottom of the world as he sets off on the adventure of a lifetime (and possibly his last).",
-        "url": "https://open.spotify.com/show/6ivVLrV6gUo1Xbi0BhMHnc?si=b996f2940c694314"
+        "description": "A science-fiction podcast written by Andy Scearce and Steven James Scearce. It is produced by Bear Weiter and Pale Matter. Station 151 is Antarctica's first and only astronomical radio observatory.",
+        "url": "https://open.spotify.com/show/6ivVLrV6gUo1Xbi0BhMHnc?si=b996f2940c694314",
+        "image": "https://www.station151.com/wp-content/uploads/elementor/thumbs/S151-Header-S2-qu25eq3s0ndhdabvjecwxz6hgxpvimhs8duk2292ig.png",
+        "platform": "Spotify",
+        "category": "Science Fiction"
       }
     ],
     "books": [
       {
-        "title": "Clean Code",
-        "description": "By Robert C. Martin - A handbook of agile software craftsmanship",
-        "url": "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"
+        "title": "Coders",
+        "description": "The Making of a New Tribe and the Remaking of the World",
+        "url": "https://www.goodreads.com/book/show/40406806-coders",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1545908174i/40406806.jpg",
+        "author": "Clive Thompson",
+        "platform": "Goodreads"
       },
       {
-        "title": "Designing Data-Intensive Applications",
-        "description": "By Martin Kleppmann - The big ideas behind reliable, scalable, and maintainable systems",
-        "url": "https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321"
+        "title": "The Pragmatic Programmer",
+        "description": "By Andrew Hunt and David Thomas - A guide to writing better code",
+        "url": "https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer",
+        "image": "https://upload.wikimedia.org/wikipedia/en/8/8f/The_pragmatic_programmer.jpg",
+        "author": "Andrew Hunt and David Thomas",
+        "platform": "Goodreads"
       }
     ],
-    "youtubeChannels": [
+    "videoChannels": [
       {
         "title": "LangChain",
         "description": "Learn more about building LLM applications with LangChain",
-        "url": "https://www.youtube.com/@LangChain"
+        "url": "https://www.youtube.com/@LangChain",
+        "image": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/65c69af1f3035ff97de2cc38_HomePage-metaImage.jpg",
+        "platform": "YouTube"
       },
       {
         "title": "IBM Technology",
-        "description": "Whether it’s AI, automation, cybersecurity, data science, DevOps, quantum computing or anything in between, we provide educational content on the biggest topics in tech. Subscribe to build your skillset, learn about new trends, and gain insights from IBM experts.",
-        "url": "https://www.youtube.com/@IBMTechnology"
+        "description": "Whether it's AI, automation, cybersecurity, data science, DevOps, quantum computing or anything in between, we provide educational content on the biggest topics in tech.",
+        "url": "https://www.youtube.com/@IBMTechnology",
+        "image": "https://yt3.googleusercontent.com/7qCmNHAsFvD6RSINuJ1WoGZYoKmm7TDnhORKFqLb8QoeOFh2qFXal8brkzoxNrwqmJTuvOLs=s900-c-k-c0x00ffffff-no-rj",
+        "platform": "YouTube"
       },
       {
         "title": "The Coding Train",
-        "description": "All aboard! The Coding Train is on its way with creative coding video tutorials on subjects ranging from the basics of programming languages like JavaScript to algorithmic art, machine learning, simulation, generative poetry, and more. Choo choo!",
-        "url": "https://www.youtube.com/@TheCodingTrain"
+        "description": "All aboard! The Coding Train is on its way with creative coding video tutorials on subjects ranging from the basics of programming languages like JavaScript to algorithmic art, machine learning, simulation, generative poetry, and more.",
+        "url": "https://www.youtube.com/@TheCodingTrain",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVSIP3t_ujBd0HCNB0jm7EeEJPDQjxRV-kg&s",
+        "platform": "YouTube"
       },
       {
         "title": "Kevin Powell",
         "description": "Helping you learn how to make the web, and make it look good while you're at it. With weekly videos and shorts, I'll be bringing you How Tos and Tutorials, as well as simple tips and tricks, with a big focus on helping people see how wonderful CSS is!",
-        "url": "https://www.youtube.com/@KevinPowell"
+        "url": "https://www.youtube.com/@KevinPowell",
+        "image": "https://kevinpowell.co/img/brand-icon.png",
+        "platform": "YouTube"
       }
     ],
     "learningResources": [
       {
         "title": "freeCodeCamp",
         "description": "Free interactive coding lessons and certifications",
-        "url": "https://www.freecodecamp.org/"
+        "url": "https://www.freecodecamp.org/",
+        "image": "https://play-lh.googleusercontent.com/A0p7yOpfRPkeyK6mxarQ1ip28Y6OU8VTYLYIfwM-d6Q6_InrbOf7Td9bnMFjtcixqMTY=w7680-h4320-rw",
+        "platform": "Web",
+        "type": "Interactive Learning"
       },
       {
         "title": "DevOps Roadmap",
         "description": "Community created roadmaps, guides and articles to help developers grow in their career.",
-        "url": "https://roadmap.sh/devops"
+        "url": "https://roadmap.sh/devops",
+        "image": "https://roadmap.sh/og/roadmap/devops",
+        "platform": "Web",
+        "type": "Learning Path"
       },
       {
         "title": "Codewars",
         "description": "Achieve mastery through challenge. Improve your development skills by training with your peers on code kata that continuously challenge and push your coding practice.",
-        "url": "https://www.codewars.com/"
+        "url": "https://www.codewars.com/",
+        "image": "https://cdn.prod.website-files.com/62e3ee10882dc50bcae8d07a/634816d46fc4a32b2a583416_codewars-og-image.png",
+        "platform": "Web",
+        "type": "Coding Challenges"
       }
     ]
   }
