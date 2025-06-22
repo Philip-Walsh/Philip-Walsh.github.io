@@ -74,17 +74,17 @@
     ],
     "learningResources": [
       {
-        "title": "Build Apps with Windsurf's AI Coding Agents",
-        "description": "Course and demos for building apps using Windsurf's AI coding agents, taught by Anshul Ramachandran.",
+        "title": "WordsIK (Words I Know) Learn, Play, Know",
+        "description": "A collaborative repository for educational vocabulary, grammar, and spelling resources that can be used to build language learning games and applications. Built with robust quality assurance and multi-language support.",
         "technologies": [
-          "AI",
-          "Windsurf",
+          "Education",
+          "language",
           "Learning"
         ],
         "links": {
-          "github": "https://github.com/Philip-Walsh/build-apps-with-windsurfs-ai-coding-agents"
+          "github": "https://github.com/Philip-Walsh/wordsIK"
         },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Build+Apps+with+Windsurf+AI"
+        "image": "https://github.com/Philip-Walsh/wordsIK/blob/main/docs/assets/site_image.png?raw=true"
       }
     ],
     "creativeFun": [
