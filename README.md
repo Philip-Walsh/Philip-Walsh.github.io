@@ -1,26 +1,17 @@
-# Philip Walsh's Portfolio 🚀
+# Philip Walsh Portfolio 🚀
 
-> A cyberpunk-themed portfolio showcasing my journey through the digital realm
 
-[![Pre-commit Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml)
+<!-- [![Pre-commit Checks](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/pre-commit.yml)
 [![Security](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/security.yml)
 [![Deploy](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Philip-Walsh/Philip-Walsh.github.io/actions/workflows/deploy.yml)
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-
-## 🌟 Features
-
-- **Neon Aesthetics**: A cyberpunk-inspired design that'll make your retinas tingle
-- **Responsive Design**: Looks slick on everything from a smartwatch to a smart fridge
-- **Dark/Light Mode**: Choose your digital reality
-- **Accessibility First**: Because everyone deserves to experience the future
-- **Performance Optimized**: Faster than a quantum computer (okay, maybe not that fast)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/) -->
 
 ## 🛠️ Tech Stack
 
-- HTML5 & CSS3 (with a sprinkle of CSS variables)
-- Vanilla JavaScript (no frameworks, just pure digital power)
-- GitHub Pages (hosting in the cloud)
-- GitHub Actions (automated digital minions)
+- HTML5 & CSS3
+- Vanilla JavaScript
+- GitHub Pages
+- GitHub Actions
 
 ## 🚀 Quick Start
 
