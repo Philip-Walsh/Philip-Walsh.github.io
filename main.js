@@ -155,7 +155,6 @@ function loadAbout(about) {
   if (aboutContent && about) {
     aboutContent.innerHTML = `
       <section class="personal-statement">
-        <h3>Personal Statement</h3>
         <p>${about.personalStatement}</p>
       </section>
     `;

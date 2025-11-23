@@ -2,6 +2,32 @@
   "projects": {
     "webApps": [
       {
+        "title": "Weathernode",
+        "description": "An Express service that provides live data and forecasts over REST and MCP, with built-in database caching to reduce API calls, enabling real-time, context-aware responses for connected LLMs.",
+        "technologies": [
+          "Express",
+          "MCP",
+          "WeatherAPI"
+        ],
+        "links": {
+          "github": "https://github.com/Philip-Walsh/weathernode"
+        },
+        "image": "./images/projects/weathernode.png"
+      },
+      {
+        "title": "MCP Servers",
+        "description": "Python Gradio MCP utilities deployed to Hugging Face enabling tool calling such as base64 encoding / decoding and JSON parsing",
+        "technologies": [
+          "Python",
+          "MCP",
+          "Gradio"
+        ],
+        "links": {
+          "github": "https://huggingface.co/spaces/Philip-Walsh/mcp-server-utils"
+        },
+        "image": "./images/projects/mcp-server-utils.png"
+      },
+      {
         "title": "Forbidden Ramen",
         "description": "A modern restaurant app with bill splitting and tipping functionality, built with React and modern CSS.",
         "technologies": [
@@ -13,7 +39,7 @@
           "demo": "https://spaghettis.netlify.app/",
           "github": "https://github.com/Philip-Walsh/www.spaghettis"
         },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Forbidden+Ramen"
+        "image": "./images/projects/forbidden-ramen.png"
       },
       {
         "title": "News API (go-app)",
@@ -26,7 +52,7 @@
         "links": {
           "github": "https://github.com/Philip-Walsh/go-app"
         },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=News+API"
+        "image": "./images/projects/news-app.png"
       },
       {
         "title": "Weather App",
@@ -39,67 +65,7 @@
         "links": {
           "github": "https://github.com/Philip-Walsh/weather"
         },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Weather+App"
-      }
-    ],
-    "devOpsTools": [
-      {
-        "title": "DevKit",
-        "description": "A CLI tool that simplifies secure container development by turning complex, multi-step security processes into simple commands. Features include automated vulnerability scanning, security documentation generation, and secure Kubernetes deployments.",
-        "technologies": [
-          "Python",
-          "Docker",
-          "Kubernetes",
-          "Security",
-          "DevOps"
-        ],
-        "links": {
-          "github": "https://github.com/Philip-Walsh/devkit"
-        },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Devkit"
-      },
-      {
-        "title": "CICD Goat",
-        "description": "A deliberately vulnerable CI/CD environment for learning CI/CD security through multiple challenges.",
-        "technologies": [
-          "CI/CD",
-          "Security",
-          "DevOps"
-        ],
-        "links": {
-          "github": "https://github.com/Philip-Walsh/cicd-goat"
-        },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=CICD+Goat"
-      }
-    ],
-    "learningResources": [
-      {
-        "title": "WordsIK (Words I Know) Learn, Play, Know",
-        "description": "A collaborative repository for educational vocabulary, grammar, and spelling resources that can be used to build language learning games and applications. Built with robust quality assurance and multi-language support.",
-        "technologies": [
-          "Education",
-          "language",
-          "Learning"
-        ],
-        "links": {
-          "github": "https://github.com/Philip-Walsh/wordsIK"
-        },
-        "image": "https://github.com/Philip-Walsh/wordsIK/blob/main/docs/assets/site_image.png?raw=true"
-      }
-    ],
-    "creativeFun": [
-      {
-        "title": "Emojinomicon",
-        "description": "A repository of SVG emoji assets for web projects, from backgrounds to cursors.",
-        "technologies": [
-          "SVG",
-          "Design",
-          "Web Assets"
-        ],
-        "links": {
-          "github": "https://github.com/Philip-Walsh/emojinomicon"
-        },
-        "image": "https://placehold.co/600x400/0D7377/FFFFFF/png?text=Emojinomicon"
+        "image": "./images/projects/weather-app.png"
       }
     ]
   },

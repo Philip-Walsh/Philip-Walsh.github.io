@@ -1,6 +1,6 @@
 {
   "about": {
-    "personalStatement": "Experienced software engineer with a strong background in DevOps, cloud-native development, and secure software solutions. Committed to delivering impactful projects, driving technical excellence, and collaborating with innovative teams on cutting-edge software engineering initiatives."
+    "personalStatement": "Versatile software engineer with a strong background in DevOps, cloud-native development, and secure software solutions. Committed to delivering impactful projects, driving technical excellence, and collaborating with innovative teams on cutting-edge software engineering initiatives."
   },
   "skills": [
     {
@@ -42,10 +42,6 @@
     {
       "name": "Backstage",
       "icon": "fas fa-layer-group"
-    },
-    {
-      "name": "Windsurf",
-      "icon": "fas fa-wind"
     }
   ],
   "experience": [

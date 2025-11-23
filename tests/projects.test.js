@@ -46,9 +46,6 @@ describe("Projects Module", () => {
     // Check if at least one project is rendered
     expect(projectItems.length).toBeGreaterThan(0);
 
-    // Check if the WindSurfRules project is rendered
-    const windSurfProject = document.getElementById("windsurfrules");
-    expect(windSurfProject).not.toBeNull();
 
     // Check project content
     expect(windSurfProject.querySelector("h3").textContent).toBe(
