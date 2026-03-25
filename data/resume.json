@@ -46,13 +46,13 @@
   ],
   "experience": [
     {
-      "title": "Senior Software Engineer",
+      "title": "Senior DevOps Engineer",
       "company": "Ericsson",
       "period": "Jan 2025 - Present",
       "location": "Athlone, Ireland",
       "responsibilities": [
         "Led the development of Backstage React plugins for the developer experience portal.",
-        "Led in early adoption pilot testing of Codeium GenAi Coding assistant, demonstrating the tool to all employees including the CEO, leading to adoption throughout the company.",
+        "Led in early adoption pilot testing of GenAi Coding assistant, demonstrating the tool to all employees including the CEO, leading to adoption throughout the company.",
         "Acted as Security Master for my team making sure our products and pipelines align with security best practices.",
         "Developed Vulnerability Analysis scanning of our products, applications and microservices to align EIC product with regulations for american markets.",
         "Contributed as part of a DevOps Team to build and maintain pipelines and internal tooling for CICD pipelines for cloud native product Ericsson Intelligent Controller (EIC) and RAN automation rApps."
